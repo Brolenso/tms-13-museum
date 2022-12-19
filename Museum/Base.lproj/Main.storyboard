@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fU-8c-qPV">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="1RI-vk-W9w">
+            <objects>
+                <viewController id="6fU-8c-qPV" customClass="LogInViewController" customModule="Museum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="64N-mu-MDv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWR-SZ-Ncb" customClass="LogInView" customModule="Museum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="buttonLogIn" destination="Z9u-K2-9Aj" id="Stv-YH-hMx"/>
+                                    <outlet property="labelAdress" destination="pxn-AC-fAg" id="6Cn-TN-J4S"/>
+                                    <outlet property="labelMuseum" destination="yfP-rH-O7X" id="K0a-X4-Qwg"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-rH-O7X">
+                                <rect key="frame" x="76.666666666666686" y="350" width="171" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="699-2S-8j8"/>
+                                </constraints>
+                                <string key="text">YOUR
+ART
+MUSEUM</string>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="36"/>
+                                <color key="textColor" name="light-text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxn-AC-fAg">
+                                <rect key="frame" x="76.666666666666671" y="496" width="152.33333333333331" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="vfr-B7-sVH"/>
+                                </constraints>
+                                <string key="text">151 3rd St
+San Francisco, CA 94103</string>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
+                                <color key="textColor" name="light-text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-0b-wG0" customClass="LogInTextField" customModule="Museum" customModuleProvider="target">
+                                <rect key="frame" x="71.666666666666686" y="558" width="250" height="42"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9Xs-u9-94k"/>
+                                    <constraint firstAttribute="height" constant="42" id="pMg-ti-7Vi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email adress"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="8q8-GB-M9E">
+                                <rect key="frame" x="71.666666666666686" y="600" width="250" height="1"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adF-ls-H1E" customClass="LogInTextField" customModule="Museum" customModuleProvider="target">
+                                <rect key="frame" x="71.666666666666686" y="601" width="250" height="42"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="asE-G0-Ioy"/>
+                                    <constraint firstAttribute="height" constant="42" id="x9z-tu-FD2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9u-K2-9Aj">
+                                <rect key="frame" x="71.666666666666686" y="694" width="250" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="hhi-i1-thu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="0.0"/>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Log In">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" red="1" green="0.2784313725" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logInTapped:" destination="6fU-8c-qPV" eventType="primaryActionTriggered" id="0Xw-kJ-IXH"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" customClass="LableTapable" customModule="Museum" customModuleProvider="target">
+                                <rect key="frame" x="71.666666666666686" y="643" width="250" height="24"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Gbr-nR-PN8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Forgot your password?"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rightTextAlignment" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AoF-wh-ULT" appends="YES" id="NXY-e1-xJi"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" customClass="LableTapable" customModule="Museum" customModuleProvider="target">
+                                <rect key="frame" x="71.666666666666686" y="741" width="250" height="24"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7pJ-pt-UHP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Don’t have an account?"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rightTextAlignment" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CEv-pr-BbJ" appends="YES" id="zZT-kG-Moh"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gvO-If-gru"/>
+                        <constraints>
+                            <constraint firstItem="pxn-AC-fAg" firstAttribute="top" secondItem="yfP-rH-O7X" secondAttribute="bottom" constant="3" id="4es-NV-e3h"/>
+                            <constraint firstItem="gvO-If-gru" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yfP-rH-O7X" secondAttribute="trailing" symbolic="YES" id="623-S4-1ul"/>
+                            <constraint firstItem="NNG-kn-H75" firstAttribute="top" secondItem="Z9u-K2-9Aj" secondAttribute="bottom" constant="5" id="9Ih-jN-Y2z"/>
+                            <constraint firstItem="Z9u-K2-9Aj" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" constant="51" id="ALO-H1-UgQ"/>
+                            <constraint firstItem="NNG-kn-H75" firstAttribute="leading" secondItem="Z9u-K2-9Aj" secondAttribute="leading" id="Bzx-GY-Fvn"/>
+                            <constraint firstItem="aOC-0b-wG0" firstAttribute="centerX" secondItem="64N-mu-MDv" secondAttribute="centerX" id="CKf-Mu-5ZO"/>
+                            <constraint firstItem="gvO-If-gru" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pxn-AC-fAg" secondAttribute="trailing" symbolic="YES" id="E9e-YQ-5UE"/>
+                            <constraint firstItem="gvO-If-gru" firstAttribute="bottom" secondItem="aOC-0b-wG0" secondAttribute="bottom" constant="218" id="Gna-Ga-5On"/>
+                            <constraint firstItem="YWR-SZ-Ncb" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" id="Krg-Xt-We8"/>
+                            <constraint firstItem="XAe-e8-PUg" firstAttribute="width" secondItem="adF-ls-H1E" secondAttribute="width" id="MJe-GU-kEQ"/>
+                            <constraint firstItem="Z9u-K2-9Aj" firstAttribute="centerX" secondItem="adF-ls-H1E" secondAttribute="centerX" id="Obf-XA-YbF"/>
+                            <constraint firstItem="pxn-AC-fAg" firstAttribute="leading" secondItem="yfP-rH-O7X" secondAttribute="leading" id="P2R-mM-Eb2"/>
+                            <constraint firstItem="XAe-e8-PUg" firstAttribute="trailing" secondItem="adF-ls-H1E" secondAttribute="trailing" id="PIU-8C-JdS"/>
+                            <constraint firstItem="adF-ls-H1E" firstAttribute="top" secondItem="8q8-GB-M9E" secondAttribute="bottom" id="ZIF-C0-Lop"/>
+                            <constraint firstItem="aOC-0b-wG0" firstAttribute="top" secondItem="pxn-AC-fAg" secondAttribute="bottom" constant="20" id="a6O-b0-MtT"/>
+                            <constraint firstItem="NNG-kn-H75" firstAttribute="width" secondItem="Z9u-K2-9Aj" secondAttribute="width" id="aEx-GW-3bT"/>
+                            <constraint firstItem="8q8-GB-M9E" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="aON-SR-guO"/>
+                            <constraint firstAttribute="bottom" secondItem="YWR-SZ-Ncb" secondAttribute="bottom" id="bpv-4G-tsB"/>
+                            <constraint firstItem="yfP-rH-O7X" firstAttribute="leading" secondItem="aOC-0b-wG0" secondAttribute="leading" constant="5" id="dld-AD-p8P"/>
+                            <constraint firstItem="Z9u-K2-9Aj" firstAttribute="width" secondItem="adF-ls-H1E" secondAttribute="width" id="fdd-UO-PpL"/>
+                            <constraint firstItem="8q8-GB-M9E" firstAttribute="width" secondItem="adF-ls-H1E" secondAttribute="width" id="h6Y-hL-MUp"/>
+                            <constraint firstItem="8q8-GB-M9E" firstAttribute="top" secondItem="aOC-0b-wG0" secondAttribute="bottom" id="iUK-6u-gfx"/>
+                            <constraint firstAttribute="trailing" secondItem="YWR-SZ-Ncb" secondAttribute="trailing" id="omw-FY-o7L"/>
+                            <constraint firstItem="XAe-e8-PUg" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" id="u6t-8a-bHa"/>
+                            <constraint firstItem="adF-ls-H1E" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="vBi-Ra-jvZ"/>
+                            <constraint firstItem="YWR-SZ-Ncb" firstAttribute="leading" secondItem="64N-mu-MDv" secondAttribute="leading" id="x9F-OQ-fku"/>
+                        </constraints>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <nil key="backgroundColor"/>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ith-es-xYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AoF-wh-ULT" userLabel="Tap Gesture Recognizer - Forgot your password?">
+                    <connections>
+                        <action selector="forgotYourPasswordTapped:" destination="6fU-8c-qPV" id="e0k-ce-n5j"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CEv-pr-BbJ" userLabel="Tap Gesture Recognizer - Don't have an account?">
+                    <connections>
+                        <action selector="dontHaveAnAccountTapped:" destination="6fU-8c-qPV" id="611-15-h8l"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="768.79999999999995" y="4.9475262368815596"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line" width="250" height="1"/>
+        <namedColor name="light-text">
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
