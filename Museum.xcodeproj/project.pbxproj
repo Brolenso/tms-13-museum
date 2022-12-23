@@ -46,6 +46,7 @@
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
 				1109F728294DF419006AB3CE /* Products */,
+				11BDBCE02954C97100766AA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +80,13 @@
 				1121DE452950382700129C08 /* LableTapable.swift */,
 			);
 			path = LogIn;
+			sourceTree = "<group>";
+		};
+		11BDBCE02954C97100766AA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
