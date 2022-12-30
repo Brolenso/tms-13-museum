@@ -1,11 +1,14 @@
 import UIKit
 
 @IBDesignable
-class LogInTextField: UIView {
+class LogInTextField: UIControl {
+
+    // closure to tap button in other class
+    public var closureLogInTap: () -> () = {  }
     
     private var textField = UITextField(frame: .zero)
     private var fontLogIn = UIFont(name: "Hiragino Sans", size: 12) ?? UIFont.systemFont(ofSize: 12)
-    
+        
     public var text: String {
         textField.text ?? ""
     }
@@ -93,11 +96,17 @@ class LogInTextField: UIView {
 extension LogInTextField: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // hide keyboard
-        textField.resignFirstResponder()
         
-        // call logInTapped
-        // ? ? ?
+        // calling tap to logInButton in LoginViewController class
+        
+        // option 1: closures
+        closureLogInTap()
+        
+        // option 2: target - action
+        sendActions(for: .editingDidEndOnExit)        
+
+        // hide keyboard
+        return textField.resignFirstResponder()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

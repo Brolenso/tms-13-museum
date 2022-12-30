@@ -80,6 +80,9 @@ San Francisco, CA 94103</string>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="passwordDonePressed:" destination="6fU-8c-qPV" eventType="editingDidEndOnExit" id="DnA-aZ-m2c"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LableTapable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="89" y="593" width="250" height="24"/>
@@ -188,6 +191,7 @@ San Francisco, CA 94103</string>
                     <connections>
                         <outlet property="emailTextField" destination="aOC-0b-wG0" id="QMf-0S-2nt"/>
                         <outlet property="forgotPasswordLabel" destination="XAe-e8-PUg" id="MCi-fV-blz"/>
+                        <outlet property="logInButton" destination="Z9u-K2-9Aj" id="nGL-6i-Cv6"/>
                         <outlet property="passwordTextField" destination="adF-ls-H1E" id="QND-en-UVM"/>
                         <outlet property="scrollView" destination="dGa-RN-lZj" id="t4y-a0-eh8"/>
                     </connections>

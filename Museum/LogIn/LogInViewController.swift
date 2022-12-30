@@ -13,16 +13,27 @@ class LogInViewController: UIViewController {
     @IBOutlet var forgotPasswordLabel: LableTapable!
     @IBOutlet var emailTextField: LogInTextField!
     @IBOutlet var passwordTextField: LogInTextField!
+    @IBOutlet var logInButton: UIButton!
+    
+    // option 1: closure to tap button from other class
+    lazy var closureLogInTap = { [weak self] in
+        return self?.logIn() ?? ()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        emailTextField.closureLogInTap = self.closureLogInTap
+        passwordTextField.closureLogInTap = self.closureLogInTap
+        
+        emailTextField.keyboardType = .emailAddress
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillChangeFrame(_:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
         
+        // add free space on top of content if possible
         let scrollLayoutGuide = UILayoutGuide()
         view.addLayoutGuide(scrollLayoutGuide)
         
@@ -33,17 +44,28 @@ class LogInViewController: UIViewController {
             scrollLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             constraint,
         ])
-        
-        emailTextField.keyboardType = .emailAddress
+
+        // option 3: target - action from code
+        emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
     
+    // option 3: target - action from code
+    @objc
+    func emailDonePressed(_ sender: LogInTextField) {
+        logIn()
+    }
+    
+    // option 2: target - action from storyboard
+    @IBAction func passwordDonePressed(_ sender: LogInTextField) {
+        logIn()
+    }
+    
     @IBAction func logInTapped(_ sender: UIButton) {
-        print(emailTextField.text)
-        print(passwordTextField.text)
+        logIn()
     }
     
     @IBAction func forgotYourPasswordTapped(_ sender: UITapGestureRecognizer) {
@@ -75,6 +97,11 @@ class LogInViewController: UIViewController {
                                                                             right: 0.0))
         
         scrollView.scrollRectToVisible(visibleFrame, animated: true)
+    }
+    
+    private func logIn() {
+        print(emailTextField.text)
+        print(passwordTextField.text)
     }
 }
 
