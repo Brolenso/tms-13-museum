@@ -7,7 +7,6 @@ class LogInTextField: UIControl {
     public var closureLogInTap: () -> () = {  }
     
     private var textField = UITextField(frame: .zero)
-    private var fontLogIn = UIFont(name: "Hiragino Sans", size: 12) ?? UIFont.systemFont(ofSize: 12)
         
     public var text: String {
         textField.text ?? ""
@@ -28,12 +27,7 @@ class LogInTextField: UIControl {
             return textField.placeholder ?? ""
         }
         set {
-            textField.attributedPlaceholder = NSAttributedString(
-                string: newValue,
-                attributes: [
-                    .foregroundColor: UIColor.black,
-                ]
-            )
+            textField.attributedPlaceholder = newValue.setTextStyle(.textfield)
         }
     }
     
@@ -69,8 +63,12 @@ class LogInTextField: UIControl {
         
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
-        textField.defaultTextAttributes[.font] = fontLogIn
         
+        // functions are declared in extention to String
+        textField.defaultTextAttributes[.font] = TextStyle.textfield.font
+        textField.defaultTextAttributes[.foregroundColor] = TextStyle.textfield.color
+        textField.defaultTextAttributes[.baselineOffset] = TextStyle.textfield.baselineOffset
+
         textField.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textField)
         
@@ -122,9 +120,8 @@ extension LogInTextField: UITextFieldDelegate {
             return true
         }
         
-        // deleting spaces
-        var editedString = string
-        editedString.removeAll(where: { $0 == " " })
+        // deleting spaces by String extention
+        let editedString = string.removeSpaces()
         
         // replacing text in changing range
         DispatchQueue.main.async {

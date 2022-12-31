@@ -13,6 +13,9 @@
 		1109F732294DF419006AB3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1109F730294DF419006AB3CE /* Main.storyboard */; };
 		1109F734294DF41A006AB3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1109F733294DF41A006AB3CE /* Assets.xcassets */; };
 		1121DE462950382700129C08 /* LableTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121DE452950382700129C08 /* LableTapable.swift */; };
+		115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */; };
+		11721EFD296040A900767FBC /* String+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFC296040A900767FBC /* String+textStyle.swift */; };
+		11721EFF296077F800767FBC /* String+removeSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFE296077F800767FBC /* String+removeSpaces.swift */; };
 		1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199D2E9294F034300FEC95B /* LogInTextField.swift */; };
 		11F15F2E294E48AF00D297B5 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F15F2D294E48AF00D297B5 /* LogInView.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 		1109F733294DF41A006AB3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1109F738294DF41A006AB3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1121DE452950382700129C08 /* LableTapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LableTapable.swift; sourceTree = "<group>"; };
+		115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+shadow.swift"; sourceTree = "<group>"; };
+		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
+		11721EFE296077F800767FBC /* String+removeSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+removeSpaces.swift"; sourceTree = "<group>"; };
 		1199D2E9294F034300FEC95B /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
 		11F15F2D294E48AF00D297B5 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +70,9 @@
 				1199D2EB294F038C00FEC95B /* LogIn */,
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
 				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
+				11721EFC296040A900767FBC /* String+textStyle.swift */,
+				11721EFE296077F800767FBC /* String+removeSpaces.swift */,
+				115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */,
 				1109F730294DF419006AB3CE /* Main.storyboard */,
 				1109F733294DF41A006AB3CE /* Assets.xcassets */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
@@ -160,6 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1121DE462950382700129C08 /* LableTapable.swift in Sources */,
+				11721EFD296040A900767FBC /* String+textStyle.swift in Sources */,
+				115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */,
+				11721EFF296077F800767FBC /* String+removeSpaces.swift in Sources */,
 				11F15F2E294E48AF00D297B5 /* LogInView.swift in Sources */,
 				1109F72F294DF419006AB3CE /* LogInViewController.swift in Sources */,
 				1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */,

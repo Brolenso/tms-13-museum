@@ -50,11 +50,9 @@ class LableTapable: UIView {
         
         self.backgroundColor = nil
         
-        let attributedText = NSAttributedString(string: label.text ?? "Default label text", attributes: [
-            .foregroundColor: UIColor(named: "light-text") ?? UIColor.white,
-            .font: UIFont(name: "Hiragino Sans", size: 10) ?? UIFont.systemFont(ofSize: 10),
-        ])
-        label.attributedText = attributedText
+        let labelText = label.text ?? "Default label text"
+        let attributedlabelText = labelText.setTextStyle(.label)
+        label.attributedText = attributedlabelText
                 
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)

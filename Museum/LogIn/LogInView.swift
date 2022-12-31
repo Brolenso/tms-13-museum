@@ -22,6 +22,7 @@ class LogInView: UIView {
     // runs when view is loaded from storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         setupView()
     }
     
@@ -39,27 +40,17 @@ class LogInView: UIView {
             backgroundImage.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: 30.0),
         ])
         
-        let textMuseum = NSAttributedString(string: "YOUR\nART\nMUSEUM", attributes: [
-            .baselineOffset: 7.0,
-        ])
+        let textMuseum = "YOUR\nART\nMUSEUM"
+        let attributedTextMuseum = textMuseum.setTextStyle(.title)
+        labelMuseum.attributedText = attributedTextMuseum
         
-        labelMuseum.attributedText = textMuseum
+        let textAdress = "151 3rd St\nSan Francisco, CA 94103"
+        let attributedTextAdress = textAdress.setTextStyle(.subtitle)
+        labelAdress.attributedText = attributedTextAdress
         
-        let textAdress = NSAttributedString(string: "151 3rd St\nSan Francisco, CA 94103", attributes: [
-            .baselineOffset: 4.0,
-        ])
-        
-        labelAdress.attributedText = textAdress
-        
-        let textForgot = NSAttributedString(string: "Log In", attributes: [
-            .font: UIFont(name: "Hiragino Sans", size: 12) ?? UIFont.systemFont(ofSize: 12),
-        ])
-        
-        buttonLogIn.setAttributedTitle(textForgot, for: .normal)
-        buttonLogIn.layer.shadowColor = UIColor.black.cgColor
-        buttonLogIn.layer.shadowOpacity = 0.25
-        buttonLogIn.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        buttonLogIn.layer.shadowRadius = 4.0
+        let textLogIn = "Log In"
+        let arrtibutedTextLogIn = textLogIn.setTextStyle(.button)
+        buttonLogIn.setAttributedTitle(arrtibutedTextLogIn, for: .normal)
     }
     
 }

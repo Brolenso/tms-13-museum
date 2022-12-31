@@ -117,6 +117,9 @@ San Francisco, CA 94103</string>
                                             </attributedString>
                                             <color key="baseBackgroundColor" red="1" green="0.2784313725" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="logInTapped:" destination="6fU-8c-qPV" eventType="primaryActionTriggered" id="0Xw-kJ-IXH"/>
                                         </connections>
