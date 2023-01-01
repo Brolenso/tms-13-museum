@@ -37,14 +37,16 @@ class LogInViewController: UIViewController {
         let scrollLayoutGuide = UILayoutGuide()
         view.addLayoutGuide(scrollLayoutGuide)
         
-        let constraint = scrollLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor)
-        constraint.priority = .defaultLow - 1
+        let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 47.0)
+
+        constraintHeight.priority = .defaultLow - 1
+        
         NSLayoutConstraint.activate([
             scrollLayoutGuide.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
             scrollLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-            constraint,
+            constraintHeight,
         ])
-
+        
         // option 3: target - action from code
         emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
     }
