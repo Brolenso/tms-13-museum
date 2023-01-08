@@ -16,35 +16,35 @@ extension TextStyle {
     static let title = TextStyle(
         size: 36.0,
         color: UIColor(named: "light-text") ?? UIColor.white,
-        fontName: "Hiragino Sans",
-        baselineOffset: 7.0
+        fontName: "Montserrat-Regular",
+        baselineOffset: 0.0
     )
     
     static let subtitle = TextStyle(
         size: 12.0,
         color: UIColor(named: "light-text") ?? UIColor.white,
-        fontName: "Hiragino Sans",
-        baselineOffset: 4.0
+        fontName: "Montserrat-Regular",
+        baselineOffset: 0.0
     )
     
     static let textfield = TextStyle(
         size: 12,
         color: .black,
-        fontName: "Hiragino Sans",
+        fontName: "Montserrat-Regular",
         baselineOffset: 0.0
     )
    
     static let label = TextStyle(
         size: 10,
         color: UIColor(named: "light-text") ?? UIColor.white,
-        fontName: "Hiragino Sans",
+        fontName: "Montserrat-Regular",
         baselineOffset: 0.0
     )
     
     static let button = TextStyle(
         size: 12,
         color: .white,
-        fontName: "Hiragino Sans",
+        fontName: "Montserrat-Regular",
         baselineOffset: 0.0
     )
     

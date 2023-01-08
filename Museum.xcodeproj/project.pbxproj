@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1108CD6F296B0DEC00A77169 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1108CD6E296B0DEC00A77169 /* Montserrat-Regular.ttf */; };
 		1109F72B294DF419006AB3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109F72A294DF419006AB3CE /* AppDelegate.swift */; };
 		1109F72D294DF419006AB3CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109F72C294DF419006AB3CE /* SceneDelegate.swift */; };
 		1109F72F294DF419006AB3CE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109F72E294DF419006AB3CE /* LogInViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1108CD6E296B0DEC00A77169 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		1109F727294DF419006AB3CE /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1109F72A294DF419006AB3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1109F72C294DF419006AB3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1108CD6D296B0DD100A77169 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1108CD6E296B0DEC00A77169 /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		1109F71E294DF419006AB3CE = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +77,7 @@
 		1109F729294DF419006AB3CE /* Museum */ = {
 			isa = PBXGroup;
 			children = (
+				1108CD6D296B0DD100A77169 /* Fonts */,
 				1199D2EB294F038C00FEC95B /* LogIn */,
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
 				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
@@ -156,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1108CD6F296B0DEC00A77169 /* Montserrat-Regular.ttf in Resources */,
 				1109F734294DF41A006AB3CE /* Assets.xcassets in Resources */,
 				1109F732294DF419006AB3CE /* Main.storyboard in Resources */,
 			);
