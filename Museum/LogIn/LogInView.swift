@@ -40,11 +40,11 @@ class LogInView: UIView {
             backgroundImage.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: 30.0),
         ])
         
-        let textMuseum = "YOUR\nART\nMUSEUM"
+        let textMuseum = "GRAND\nPALAIS\nMUSEUM"
         let attributedTextMuseum = textMuseum.setTextStyle(.title)
         labelMuseum.attributedText = attributedTextMuseum
         
-        let textAdress = "151 3rd St\nSan Francisco, CA 94103"
+        let textAdress = "3 Avenue Winston-Churchill\n75008 Paris, France"
         let attributedTextAdress = textAdress.setTextStyle(.subtitle)
         labelAdress.attributedText = attributedTextAdress
         
