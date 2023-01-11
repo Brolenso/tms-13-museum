@@ -89,6 +89,11 @@ class LogInTextField: UIControl {
     func textFieldViewTapped(_ sender: UITapGestureRecognizer) {
         textField.becomeFirstResponder()
     }
+    
+    // access to values by this interface
+    public func setTextFieldText(text: String) {
+        textField.text = text
+    }
 }
 
 extension LogInTextField: UITextFieldDelegate {

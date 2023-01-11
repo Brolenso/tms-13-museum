@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galeries du Grand Palais" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-rH-O7X" userLabel="Museum name">
-                                        <rect key="frame" x="94" y="300" width="211" height="143"/>
+                                        <rect key="frame" x="86.999999999999986" y="300" width="211.66666666666663" height="143"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="143" id="699-2S-8j8"/>
                                         </constraints>
@@ -39,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxn-AC-fAg" userLabel="Museum adress">
-                                        <rect key="frame" x="94.000000000000014" y="446" width="152.33333333333337" height="42"/>
+                                        <rect key="frame" x="90.000000000000014" y="446" width="152.33333333333337" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="vfr-B7-sVH"/>
                                         </constraints>
@@ -82,7 +82,7 @@ San Francisco, CA 94103</string>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LabelTappable" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="89" y="593" width="250" height="24"/>
+                                        <rect key="frame" x="89" y="596" width="250" height="24"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Gbr-nR-PN8"/>
@@ -122,7 +122,7 @@ San Francisco, CA 94103</string>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LabelTappable" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="89" y="691" width="250" height="24"/>
+                                        <rect key="frame" x="89" y="689" width="250" height="24"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="7pJ-pt-UHP"/>
@@ -137,16 +137,16 @@ San Francisco, CA 94103</string>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="aOC-0b-wG0" firstAttribute="leading" secondItem="yfP-rH-O7X" secondAttribute="leading" constant="-5" id="0Pc-Ld-fEk"/>
+                                    <constraint firstItem="yfP-rH-O7X" firstAttribute="leading" secondItem="aOC-0b-wG0" secondAttribute="leading" constant="-2" id="0Pc-Ld-fEk"/>
                                     <constraint firstItem="8q8-GB-M9E" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="2wt-Cp-iuU"/>
                                     <constraint firstItem="pxn-AC-fAg" firstAttribute="top" secondItem="yfP-rH-O7X" secondAttribute="bottom" constant="3" id="8Vw-8T-gYX"/>
                                     <constraint firstItem="T4I-a4-JxA" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="ATw-cr-Fqt"/>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="centerX" secondItem="dGa-RN-lZj" secondAttribute="centerX" id="B3F-Je-2ZN"/>
-                                    <constraint firstItem="NNG-kn-H75" firstAttribute="top" secondItem="Z9u-K2-9Aj" secondAttribute="bottom" constant="5" id="B4l-wC-9Qg"/>
+                                    <constraint firstItem="NNG-kn-H75" firstAttribute="top" secondItem="Z9u-K2-9Aj" secondAttribute="bottom" constant="3" id="B4l-wC-9Qg"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="Ck7-s2-HL0"/>
-                                    <constraint firstItem="XAe-e8-PUg" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" id="FSo-Zq-WFl"/>
+                                    <constraint firstItem="XAe-e8-PUg" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" constant="3" id="FSo-Zq-WFl"/>
                                     <constraint firstItem="XAe-e8-PUg" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="N8O-4W-J3d"/>
-                                    <constraint firstItem="pxn-AC-fAg" firstAttribute="leading" secondItem="yfP-rH-O7X" secondAttribute="leading" id="Nou-AB-KSI"/>
+                                    <constraint firstItem="pxn-AC-fAg" firstAttribute="leading" secondItem="yfP-rH-O7X" secondAttribute="leading" constant="3" id="Nou-AB-KSI"/>
                                     <constraint firstItem="XAe-e8-PUg" firstAttribute="trailing" secondItem="adF-ls-H1E" secondAttribute="trailing" id="RYh-ZR-QUY"/>
                                     <constraint firstItem="yfP-rH-O7X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="T4I-a4-JxA" secondAttribute="top" constant="30" id="SRi-fQ-lzM"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="leading" secondItem="Z9u-K2-9Aj" secondAttribute="leading" id="UOl-pI-sLf"/>
