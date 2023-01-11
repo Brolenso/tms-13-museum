@@ -4,7 +4,7 @@ class LogInView: UIView {
     
     private let backgroundImage = UIImageView(frame: .zero)
     @IBOutlet var labelMuseum: UILabel!
-    @IBOutlet var labelAdress: UILabel!
+    @IBOutlet var labelAddress: UILabel!
     @IBOutlet var buttonLogIn: UIButton!
     
     // runs when we create view by code: let myView = CustomView(frame: .zero)
@@ -44,13 +44,13 @@ class LogInView: UIView {
         let attributedTextMuseum = textMuseum.setTextStyle(.title)
         labelMuseum.attributedText = attributedTextMuseum
         
-        let textAdress = "3 Avenue Winston-Churchill\n75008 Paris, France"
-        let attributedTextAdress = textAdress.setTextStyle(.subtitle)
-        labelAdress.attributedText = attributedTextAdress
+        let textAddress = "3 Avenue Winston-Churchill\n75008 Paris, France"
+        let attributedTextAddress = textAddress.setTextStyle(.subtitle)
+        labelAddress.attributedText = attributedTextAddress
         
         let textLogIn = "Log In"
-        let arrtibutedTextLogIn = textLogIn.setTextStyle(.button)
-        buttonLogIn.setAttributedTitle(arrtibutedTextLogIn, for: .normal)
+        let attributedTextLogIn = textLogIn.setTextStyle(.button)
+        buttonLogIn.setAttributedTitle(attributedTextLogIn, for: .normal)
     }
     
 }

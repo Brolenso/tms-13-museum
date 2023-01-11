@@ -120,7 +120,7 @@ extension LogInTextField: UITextFieldDelegate {
             return true
         }
         
-        // deleting spaces by String extention
+        // deleting spaces by String extension
         let editedString = string.removeSpaces()
         
         // replacing text in changing range

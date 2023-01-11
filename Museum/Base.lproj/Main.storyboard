@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="buttonLogIn" destination="Z9u-K2-9Aj" id="Stv-YH-hMx"/>
-                                    <outlet property="labelAdress" destination="pxn-AC-fAg" id="6Cn-TN-J4S"/>
+                                    <outlet property="labelAddress" destination="pxn-AC-fAg" id="6Cn-TN-J4S"/>
                                     <outlet property="labelMuseum" destination="yfP-rH-O7X" id="K0a-X4-Qwg"/>
                                 </connections>
                             </view>
@@ -81,7 +81,7 @@ San Francisco, CA 94103</string>
                                             <action selector="passwordDonePressed:" destination="6fU-8c-qPV" eventType="editingDidEndOnExit" id="DnA-aZ-m2c"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LableTapable" customModule="Museum" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LabelTappable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="89" y="593" width="250" height="24"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -121,7 +121,7 @@ San Francisco, CA 94103</string>
                                             <action selector="logInTapped:" destination="6fU-8c-qPV" eventType="primaryActionTriggered" id="0Xw-kJ-IXH"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LableTapable" customModule="Museum" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LabelTappable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="89" y="691" width="250" height="24"/>
                                         <gestureRecognizers/>
                                         <constraints>

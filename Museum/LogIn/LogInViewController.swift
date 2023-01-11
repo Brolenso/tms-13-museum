@@ -10,7 +10,7 @@ import UIKit
 class LogInViewController: UIViewController {
     
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var forgotPasswordLabel: LableTapable!
+    @IBOutlet var forgotPasswordLabel: LabelTappable!
     @IBOutlet var emailTextField: LogInTextField!
     @IBOutlet var passwordTextField: LogInTextField!
     @IBOutlet var logInButton: UIButton!
