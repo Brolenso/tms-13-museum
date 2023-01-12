@@ -18,25 +18,21 @@ class MainViewController: UIViewController {
         customiseLabelEmail()
     }
     
-    private func customiseLabelEmail() -> Bool {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // hide navigationBar
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func customiseLabelEmail() {
         
         guard let user = JsonData().user else {
             print("Can not customise labelEmail")
-            return false
+            return
         }
                 
         labelEmail.attributedText = user.email.uppercased().setTextStyle(.labelDark)
-        return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

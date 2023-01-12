@@ -108,9 +108,12 @@ class LogInViewController: UIViewController {
         guard emailTextField.text.count > 0 else {
             return
         }
-
-        print(emailTextField.text)
-        print(passwordTextField.text)
+        
+        // show next mainViewController screen
+        if let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateInitialViewController() {
+            
+            navigationController?.setViewControllers([mainViewController], animated: true)
+        }
 
         // making object
         let user = User(email: emailTextField.text, password: passwordTextField.text)

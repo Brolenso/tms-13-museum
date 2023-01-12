@@ -96,9 +96,9 @@
 				11B20006296F53D10045960B /* JsonData.swift */,
 				11B20008296F55C20045960B /* User.swift */,
 				1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */,
+				11B2000A297008160045960B /* MainStoryboard.storyboard */,
 				1109F733294DF41A006AB3CE /* Assets.xcassets */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
-				11B2000A297008160045960B /* MainStoryboard.storyboard */,
 			);
 			path = Museum;
 			sourceTree = "<group>";
