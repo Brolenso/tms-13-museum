@@ -51,7 +51,7 @@ class LogInViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
         
         // try to filling textFields from JSON
-        fillTextFieldsFromJson(email: emailTextField, password: passwordTextField)
+        fillTextFieldsFromJson(emailToFill: emailTextField, passwordToFill: passwordTextField)
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -105,22 +105,26 @@ class LogInViewController: UIViewController {
     }
     
     private func logIn() {
+        guard emailTextField.text.count > 0 else {
+            return
+        }
+
         print(emailTextField.text)
         print(passwordTextField.text)
-        
+
         // making object
         let user = User(email: emailTextField.text, password: passwordTextField.text)
         // writing data to JSON
         JsonData().user = user
     }
     
-    private func fillTextFieldsFromJson(email: LogInTextField, password: LogInTextField) {
+    private func fillTextFieldsFromJson(emailToFill: LogInTextField, passwordToFill: LogInTextField) {
         guard let user: User = JsonData().user else {
             print("Can not read User from JsonData().user")
             return
         }
-        email.setTextFieldText(text: user.email)
-        password.setTextFieldText(text: user.password)
+        emailToFill.setTextFieldText(text: user.email)
+        passwordToFill.setTextFieldText(text: user.password)
     }
 }
 

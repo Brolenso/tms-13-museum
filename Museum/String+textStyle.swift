@@ -41,6 +41,13 @@ extension TextStyle {
         baselineOffset: 0.0
     )
     
+    static let labelDark = TextStyle(
+        size: 10,
+        color: .black,
+        fontName: "Montserrat-Regular",
+        baselineOffset: 0.0
+    )
+    
     static let button = TextStyle(
         size: 12,
         color: .white,
