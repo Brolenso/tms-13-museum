@@ -8,28 +8,29 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
-
+    var logInNavigationController: UINavigationController!
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+//        let logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateInitialViewController()
+        let logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateInitialViewController()
+
+        logInNavigationController = logInViewController as? UINavigationController
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
+                
+        var rootViewController: UIViewController?
         
-        var storyboardName: String
-        
-        if JsonData().user == nil {
-            storyboardName = "LogInStoryboard"
+        if let user = JsonData().user, user.email.count > 0 {
+            rootViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "mainScreen") { coder in
+                MainViewController(user: user, coder: coder)
+            }
         } else {
-            storyboardName = "MainStoryboard"
+            rootViewController = logInViewController
         }
-        
-        let rootViewController = UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController()
         
         window.rootViewController = rootViewController
         

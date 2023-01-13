@@ -61,6 +61,8 @@ class LogInTextField: UIControl {
     
     private func setupView() {
         
+        self.backgroundColor = .white
+
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         
@@ -103,7 +105,7 @@ extension LogInTextField: UITextFieldDelegate {
         // calling tap to logInButton in LoginViewController class
         
         // option 1: closures
-        closureLogInTap()
+        // closureLogInTap()
         
         // option 2: target - action
         sendActions(for: .editingDidEndOnExit)        

@@ -22,7 +22,7 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         emailTextField.closureLogInTap = self.closureLogInTap
         passwordTextField.closureLogInTap = self.closureLogInTap
         
@@ -49,13 +49,6 @@ class LogInViewController: UIViewController {
         
         // option 3: target - action from code
         emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
-        
-        // try to filling textFields from JSON
-        fillTextFieldsFromJson(emailToFill: emailTextField, passwordToFill: passwordTextField)
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
     }
     
     // option 3: target - action from code
@@ -109,25 +102,19 @@ class LogInViewController: UIViewController {
             return
         }
         
-        // show next mainViewController screen
-        if let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateInitialViewController() {
-            
-            navigationController?.setViewControllers([mainViewController], animated: true)
-        }
-
         // making object
         let user = User(email: emailTextField.text, password: passwordTextField.text)
+        
+        // show next mainViewController screen
+        let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: .main).instantiateInitialViewController() { coder in
+            MainViewController(user: user, coder: coder)
+        }
+                
+        navigationController?.setViewControllers([mainViewController!], animated: true)
+       
         // writing data to JSON
         JsonData().user = user
     }
     
-    private func fillTextFieldsFromJson(emailToFill: LogInTextField, passwordToFill: LogInTextField) {
-        guard let user: User = JsonData().user else {
-            print("Can not read User from JsonData().user")
-            return
-        }
-        emailToFill.setTextFieldText(text: user.email)
-        passwordToFill.setTextFieldText(text: user.password)
-    }
 }
 
