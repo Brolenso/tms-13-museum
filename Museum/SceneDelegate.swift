@@ -9,30 +9,28 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    var logInNavigationController: UINavigationController!
+    var rootNavigationController = UINavigationController()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-//        let logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateInitialViewController()
-        let logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateInitialViewController()
-
-        logInNavigationController = logInViewController as? UINavigationController
-        
+                
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
                 
-        var rootViewController: UIViewController?
+        var rootViewController: UIViewController
         
         if let user = JsonData().user, user.email.count > 0 {
             rootViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "mainScreen") { coder in
                 MainViewController(user: user, coder: coder)
             }
         } else {
-            rootViewController = logInViewController
+            rootViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateViewController(identifier: "logInScreen")
         }
         
-        window.rootViewController = rootViewController
+        rootNavigationController.setViewControllers([rootViewController], animated: false)
+        rootNavigationController.navigationBar.isHidden = true
+        
+        window.rootViewController = rootNavigationController
         
         window.makeKeyAndVisible()
         

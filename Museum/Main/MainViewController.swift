@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     @IBOutlet var buttonLogOut: UIButton!
     @IBOutlet var topBlackView: UIView!
     
-    
     var user: User
 
     init?(user: User, coder: NSCoder) {
@@ -25,8 +24,6 @@ class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,15 +34,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
-        // show logInViewController screen:
-        guard let logInNavigationController = (view.window?.windowScene?.delegate as? SceneDelegate)?.logInNavigationController else {
-            return
-        }
-                
         let logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: .main).instantiateViewController(withIdentifier: "logInScreen")
 
-        logInNavigationController.setViewControllers([logInViewController], animated: true)
-        
+        navigationController?.setViewControllers([logInViewController], animated: true)
+
         user.erase()
         
         JsonData().user = user
@@ -68,7 +60,6 @@ class MainViewController: UIViewController {
     
     private func customiseTopBlackView() {
         topBlackView.translatesAutoresizingMaskIntoConstraints = false
-        
     }
 
 }

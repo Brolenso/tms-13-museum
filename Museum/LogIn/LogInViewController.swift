@@ -37,7 +37,7 @@ class LogInViewController: UIViewController {
         let scrollLayoutGuide = UILayoutGuide()
         view.addLayoutGuide(scrollLayoutGuide)
         
-        let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 47.0)
+        let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 40.0)
 
         constraintHeight.priority = .defaultLow - 1
         
@@ -109,7 +109,7 @@ class LogInViewController: UIViewController {
         let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: .main).instantiateInitialViewController() { coder in
             MainViewController(user: user, coder: coder)
         }
-                
+        
         navigationController?.setViewControllers([mainViewController!], animated: true)
        
         // writing data to JSON
