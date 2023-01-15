@@ -98,10 +98,6 @@ class LogInViewController: UIViewController {
     }
     
     private func logIn() {
-        guard emailTextField.text.count > 0 else {
-            return
-        }
-        
         // making object
         let user = User(email: emailTextField.text, password: passwordTextField.text)
         
