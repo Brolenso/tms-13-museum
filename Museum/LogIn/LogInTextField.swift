@@ -66,7 +66,7 @@ class LogInTextField: UIControl {
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         
-        // functions are declared in extention to String
+        // functions are declared in extension to String
         textField.defaultTextAttributes[.font] = TextStyle.textfield.font
         textField.defaultTextAttributes[.foregroundColor] = TextStyle.textfield.color
         textField.defaultTextAttributes[.baselineOffset] = TextStyle.textfield.baselineOffset
@@ -76,13 +76,13 @@ class LogInTextField: UIControl {
         
         NSLayoutConstraint.activate([
             textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
-            textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 12.0),
-            textField.centerYAnchor.constraint(equalTo: centerYAnchor)
+            textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0),
+            textField.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
         
-        let tapGuesture = UITapGestureRecognizer(target: self,
+        let tapGesture = UITapGestureRecognizer(target: self,
                                                  action: #selector(textFieldViewTapped(_:)))
-        self.addGestureRecognizer(tapGuesture)
+        self.addGestureRecognizer(tapGesture)
         
         textField.delegate = self
     }

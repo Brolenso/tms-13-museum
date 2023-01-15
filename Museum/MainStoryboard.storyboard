@@ -25,67 +25,120 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-4k-zAx">
-                                <rect key="frame" x="180.33333333333334" y="89" width="32.333333333333343" height="11.666666666666671"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGa-Rz-gUz">
-                                <rect key="frame" x="339" y="77.666666666666671" width="49" height="34.666666666666671"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="LOG">
-                                            <attributes>
-                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                <font key="NSOriginalFont" size="10" name="Mshtakan"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment>
-                                            <string key="content" base64-UTF8="YES">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="Pg0-XZ-WJq">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-HL-oJN">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="184.33333333333334"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="U3m-zF-rIH">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="56.333333333333336"/>
+                                                <subviews>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efv-pv-HCG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="56.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment>
+                                                                    <string key="content">THE ART
+MUSEUM</string>
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <directionalEdgeInsets key="contentInsets" top="9.5" leading="12" bottom="10" trailing="20"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="7S8-la-Rdx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-Y4-Gae">
+                                                        <rect key="frame" x="180.33333333333334" y="22" width="32.333333333333343" height="12.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGa-Rz-gUz">
+                                                        <rect key="frame" x="339" y="11" width="54" height="34.666666666666664"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="LOG">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                        <font key="NSOriginalFont" size="10" name="Mshtakan"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content" base64-UTF8="YES">
 Cg
 </string>
-                                            <attributes>
-                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="OUT">
-                                            <attributes>
-                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                <font key="NSOriginalFont" size="10" name="Mshtakan"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <directionalEdgeInsets key="contentInsets" top="5" leading="20" bottom="5" trailing="7"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="ev0-zu-7EY"/>
-                                </connections>
-                            </button>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="OUT">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                        <font key="NSOriginalFont" size="10" name="Mshtakan"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <directionalEdgeInsets key="contentInsets" top="5" leading="20" bottom="5" trailing="12"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="ev0-zu-7EY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-37-dqs">
+                                                <rect key="frame" x="76.666666666666686" y="56.333333333333329" width="240" height="127.99999999999999"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="top" secondItem="Pg0-XZ-WJq" secondAttribute="top" id="Gzj-n0-2aA"/>
+                                    <constraint firstItem="MdZ-LL-rms" firstAttribute="height" secondItem="Pdh-HL-oJN" secondAttribute="height" id="cYi-QF-ASx"/>
+                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="leading" secondItem="Pg0-XZ-WJq" secondAttribute="leading" id="m6R-pz-8mA"/>
+                                    <constraint firstItem="MdZ-LL-rms" firstAttribute="width" secondItem="Pdh-HL-oJN" secondAttribute="width" id="qqa-qj-Ij8"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MdZ-LL-rms"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="DOH-ef-BU0"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2LA-by-CxO" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="6zR-eO-VDr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iGa-Rz-gUz" secondAttribute="trailing" id="HhI-Yj-XLQ"/>
+                            <constraint firstItem="Pg0-XZ-WJq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LcH-q5-6TJ"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Mqe-2W-Gxg"/>
-                            <constraint firstItem="iGa-Rz-gUz" firstAttribute="centerY" secondItem="EFi-4k-zAx" secondAttribute="centerY" id="Qnx-4Z-jDz"/>
+                            <constraint firstItem="efv-pv-HCG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Nv4-Vd-qvY"/>
+                            <constraint firstItem="Pg0-XZ-WJq" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="OLw-Tm-DO9"/>
+                            <constraint firstItem="Pg0-XZ-WJq" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SWu-ED-4WD"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ucc-KB-qsG"/>
-                            <constraint firstItem="2LA-by-CxO" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.0777339" id="gH1-SG-Qwz"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iGa-Rz-gUz" secondAttribute="trailing" constant="5" id="pyz-0Z-dAF"/>
+                            <constraint firstItem="qhn-Y4-Gae" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="aHp-No-WUB"/>
+                            <constraint firstItem="Pdh-HL-oJN" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="dU2-0a-5nD"/>
+                            <constraint firstItem="Pg0-XZ-WJq" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="fJ4-z4-BMu"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="txh-6R-TvA"/>
-                            <constraint firstItem="EFi-4k-zAx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yeM-xc-fdG"/>
-                            <constraint firstItem="EFi-4k-zAx" firstAttribute="top" secondItem="2LA-by-CxO" secondAttribute="bottom" constant="30" id="zA4-ig-vj8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Zw-Kr-xX4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="buttonLogOut" destination="iGa-Rz-gUz" id="0tW-tB-jO0"/>
-                        <outlet property="labelEmail" destination="EFi-4k-zAx" id="bRs-Ez-xxU"/>
+                        <outlet property="buttonTheArtMuseum" destination="efv-pv-HCG" id="WNb-wT-hs0"/>
+                        <outlet property="labelEmail" destination="qhn-Y4-Gae" id="uxV-Gb-84L"/>
                         <outlet property="topBlackView" destination="2LA-by-CxO" id="g6b-Ph-8lp"/>
                     </connections>
                 </viewController>

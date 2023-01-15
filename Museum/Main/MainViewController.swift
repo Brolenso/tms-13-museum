@@ -9,10 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet var topBlackView: UIView!
+    @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
     @IBOutlet var buttonLogOut: UIButton!
-    @IBOutlet var topBlackView: UIView!
-    
+
     var user: User
 
     init?(user: User, coder: NSCoder) {
@@ -57,7 +58,11 @@ class MainViewController: UIViewController {
     private func customiseButtonLogOut() {
         buttonLogOut.setAttributedTitle(("LOG\nOUT").setTextStyle(.labelDark), for: .normal)
     }
-    
+
+    private func customiseButtonTheArtMuseum() {
+        buttonTheArtMuseum.setAttributedTitle(("THE\nART\nMUSEUM").setTextStyle(.labelDark), for: .normal)
+    }
+
     private func customiseTopBlackView() {
         topBlackView.translatesAutoresizingMaskIntoConstraints = false
     }
