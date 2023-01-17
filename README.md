@@ -5,15 +5,16 @@
 ## Technologies
 
 - [x] UIKit
-- [x] Design from Figma
+- [x] Figma's ready-made design
 - [x] JSON
 - [x] SceneDelegate login check
 - [x] Storyboard Interface Builder
 - [x] Views by code with @IBDesignable and @IBInspectable
-- [x] Constraints
-- [x] Custom fonts
+- [x] Constraints by code and Storyboard
+- [x] Custom font
+- [x] Adobe Photoshop for precise screenshots
 
-## Patterns
+## Code patterns
 
 - [x] Singletone
 - [x] Target-Action

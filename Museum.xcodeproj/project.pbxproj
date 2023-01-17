@@ -69,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
-				1108CD6D296B0DD100A77169 /* Fonts */,
 				1109F728294DF419006AB3CE /* Products */,
 				11BDBCE02954C97100766AA1 /* Frameworks */,
 			);
@@ -97,6 +96,7 @@
 				11B20008296F55C20045960B /* User.swift */,
 				1109F733294DF41A006AB3CE /* Assets.xcassets */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
+				1108CD6D296B0DD100A77169 /* Fonts */,
 			);
 			path = Museum;
 			sourceTree = "<group>";
