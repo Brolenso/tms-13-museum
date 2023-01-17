@@ -69,7 +69,6 @@ class LogInTextField: UIControl {
         // functions are declared in extension to String
         textField.defaultTextAttributes[.font] = TextStyle.textfield.font
         textField.defaultTextAttributes[.foregroundColor] = TextStyle.textfield.color
-        textField.defaultTextAttributes[.baselineOffset] = TextStyle.textfield.baselineOffset
 
         textField.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textField)

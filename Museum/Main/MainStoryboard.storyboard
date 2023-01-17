@@ -29,14 +29,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pg0-XZ-WJq">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-HL-oJN" userLabel="Vertical Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="599"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-HL-oJN" userLabel="Vertical Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="620.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="U3m-zF-rIH" userLabel="Horizontal Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="58.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="60.333333333333336"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efv-pv-HCG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="58.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="60.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <attributedString key="attributedTitle">
@@ -58,13 +58,13 @@ MUSEUM</string>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-Y4-Gae">
-                                                        <rect key="frame" x="181.66666666666666" y="23.666666666666671" width="29.666666666666657" height="11.666666666666664"/>
+                                                        <rect key="frame" x="180.33333333333334" y="24" width="32.333333333333343" height="12.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGa-Rz-gUz">
-                                                        <rect key="frame" x="340" y="12.666666666666671" width="53" height="33.333333333333336"/>
+                                                        <rect key="frame" x="339" y="13" width="54" height="34.666666666666664"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <attributedString key="attributedTitle">
@@ -102,13 +102,13 @@ Cg
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exhibition" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-37-dqs">
-                                                <rect key="frame" x="0.0" y="58.666666666666686" width="393" height="262"/>
+                                                <rect key="frame" x="0.0" y="60.333333333333314" width="393" height="262"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xh3-37-dqs" secondAttribute="height" multiplier="112.5:75" id="Xhp-CK-MfI"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-oN-LVs">
-                                                <rect key="frame" x="0.0" y="320.66666666666669" width="80.666666666666671" height="31.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="322.33333333333331" width="393" height="32"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -125,7 +125,7 @@ Cg
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-gu-hms">
-                                                <rect key="frame" x="0.0" y="352" width="138.66666666666666" height="84"/>
+                                                <rect key="frame" x="0.0" y="354.33333333333331" width="393" height="88"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -161,7 +161,7 @@ OLD AND
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVN-kp-d10">
-                                                <rect key="frame" x="0.0" y="436" width="250.66666666666666" height="33.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="442.33333333333331" width="393" height="34.666666666666686"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -183,7 +183,7 @@ OLD AND
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-ls-enX">
-                                                <rect key="frame" x="0.0" y="469.66666666666663" width="68" height="22.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="477" width="393" height="23"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -205,7 +205,7 @@ OLD AND
                                                 </buttonConfiguration>
                                             </button>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzE-Mn-x7v" userLabel="View With Button">
-                                                <rect key="frame" x="0.0" y="492" width="393" height="69"/>
+                                                <rect key="frame" x="0.0" y="500" width="393" height="69"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="center" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntW-f4-jIi">
                                                         <rect key="frame" x="13" y="13.666666666666629" width="367" height="42"/>
@@ -244,7 +244,7 @@ OLD AND
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="oLc-ib-il1">
-                                                <rect key="frame" x="0.0" y="561" width="393" height="38"/>
+                                                <rect key="frame" x="0.0" y="569" width="393" height="51.333333333333371"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh1-wq-xFa">
                                                         <rect key="frame" x="0.0" y="0.0" width="16" height="10"/>
@@ -255,10 +255,10 @@ OLD AND
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="efd-1t-ver">
-                                                        <rect key="frame" x="16" y="0.0" width="19.666666666666671" height="34"/>
+                                                        <rect key="frame" x="16" y="0.0" width="19" height="43.333333333333336"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="AGa-N2-8VQ">
-                                                        <rect key="frame" x="35.666666666666657" y="0.0" width="180" height="38"/>
+                                                        <rect key="frame" x="35" y="0.0" width="182.33333333333334" height="51.333333333333336"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bku-pB-48b">
                                                                 <rect key="frame" x="0.0" y="0.0" width="12" height="10"/>
@@ -269,11 +269,13 @@ OLD AND
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPb-d4-dZx">
-                                                                <rect key="frame" x="0.0" y="10" width="65.333333333333329" height="14"/>
+                                                                <rect key="frame" x="0.0" y="9.9999999999999982" width="153" height="29.333333333333329"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                                     <attributedString key="attributedTitle">
-                                                                        <fragment content="151 3rd St">
+                                                                        <fragment>
+                                                                            <string key="content">151 3rd St
+</string>
                                                                             <attributes>
                                                                                 <color key="NSColor" red="1" green="0.27843137254901962" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <font key="NSFont" size="12" name="Montserrat-Regular"/>
@@ -285,26 +287,15 @@ OLD AND
                                                                                 <real key="NSStrokeWidth" value="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
-                                                                    </attributedString>
-                                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="9" bottom="0.0" trailing="0.0"/>
-                                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbh-T1-fK4">
-                                                                <rect key="frame" x="0.0" y="24" width="145.66666666666666" height="14"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
-                                                                    <attributedString key="attributedTitle">
                                                                         <fragment content="San Francisco, CA 94103">
                                                                             <attributes>
-                                                                                <color key="NSColor" red="1" green="0.27843137254901962" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <color key="NSColor" red="1" green="0.27843000000000001" blue="0.22745000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                 <font key="NSFont" size="12" name="Montserrat-Regular"/>
                                                                                 <real key="NSKern" value="0.0"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                                     <tabStops/>
                                                                                 </paragraphStyle>
                                                                                 <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <real key="NSStrokeWidth" value="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
@@ -312,10 +303,18 @@ OLD AND
                                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
                                                             </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kP7-Zb-Vck">
+                                                                <rect key="frame" x="0.0" y="39.333333333333371" width="12" height="12"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="12" id="36m-OC-CEi"/>
+                                                                    <constraint firstAttribute="width" constant="12" id="sQA-0n-i3i"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apX-ZH-PsR">
-                                                        <rect key="frame" x="215.66666666666666" y="0.0" width="27" height="10"/>
+                                                        <rect key="frame" x="217.33333333333334" y="0.0" width="27" height="10"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="6Vg-qe-zkF"/>
@@ -323,10 +322,10 @@ OLD AND
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-Xg-xDI">
-                                                        <rect key="frame" x="242.66666666666666" y="0.0" width="18.333333333333343" height="34"/>
+                                                        <rect key="frame" x="244.33333333333334" y="0.0" width="18.000000000000028" height="43.333333333333336"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6qy-yY-JLm">
-                                                        <rect key="frame" x="261" y="0.0" width="82" height="38"/>
+                                                        <rect key="frame" x="262.33333333333331" y="0.0" width="80.666666666666686" height="39.333333333333336"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1TO-Qx-cla">
                                                                 <rect key="frame" x="0.0" y="0.0" width="12" height="10"/>
@@ -337,11 +336,13 @@ OLD AND
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOG-v2-J96">
-                                                                <rect key="frame" x="0.0" y="10" width="72" height="14"/>
+                                                                <rect key="frame" x="0.0" y="9.9999999999999982" width="80.666666666666671" height="29.333333333333329"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                                     <attributedString key="attributedTitle">
-                                                                        <fragment content="Open today">
+                                                                        <fragment>
+                                                                            <string key="content">Open today
+</string>
                                                                             <attributes>
                                                                                 <color key="NSColor" red="1" green="0.27843137254901962" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <font key="NSFont" size="12" name="Montserrat-Regular"/>
@@ -353,29 +354,18 @@ OLD AND
                                                                                 <real key="NSStrokeWidth" value="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
-                                                                    </attributedString>
-                                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="9" bottom="0.0" trailing="0.0"/>
-                                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="354-lF-iHt">
-                                                                <rect key="frame" x="0.0" y="24" width="82" height="14"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
-                                                                    <attributedString key="attributedTitle">
                                                                         <fragment>
                                                                             <string key="content" base64-UTF8="YES">
 MTA6MDAgH+KAkyAxNzozMA
 </string>
                                                                             <attributes>
-                                                                                <color key="NSColor" red="1" green="0.27843137254901962" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <color key="NSColor" red="1" green="0.27843000000000001" blue="0.22745000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                 <font key="NSFont" size="12" name="Montserrat-Regular"/>
                                                                                 <real key="NSKern" value="0.0"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                                     <tabStops/>
                                                                                 </paragraphStyle>
                                                                                 <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <real key="NSStrokeWidth" value="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
@@ -395,18 +385,18 @@ MTA6MDAgH+KAkyAxNzozMA
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="vTE-Xg-xDI" firstAttribute="centerY" secondItem="bOG-v2-J96" secondAttribute="centerY" id="GYr-qv-gzO"/>
-                                                    <constraint firstItem="efd-1t-ver" firstAttribute="centerY" secondItem="JPb-d4-dZx" secondAttribute="centerY" id="bUT-Qy-e2e"/>
+                                                    <constraint firstItem="efd-1t-ver" firstAttribute="centerY" secondItem="JPb-d4-dZx" secondAttribute="firstBaseline" id="bUT-Qy-e2e"/>
+                                                    <constraint firstItem="vTE-Xg-xDI" firstAttribute="centerY" secondItem="bOG-v2-J96" secondAttribute="firstBaseline" id="hVy-rO-gnM"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="top" secondItem="Pg0-XZ-WJq" secondAttribute="top" id="Gzj-n0-2aA"/>
-                                    <constraint firstItem="MdZ-LL-rms" firstAttribute="height" secondItem="Pdh-HL-oJN" secondAttribute="height" id="cYi-QF-ASx"/>
-                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="leading" secondItem="Pg0-XZ-WJq" secondAttribute="leading" id="m6R-pz-8mA"/>
-                                    <constraint firstItem="MdZ-LL-rms" firstAttribute="width" secondItem="Pdh-HL-oJN" secondAttribute="width" id="qqa-qj-Ij8"/>
+                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="top" secondItem="MdZ-LL-rms" secondAttribute="top" id="Gzj-n0-2aA"/>
+                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="bottom" secondItem="MdZ-LL-rms" secondAttribute="bottom" id="gaE-gU-NRg"/>
+                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="leading" secondItem="MdZ-LL-rms" secondAttribute="leading" id="m6R-pz-8mA"/>
+                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="trailing" secondItem="MdZ-LL-rms" secondAttribute="trailing" id="otm-P7-JWe"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="MdZ-LL-rms"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="DOH-ef-BU0"/>
@@ -442,7 +432,14 @@ MTA6MDAgH+KAkyAxNzozMA
                     <navigationItem key="navigationItem" id="3Zw-Kr-xX4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="buttonAdressStreet" destination="JPb-d4-dZx" id="0FW-rD-vJS"/>
+                        <outlet property="buttonDate" destination="RVN-kp-d10" id="Kq4-xD-NMn"/>
+                        <outlet property="buttonExhibition" destination="GwY-oN-LVs" id="JgF-UZ-9gH"/>
+                        <outlet property="buttonFloor" destination="AKw-ls-enX" id="I5s-92-3uS"/>
+                        <outlet property="buttonHeader" destination="NNu-gu-hms" id="SJl-rK-DCc"/>
                         <outlet property="buttonLogOut" destination="iGa-Rz-gUz" id="0tW-tB-jO0"/>
+                        <outlet property="buttonOpenToday" destination="bOG-v2-J96" id="gbA-GO-VHJ"/>
+                        <outlet property="buttonPlanVisit" destination="ntW-f4-jIi" id="8wz-QW-vap"/>
                         <outlet property="buttonTheArtMuseum" destination="efv-pv-HCG" id="WNb-wT-hs0"/>
                         <outlet property="labelEmail" destination="qhn-Y4-Gae" id="uxV-Gb-84L"/>
                         <outlet property="topBlackView" destination="2LA-by-CxO" id="g6b-Ph-8lp"/>
@@ -454,9 +451,9 @@ MTA6MDAgH+KAkyAxNzozMA
         </scene>
     </scenes>
     <resources>
-        <image name="Clock" width="18.333333969116211" height="18.333333969116211"/>
+        <image name="Clock" width="18" height="18"/>
         <image name="Exhibition" width="375" height="250"/>
-        <image name="Pin" width="19.666666030883789" height="25.666666030883789"/>
+        <image name="Pin" width="19" height="26"/>
         <namedColor name="red">
             <color red="1" green="0.27843137254901962" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

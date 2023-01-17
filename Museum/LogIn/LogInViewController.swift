@@ -37,7 +37,7 @@ class LogInViewController: UIViewController {
         let scrollLayoutGuide = UILayoutGuide()
         view.addLayoutGuide(scrollLayoutGuide)
         
-        let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 40.0)
+        let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 20.0)
 
         constraintHeight.priority = .defaultLow - 1
         
