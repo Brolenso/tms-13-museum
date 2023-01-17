@@ -9,9 +9,17 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet var topBlackView: UIView!
+    @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
     @IBOutlet var buttonLogOut: UIButton!
-    @IBOutlet var topBlackView: UIView!
+    @IBOutlet var buttonExhibition: UIButton!
+    @IBOutlet var buttonHeader: UIButton!
+    @IBOutlet var buttonDate: UIButton!
+    @IBOutlet var buttonFloor: UIButton!
+    @IBOutlet var buttonPlanVisit: UIButton!
+    @IBOutlet var buttonAdressStreet: UIButton!
+    @IBOutlet var buttonOpenToday: UIButton!
     
     var user: User
 
@@ -28,9 +36,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        customiseTopBlackView()
-        customiseLabelEmail()
-        customiseButtonLogOut()
+        customiseInterfaceElements()
     }
     
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
@@ -50,16 +56,17 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    private func customiseLabelEmail() {
+    private func customiseInterfaceElements() {
+        buttonTheArtMuseum.setAttributedTitle(("THE\nART\nMUSEUM").setTextStyle(.labelDark), for: .normal)
         labelEmail.attributedText = user.email.uppercased().setTextStyle(.labelDark)
-    }
-    
-    private func customiseButtonLogOut() {
         buttonLogOut.setAttributedTitle(("LOG\nOUT").setTextStyle(.labelDark), for: .normal)
+        buttonExhibition.setAttributedTitle(("EXHIBITION").setTextStyle(.labelGrey), for: .normal)
+        buttonHeader.setAttributedTitle(("MASTERS\nOLD AND\nNEW").setTextStyle(.header), for: .normal)
+        buttonDate.setAttributedTitle(("APRIL 15 - SEPTEMBER 20").setTextStyle(.headerDate), for: .normal)
+        buttonFloor.setAttributedTitle(("FLOOR 5").setTextStyle(.labelGrey), for: .normal)
+        buttonPlanVisit.setAttributedTitle(("Plan Your Visit").setTextStyle(.button), for: .normal)
+        buttonAdressStreet.setAttributedTitle(("3 Avenue Winston-Churchill 3\n75008 Paris, France").setTextStyle(.coordinates), for: .normal)
+        buttonOpenToday.setAttributedTitle(("Open today\n10:00 – 17:00").setTextStyle(.coordinates), for: .normal)
     }
     
-    private func customiseTopBlackView() {
-        topBlackView.translatesAutoresizingMaskIntoConstraints = false
-    }
-
 }

@@ -27,7 +27,7 @@ class LogInView: UIView {
     }
     
     private func setupView() {
-        backgroundImage.image = UIImage(named: "background")
+        backgroundImage.image = UIImage(named: "Background")
         
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         backgroundImage.contentMode = .scaleAspectFill
