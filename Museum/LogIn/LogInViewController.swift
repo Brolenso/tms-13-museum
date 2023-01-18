@@ -99,17 +99,16 @@ class LogInViewController: UIViewController {
     
     private func logIn() {
         // making object
-        let user = User(email: emailTextField.text, password: passwordTextField.text)
+        let user = User.current
+        user.setUser(email: emailTextField.text, password: passwordTextField.text)
         
         // show next mainViewController screen
-        let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: .main).instantiateInitialViewController() { coder in
-            MainViewController(user: user, coder: coder)
-        }
+        let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: .main).instantiateInitialViewController()
         
         navigationController?.setViewControllers([mainViewController!], animated: true)
        
         // writing data to JSON
-        JsonData().user = user
+        JsonData().writeUser()
     }
     
 }

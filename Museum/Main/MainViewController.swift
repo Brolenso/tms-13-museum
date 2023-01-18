@@ -20,17 +20,6 @@ class MainViewController: UIViewController {
     @IBOutlet var buttonPlanVisit: UIButton!
     @IBOutlet var buttonAdressStreet: UIButton!
     @IBOutlet var buttonOpenToday: UIButton!
-    
-    var user: User
-
-    init?(user: User, coder: NSCoder) {
-        self.user = user
-        super.init(coder: coder)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +33,10 @@ class MainViewController: UIViewController {
 
         navigationController?.setViewControllers([logInViewController], animated: true)
 
+        let user = User.current
         user.erase()
         
-        JsonData().user = user
+        JsonData().writeUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +48,7 @@ class MainViewController: UIViewController {
     
     private func customiseInterfaceElements() {
         buttonTheArtMuseum.setAttributedTitle(("THE\nART\nMUSEUM").setTextStyle(.labelDark), for: .normal)
-        labelEmail.attributedText = user.email.uppercased().setTextStyle(.labelDark)
+        labelEmail.attributedText = User.current.email.uppercased().setTextStyle(.labelDark)
         buttonLogOut.setAttributedTitle(("LOG\nOUT").setTextStyle(.labelDark), for: .normal)
         buttonExhibition.setAttributedTitle(("EXHIBITION").setTextStyle(.labelGrey), for: .normal)
         buttonHeader.setAttributedTitle(("MASTERS\nOLD AND\nNEW").setTextStyle(.header), for: .normal)

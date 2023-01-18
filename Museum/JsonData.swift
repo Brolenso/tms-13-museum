@@ -3,42 +3,47 @@ import Foundation
 struct JsonData {
     
     private enum FileName: String {
-        case user = "userInfo.json"
+        case userFile = "userInfo.json"
     }
     
-    var user: User? {
-        get {
-            do {
-                let jsonUrl = try getUrl(fileName: FileName.user.rawValue)
-                
-                let userData = try Data(contentsOf: jsonUrl)
-                
-                let jsonDecoder = JSONDecoder()
-                
-                let user = try jsonDecoder.decode(User.self, from: userData)
-
-                return user
-                
-            } catch {
-                print("Error to read JSON:\n\(error.localizedDescription)")
-                return nil
-            }
+    @discardableResult
+    public func readUser() -> Bool {
+        do {
+            let jsonUrl = try getUrl(fileName: FileName.userFile.rawValue)
+            
+            let userData = try Data(contentsOf: jsonUrl)
+            
+            let jsonDecoder = JSONDecoder()
+            
+            let user = try jsonDecoder.decode(User.self, from: userData)
+            
+            User.current.setUser(email: user.email, password: user.password)
+            
+            return true
+            
+        } catch {
+            print("Error to read JSON:\n\(error.localizedDescription)")
+            return false
         }
-        nonmutating set {
-            do {
-                let jsonEncoder = JSONEncoder()
-                jsonEncoder.outputFormatting = .prettyPrinted
-                
-                let userData = try jsonEncoder.encode(newValue)
-                
-                let jsonUrl = try getUrl(fileName: FileName.user.rawValue)
-                
-                try userData.write(to: jsonUrl)
-                
-            } catch {
-                print("Error to write to JSON:\n\(error.localizedDescription)")
-                return
-            }
+    }
+    
+    @discardableResult
+    public func writeUser() -> Bool {
+        do {
+            let jsonEncoder = JSONEncoder()
+            jsonEncoder.outputFormatting = .prettyPrinted
+            
+            let userData = try jsonEncoder.encode(User.current)
+            
+            let jsonUrl = try getUrl(fileName: FileName.userFile.rawValue)
+            
+            try userData.write(to: jsonUrl)
+            
+            return true
+            
+        } catch {
+            print("Error to write to JSON:\n\(error.localizedDescription)")
+            return false
         }
     }
     
