@@ -19,13 +19,13 @@ struct JsonData: JsonDataProtocol {
 //            return nil
 //        }
 //
-//        switch type {
-//        case User.self:
-//            return "userInfo.json"
-//        default:
-//            print("Type is not found in func getFileName(byType:)")
-//            return nil
-//        }
+////        switch (type as Any.Type) {
+////        case User.self:
+////            return "userInfo.json"
+////        default:
+////            print("Type is not found in func getFileName(byType:)")
+////            return nil
+////        }
 //    }
     
     public func read<T>(type: T.Type) -> T? where T: Codable {

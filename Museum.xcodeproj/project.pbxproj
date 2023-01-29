@@ -27,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		1108CD6E296B0DEC00A77169 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		1109F727294DF419006AB3CE /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Museum.app; path = "/Users/vyacheslav/Library/Mobile Documents/com~apple~CloudDocs/XCode/08.TMS/21-Constraints-Files-MVP/MuseumTask/build/Debug-iphoneos/Museum.app"; sourceTree = "<absolute>"; };
 		1109F72A294DF419006AB3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1109F72C294DF419006AB3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1109F72E294DF419006AB3CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		11B20008296F55C20045960B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11B2000A297008160045960B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		11B2000C2970188C0045960B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		11C8B1A62986B45100E55018 /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,24 +69,18 @@
 			isa = PBXGroup;
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
+				11C8B1A62986B45100E55018 /* Museum.app */,
 			);
 			sourceTree = "<group>";
 		};
 		1109F729294DF419006AB3CE /* Museum */ = {
 			isa = PBXGroup;
 			children = (
-				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
-				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
-				1199D2EB294F038C00FEC95B /* LogIn */,
-				11B2000E2970189E0045960B /* Main */,
-				11721EFC296040A900767FBC /* String+textStyle.swift */,
-				11721EFE296077F800767FBC /* String+removeSpaces.swift */,
-				115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */,
-				11B20006296F53D10045960B /* JsonData.swift */,
-				11B20008296F55C20045960B /* User.swift */,
-				1109F733294DF41A006AB3CE /* Assets.xcassets */,
-				1109F738294DF41A006AB3CE /* Info.plist */,
-				1108CD6D296B0DD100A77169 /* Fonts */,
+				11C8B1AA2986B5B300E55018 /* Extensions */,
+				11C8B1A52986B3E600E55018 /* AppMain */,
+				11C8B1A72986B49300E55018 /* UI */,
+				11C8B1A92986B56800E55018 /* Model */,
+				11C8B1AB2986B5F500E55018 /* Services */,
 			);
 			path = Museum;
 			sourceTree = "<group>";
@@ -112,6 +106,53 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		11C8B1A52986B3E600E55018 /* AppMain */ = {
+			isa = PBXGroup;
+			children = (
+				1108CD6D296B0DD100A77169 /* Fonts */,
+				1109F738294DF41A006AB3CE /* Info.plist */,
+				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
+				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
+				1109F733294DF41A006AB3CE /* Assets.xcassets */,
+			);
+			path = AppMain;
+			sourceTree = "<group>";
+		};
+		11C8B1A72986B49300E55018 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1199D2EB294F038C00FEC95B /* LogIn */,
+				11B2000E2970189E0045960B /* Main */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11C8B1A92986B56800E55018 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11B20008296F55C20045960B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C8B1AA2986B5B300E55018 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11721EFC296040A900767FBC /* String+textStyle.swift */,
+				11721EFE296077F800767FBC /* String+removeSpaces.swift */,
+				115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		11C8B1AB2986B5F500E55018 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11B20006296F53D10045960B /* JsonData.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,7 +170,7 @@
 			);
 			name = Museum;
 			productName = Museum;
-			productReference = 1109F727294DF419006AB3CE /* Museum.app */;
+			productReference = 11C8B1A62986B45100E55018 /* Museum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -338,7 +379,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3NTG39P2L6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Museum/Info.plist;
+				INFOPLIST_FILE = Museum/AppMain/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LogInStoryboard;
@@ -367,7 +408,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3NTG39P2L6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Museum/Info.plist;
+				INFOPLIST_FILE = Museum/AppMain/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LogInStoryboard;
