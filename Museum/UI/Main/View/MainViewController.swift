@@ -20,22 +20,19 @@ class MainViewController: UIViewController {
     @IBOutlet var buttonPlanVisit: UIButton!
     @IBOutlet var buttonAdressStreet: UIButton!
     @IBOutlet var buttonOpenToday: UIButton!
+    
+    var presenter: MainPresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         customiseInterfaceElements()
+        presenter.setEmail()
     }
     
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
-        let logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: .main).instantiateViewController(withIdentifier: "logInScreen")
-
-        navigationController?.setViewControllers([logInViewController], animated: true)
-
-        let user = User.current
-        user.erase()
-        JsonData().write(user)
+        presenter.logout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +44,6 @@ class MainViewController: UIViewController {
     
     private func customiseInterfaceElements() {
         buttonTheArtMuseum.setAttributedTitle(("THE\nART\nMUSEUM").setTextStyle(.labelDark), for: .normal)
-        labelEmail.attributedText = User.current.email.uppercased().setTextStyle(.labelDark)
         buttonLogOut.setAttributedTitle(("LOG\nOUT").setTextStyle(.labelDark), for: .normal)
         buttonExhibition.setAttributedTitle(("EXHIBITION").setTextStyle(.labelGrey), for: .normal)
         buttonHeader.setAttributedTitle(("MASTERS\nOLD AND\nNEW").setTextStyle(.header), for: .normal)
@@ -57,5 +53,15 @@ class MainViewController: UIViewController {
         buttonAdressStreet.setAttributedTitle(("3 Avenue Winston-Churchill 3\n75008 Paris, France").setTextStyle(.coordinates), for: .normal)
         buttonOpenToday.setAttributedTitle(("Open today\n10:00 – 17:00").setTextStyle(.coordinates), for: .normal)
     }
+}
+
+extension MainViewController: MainViewProtocol {
+    func showEmail(email: String) {
+        labelEmail.attributedText = email.uppercased().setTextStyle(.labelDark)
+    }
     
+    func showLogInScreen() {
+        let logInViewController = ModuleBuilder().createLogInModule()
+        navigationController?.setViewControllers([logInViewController], animated: true)
+    }
 }

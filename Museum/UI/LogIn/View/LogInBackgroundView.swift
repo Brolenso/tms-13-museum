@@ -52,5 +52,4 @@ class LogInBackgroundView: UIView {
         let attributedTextLogIn = textLogIn.setTextStyle(.button)
         buttonLogIn.setAttributedTitle(attributedTextLogIn, for: .normal)
     }
-    
 }

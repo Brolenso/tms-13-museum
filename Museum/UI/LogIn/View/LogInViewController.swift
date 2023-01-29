@@ -15,6 +15,8 @@ class LogInViewController: UIViewController {
     @IBOutlet var passwordTextField: LogInTextField!
     @IBOutlet var logInButton: UIButton!
     
+    var presenter: LogInPresenterProtocol!
+    
     // option 1: closure to tap button from other class
     lazy var closureLogInTap = { [weak self] in
         return self?.logIn() ?? ()
@@ -26,6 +28,7 @@ class LogInViewController: UIViewController {
         emailTextField.closureLogInTap = self.closureLogInTap
         passwordTextField.closureLogInTap = self.closureLogInTap
         
+        // no spaces in this field
         emailTextField.keyboardType = .emailAddress
         
         NotificationCenter.default.addObserver(self,
@@ -98,18 +101,15 @@ class LogInViewController: UIViewController {
     }
     
     private func logIn() {
-        // making object
-        let user = User.current
-        user.setUser(email: emailTextField.text, password: passwordTextField.text)
-        
-        // show next mainViewController screen
-        let mainViewController = UIStoryboard(name: "MainStoryboard", bundle: .main).instantiateInitialViewController()
-        
-        navigationController?.setViewControllers([mainViewController!], animated: true)
-       
-        // writing data to JSON
-        JsonData().write(user)
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        presenter.loginUser(email: email, password: password)
     }
-    
 }
 
+extension LogInViewController: LogInViewProtocol {
+    func showMainScreen(email: String) {
+        let mainViewController = ModuleBuilder().createMainModule(email: email)
+        navigationController?.setViewControllers([mainViewController], animated: true)
+    }
+}

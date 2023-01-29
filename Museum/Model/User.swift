@@ -1,6 +1,6 @@
 class User: Codable {
-    var email: String
-    var password: String
+    private(set) var email: String
+    private(set) var password: String
     
     static let current: User = User()
     

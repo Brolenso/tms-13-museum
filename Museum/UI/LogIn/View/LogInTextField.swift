@@ -5,7 +5,6 @@ class LogInTextField: UIControl {
 
     // closure to tap button in other class
     public var closureLogInTap: () -> () = {  }
-    
     private var textField = UITextField(frame: .zero)
         
     public var text: String {
@@ -60,7 +59,6 @@ class LogInTextField: UIControl {
     }
     
     private func setupView() {
-        
         self.backgroundColor = .white
 
         textField.autocapitalizationType = .none
@@ -136,5 +134,4 @@ extension LogInTextField: UITextFieldDelegate {
         
         return false
     }
-    
 }

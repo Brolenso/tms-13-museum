@@ -2,20 +2,20 @@
 
 # Museum App
 
-## Technologies
+## Architecture
+- [x] MVP 
 
+## Technologies
 - [x] UIKit
 - [x] Figma's ready-made design
-- [x] JSON
+- [x] JSON service
 - [x] SceneDelegate login check
 - [x] Storyboard Interface Builder
 - [x] Views by code with @IBDesignable and @IBInspectable
 - [x] Constraints by code and Storyboard
-- [x] Custom font
 - [x] Adobe Photoshop for precise screenshots
 
 ## Code patterns
-
 - [x] Singletone
 - [x] Target-Action
 - [x] Delegate

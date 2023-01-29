@@ -2,6 +2,7 @@ import UIKit
 
 @IBDesignable
 class LogInLabelTappable: UIView {
+    
     private let label = UILabel(frame: .zero)
     
     @IBInspectable
@@ -47,12 +48,11 @@ class LogInLabelTappable: UIView {
     }
     
     private func setupView() {
-        
         self.backgroundColor = nil
         
         let labelText = label.text ?? "Default label text"
-        let attributedlabelText = labelText.setTextStyle(.label)
-        label.attributedText = attributedlabelText
+        let attributedLabelText = labelText.setTextStyle(.label)
+        label.attributedText = attributedLabelText
                 
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
@@ -64,5 +64,4 @@ class LogInLabelTappable: UIView {
             label.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
 }

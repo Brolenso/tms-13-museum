@@ -18,10 +18,13 @@
 		11721EFD296040A900767FBC /* String+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFC296040A900767FBC /* String+textStyle.swift */; };
 		11721EFF296077F800767FBC /* String+removeSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFE296077F800767FBC /* String+removeSpaces.swift */; };
 		1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199D2E9294F034300FEC95B /* LogInTextField.swift */; };
-		11B20007296F53D10045960B /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B20006296F53D10045960B /* JsonData.swift */; };
+		11B20007296F53D10045960B /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B20006296F53D10045960B /* JsonService.swift */; };
 		11B20009296F55C20045960B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B20008296F55C20045960B /* User.swift */; };
 		11B2000B297008160045960B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B2000A297008160045960B /* MainStoryboard.storyboard */; };
 		11B2000D2970188C0045960B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2000C2970188C0045960B /* MainViewController.swift */; };
+		11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B02986C3D900E55018 /* LogInPresenter.swift */; };
+		11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */; };
+		11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B52987023D00E55018 /* MainPresenter.swift */; };
 		11F15F2E294E48AF00D297B5 /* LogInBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,11 +41,14 @@
 		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
 		11721EFE296077F800767FBC /* String+removeSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+removeSpaces.swift"; sourceTree = "<group>"; };
 		1199D2E9294F034300FEC95B /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
-		11B20006296F53D10045960B /* JsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
+		11B20006296F53D10045960B /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
 		11B20008296F55C20045960B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11B2000A297008160045960B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		11B2000C2970188C0045960B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		11C8B1A62986B45100E55018 /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BFD726298722D9003995D9 /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Museum.app; path = "/Users/vyacheslav/Library/Mobile Documents/com~apple~CloudDocs/XCode/08.TMS/21-Constraints-Files-MVP/MuseumTask/build/Debug-iphoneos/Museum.app"; sourceTree = "<absolute>"; };
+		11C8B1B02986C3D900E55018 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
+		11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		11C8B1B52987023D00E55018 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
-				11C8B1A62986B45100E55018 /* Museum.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,11 +93,8 @@
 		1199D2EB294F038C00FEC95B /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */,
-				1109F72E294DF419006AB3CE /* LogInViewController.swift */,
-				11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */,
-				1199D2E9294F034300FEC95B /* LogInTextField.swift */,
-				1121DE452950382700129C08 /* LogInLabelTappable.swift */,
+				11C8B1AC2986C2AC00E55018 /* View */,
+				11C8B1AE2986C2CB00E55018 /* Presenter */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -100,8 +102,8 @@
 		11B2000E2970189E0045960B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				11B2000A297008160045960B /* MainStoryboard.storyboard */,
-				11B2000C2970188C0045960B /* MainViewController.swift */,
+				11C8B1AD2986C2BC00E55018 /* View */,
+				11C8B1AF2986C2D600E55018 /* Presenter */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -110,10 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				1108CD6D296B0DD100A77169 /* Fonts */,
+				1109F733294DF41A006AB3CE /* Assets.xcassets */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
 				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
-				1109F733294DF41A006AB3CE /* Assets.xcassets */,
+				11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -148,9 +151,46 @@
 		11C8B1AB2986B5F500E55018 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				11B20006296F53D10045960B /* JsonData.swift */,
+				11B20006296F53D10045960B /* JsonService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		11C8B1AC2986C2AC00E55018 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */,
+				1109F72E294DF419006AB3CE /* LogInViewController.swift */,
+				11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */,
+				1199D2E9294F034300FEC95B /* LogInTextField.swift */,
+				1121DE452950382700129C08 /* LogInLabelTappable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11C8B1AD2986C2BC00E55018 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11B2000A297008160045960B /* MainStoryboard.storyboard */,
+				11B2000C2970188C0045960B /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11C8B1AE2986C2CB00E55018 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				11C8B1B02986C3D900E55018 /* LogInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		11C8B1AF2986C2D600E55018 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				11C8B1B52987023D00E55018 /* MainPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +210,7 @@
 			);
 			name = Museum;
 			productName = Museum;
-			productReference = 11C8B1A62986B45100E55018 /* Museum.app */;
+			productReference = 11BFD726298722D9003995D9 /* Museum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -233,9 +273,12 @@
 				11F15F2E294E48AF00D297B5 /* LogInBackgroundView.swift in Sources */,
 				1109F72F294DF419006AB3CE /* LogInViewController.swift in Sources */,
 				1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */,
+				11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */,
 				1109F72B294DF419006AB3CE /* AppDelegate.swift in Sources */,
+				11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */,
 				1109F72D294DF419006AB3CE /* SceneDelegate.swift in Sources */,
-				11B20007296F53D10045960B /* JsonData.swift in Sources */,
+				11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */,
+				11B20007296F53D10045960B /* JsonService.swift in Sources */,
 				11B20009296F55C20045960B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

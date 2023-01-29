@@ -12,27 +12,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var rootNavigationController = UINavigationController()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-                
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         let window = UIWindow(windowScene: windowScene)
-                
         let rootViewController: UIViewController
-        
-        if let user = JsonData().read(type: User.self), user.email.count > 0 {
+        // if user found in JSON, than auto-login 
+        if let user = JsonService().read(type: User.self), user.email.count > 0 {
             User.current.setUser(email: user.email, password: user.password)
-            rootViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "mainScreen")
+            rootViewController = ModuleBuilder().createMainModule(email: user.email)
         } else {
-            rootViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateViewController(identifier: "logInScreen")
+            rootViewController = ModuleBuilder().createLogInModule()
         }
-        
         rootNavigationController.setViewControllers([rootViewController], animated: false)
         rootNavigationController.navigationBar.isHidden = true
-        
         window.rootViewController = rootNavigationController
-        
         window.makeKeyAndVisible()
-        
         self.window = window
     }
 
@@ -63,7 +56,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
 
 }
 
