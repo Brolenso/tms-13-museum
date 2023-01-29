@@ -1,6 +1,6 @@
 import UIKit
 
-class LogInView: UIView {
+class LogInBackgroundView: UIView {
     
     private let backgroundImage = UIImageView(frame: .zero)
     @IBOutlet var labelMuseum: UILabel!

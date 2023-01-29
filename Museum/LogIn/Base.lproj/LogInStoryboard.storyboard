@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWR-SZ-Ncb" userLabel="Background View" customClass="LogInView" customModule="Museum" customModuleProvider="target">
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWR-SZ-Ncb" userLabel="Background View" customClass="LogInBackgroundView" customModule="Museum" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galeries du Grand Palais" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-rH-O7X" userLabel="Museum name">
-                                        <rect key="frame" x="69.666666666666686" y="300" width="211.66666666666663" height="143"/>
+                                        <rect key="frame" x="69.666666666666671" y="300" width="211.66666666666663" height="143"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="143" id="699-2S-8j8"/>
                                         </constraints>
@@ -39,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxn-AC-fAg" userLabel="Museum adress">
-                                        <rect key="frame" x="72.666666666666686" y="446" width="152.33333333333331" height="42"/>
+                                        <rect key="frame" x="72.666666666666671" y="446" width="152.33333333333331" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="vfr-B7-sVH"/>
                                         </constraints>
@@ -81,7 +81,7 @@ San Francisco, CA 94103</string>
                                             <action selector="passwordDonePressed:" destination="6fU-8c-qPV" eventType="editingDidEndOnExit" id="DnA-aZ-m2c"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LabelTappable" customModule="Museum" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LogInLabelTappable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="596" width="250" height="24"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -122,7 +122,7 @@ San Francisco, CA 94103</string>
                                             <action selector="logInTapped:" destination="6fU-8c-qPV" eventType="primaryActionTriggered" id="0Xw-kJ-IXH"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LabelTappable" customModule="Museum" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LogInLabelTappable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="689" width="250" height="24"/>
                                         <gestureRecognizers/>
                                         <constraints>

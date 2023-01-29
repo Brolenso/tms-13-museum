@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-class LabelTappable: UIView {
+class LogInLabelTappable: UIView {
     private let label = UILabel(frame: .zero)
     
     @IBInspectable
