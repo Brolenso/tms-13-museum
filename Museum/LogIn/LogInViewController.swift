@@ -108,7 +108,7 @@ class LogInViewController: UIViewController {
         navigationController?.setViewControllers([mainViewController!], animated: true)
        
         // writing data to JSON
-        JsonData().writeUser()
+        JsonData().write(user)
     }
     
 }

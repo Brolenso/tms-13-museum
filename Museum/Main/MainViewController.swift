@@ -35,8 +35,7 @@ class MainViewController: UIViewController {
 
         let user = User.current
         user.erase()
-        
-        JsonData().writeUser()
+        JsonData().write(user)
     }
     
     override func viewWillAppear(_ animated: Bool) {

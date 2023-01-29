@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1108CD6E296B0DEC00A77169 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		1109F727294DF419006AB3CE /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1109F727294DF419006AB3CE /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Museum.app; path = "/Users/vyacheslav/Library/Mobile Documents/com~apple~CloudDocs/XCode/08.TMS/21-Constraints-Files-MVP/MuseumTask/build/Debug-iphoneos/Museum.app"; sourceTree = "<absolute>"; };
 		1109F72A294DF419006AB3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1109F72C294DF419006AB3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1109F72E294DF419006AB3CE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -69,17 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
-				1109F728294DF419006AB3CE /* Products */,
-				11BDBCE02954C97100766AA1 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		1109F728294DF419006AB3CE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1109F727294DF419006AB3CE /* Museum.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		1109F729294DF419006AB3CE /* Museum */ = {
@@ -120,13 +110,6 @@
 				11B2000C2970188C0045960B /* MainViewController.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		11BDBCE02954C97100766AA1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +156,7 @@
 				Base,
 			);
 			mainGroup = 1109F71E294DF419006AB3CE;
-			productRefGroup = 1109F728294DF419006AB3CE /* Products */;
+			productRefGroup = 1109F71E294DF419006AB3CE;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

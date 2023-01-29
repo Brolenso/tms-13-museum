@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
         let rootViewController: UIViewController
         
-        if JsonData().readUser(), User.current.email.count > 0 {
+        if let user = JsonData().read(type: User.self), user.email.count > 0 {
+            User.current.setUser(email: user.email, password: user.password)
             rootViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "mainScreen")
         } else {
             rootViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateViewController(identifier: "logInScreen")
