@@ -7,13 +7,11 @@
 
 ## Technologies
 - [x] UIKit
-- [x] Figma's ready-made design
+- [x] Design moved from Figma
+- [x] Storyboards, constraints in Interface Builder and by code
+- [x] Custom views by code with @IBDesignable and @IBInspectable
 - [x] JSON service
-- [x] SceneDelegate login check
 - [x] Generics
-- [x] Storyboard Interface Builder
-- [x] Views by code with @IBDesignable and @IBInspectable
-- [x] Constraints by code and Storyboard
 - [x] Adobe Photoshop for precise screenshots
 
 ## Code patterns
