@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         buttonDate.setAttributedTitle(("APRIL 15 - SEPTEMBER 20").setTextStyle(.headerDate), for: .normal)
         buttonFloor.setAttributedTitle(("FLOOR 5").setTextStyle(.labelGrey), for: .normal)
         buttonPlanVisit.setAttributedTitle(("Plan Your Visit").setTextStyle(.button), for: .normal)
-        buttonAdressStreet.setAttributedTitle(("3 Avenue Winston-Churchill 3\n75008 Paris, France").setTextStyle(.coordinates), for: .normal)
+        buttonAdressStreet.setAttributedTitle(("3 Avenue Winston-Churchill\n75008 Paris, France").setTextStyle(.coordinates), for: .normal)
         buttonOpenToday.setAttributedTitle(("Open today\n10:00 – 17:00").setTextStyle(.coordinates), for: .normal)
     }
 }
