@@ -1,39 +1,24 @@
 import Foundation
 
+// name of JSON-file in any type for universal generic-based JSON service
+protocol JsonFileStorableProtocol {
+    static var jsonFileName: String { get set }
+}
+
+extension User: JsonFileStorableProtocol {
+    static var jsonFileName: String = "userInfo.json"
+}
+
 protocol JsonServiceProtocol {
-    func read<T>(type: T.Type) -> T? where T: Codable
-    func write<T>(dataObject objectToWrite: T) where T: Codable
+    func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T?
+    func write<T: Codable & JsonFileStorableProtocol>(dataObject: T)
 }
 
 struct JsonService: JsonServiceProtocol {
-    
-    private enum FileName: String {
-        case userFile = "userInfo.json"
-    }
-    
-    // TODO: make universal function that return file-name by T.Type
-    
-//    private func getFileName<T>(byType type: T.Type) -> String? {
-//        if type is User {
-//            return "userInfo.json"
-//        } else {
-//            print("Type is not found in func getFileName(byType:)")
-//            return nil
-//        }
-//
-//        switch (type as Any.Type) {
-//        case User.self:
-//            return "userInfo.json"
-//        default:
-//            print("Type is not found in func getFileName(byType:)")
-//            return nil
-//        }
-//    }
-    
-    // read from JSON any codable object
-    public func read<T>(type: T.Type) -> T? where T: Codable {
+    // read from JSON any Codable & JsonFileStorable object
+    public func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T? {
         do {
-            let jsonUrl = try getUrl(fileName: FileName.userFile.rawValue)
+            let jsonUrl = try getUrl(fileName: type.jsonFileName)
             let data = try Data(contentsOf: jsonUrl)
             let jsonDecoder = JSONDecoder()
             return try jsonDecoder.decode(type, from: data)
@@ -43,13 +28,13 @@ struct JsonService: JsonServiceProtocol {
         }
     }
     
-    // write any codable object to JSON
-    public func write<T>(dataObject: T) where T: Codable {
+    // write any Codable & JsonFileStorable object to JSON
+    public func write<T: Codable & JsonFileStorableProtocol>(dataObject: T) {
         do {
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted
             let data = try jsonEncoder.encode(dataObject)
-            let jsonUrl = try getUrl(fileName: FileName.userFile.rawValue)
+            let jsonUrl = try getUrl(fileName: T.jsonFileName)
             try data.write(to: jsonUrl)
         } catch {
             print("Error to write to JSON:\n\(error.localizedDescription)")
