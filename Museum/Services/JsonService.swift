@@ -2,7 +2,7 @@ import Foundation
 
 // name of JSON-file in any type for universal generic-based JSON service
 protocol JsonFileStorableProtocol {
-    static var jsonFileName: String { get set }
+    static var jsonFileName: String { get }
 }
 
 extension User: JsonFileStorableProtocol {
@@ -14,11 +14,11 @@ protocol JsonServiceProtocol {
     func write<T: Codable & JsonFileStorableProtocol>(dataObject: T)
 }
 
-struct JsonService: JsonServiceProtocol {
+class JsonService: JsonServiceProtocol {
     // read from JSON any Codable & JsonFileStorable object
     public func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T? {
         do {
-            let jsonUrl = try getUrl(fileName: type.jsonFileName)
+            let jsonUrl = try getUrl(fileName: T.jsonFileName)
             let data = try Data(contentsOf: jsonUrl)
             let jsonDecoder = JSONDecoder()
             return try jsonDecoder.decode(type, from: data)

@@ -45,10 +45,10 @@
 		11B20008296F55C20045960B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11B2000A297008160045960B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		11B2000C2970188C0045960B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		11BFD726298722D9003995D9 /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Museum.app; path = "/Users/vyacheslav/Library/Mobile Documents/com~apple~CloudDocs/XCode/08.TMS/21-Constraints-Files-MVP/MuseumTask/build/Debug-iphoneos/Museum.app"; sourceTree = "<absolute>"; };
 		11C8B1B02986C3D900E55018 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		11C8B1B52987023D00E55018 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		11E809CB29882255005ACA3C /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
+				11E809CB29882255005ACA3C /* Museum.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,7 +211,7 @@
 			);
 			name = Museum;
 			productName = Museum;
-			productReference = 11BFD726298722D9003995D9 /* Museum.app */;
+			productReference = 11E809CB29882255005ACA3C /* Museum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
