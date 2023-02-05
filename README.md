@@ -12,7 +12,6 @@
 - [x] Custom views by code with @IBDesignable and @IBInspectable
 - [x] JSON service
 - [x] Generics
-- [x] Adobe Photoshop for precise screenshots
 
 ## Code patterns
 - [x] Singletone
