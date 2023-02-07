@@ -14,6 +14,7 @@
 - [x] Generics
 
 ## Code patterns
+- [x] Builder
 - [x] Singletone
 - [x] Target-Action
 - [x] Delegate
