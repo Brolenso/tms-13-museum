@@ -15,6 +15,7 @@
 
 ## Code patterns
 - [x] Builder
+- [x] Router
 - [x] Singletone
 - [x] Target-Action
 - [x] Delegate
