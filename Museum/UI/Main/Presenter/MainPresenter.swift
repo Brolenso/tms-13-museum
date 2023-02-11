@@ -9,23 +9,24 @@ import UIKit
 
 protocol MainViewProtocol: AnyObject {
     func showEmail(email: String)
-    func showLogInScreen()
 }
 
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, jsonService: JsonServiceProtocol, email: String)
+    init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String)
     func setEmail()
     func logout()
 }
 
 class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol?
-    var jsonService: JsonServiceProtocol!
+    let jsonService: JsonServiceProtocol
+    let router: RouterProtocol
     var email: String
     
-    required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, email: String) {
+    required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String) {
         self.view = view
         self.jsonService = jsonService
+        self.router = router
         self.email = email
     }
     
@@ -35,7 +36,7 @@ class MainPresenter: MainPresenterProtocol {
     
     // show view, than write to JSON
     func logout() {
-        view?.showLogInScreen()
+        router.showLogInViewController()
         let user = User.current
         user.erase()
         jsonService.write(dataObject: user)

@@ -59,9 +59,4 @@ extension MainViewController: MainViewProtocol {
     func showEmail(email: String) {
         labelEmail.attributedText = email.uppercased().setTextStyle(.labelDark)
     }
-    
-    func showLogInScreen() {
-        let logInViewController = ModuleBuilder().createLogInModule()
-        navigationController?.setViewControllers([logInViewController], animated: true)
-    }
 }

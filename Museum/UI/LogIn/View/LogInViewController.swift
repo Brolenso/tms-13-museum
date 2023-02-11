@@ -108,8 +108,5 @@ class LogInViewController: UIViewController {
 }
 
 extension LogInViewController: LogInViewProtocol {
-    func showMainScreen(email: String) {
-        let mainViewController = ModuleBuilder().createMainModule(email: email)
-        navigationController?.setViewControllers([mainViewController], animated: true)
-    }
+
 }

@@ -11,7 +11,7 @@ protocol RouterProtocol {
     var moduleBuilder: ModuleBuilderProtocol { get set }
     var navigationController: UINavigationController  { get set }
     func showLogInViewController()
-    func showMainViewController()
+    func showMainViewController(email: String)
 }
 
 class Router: RouterProtocol {
@@ -24,11 +24,13 @@ class Router: RouterProtocol {
     }
     
     func showLogInViewController() {
-        
+        let logInViewController = moduleBuilder.createLogInModule(router: self)
+        navigationController.setViewControllers([logInViewController], animated: true)
     }
     
-    func showMainViewController() {
-        
+    func showMainViewController(email: String) {
+        let mainViewController = moduleBuilder.createMainModule(router: self, email: email)
+        navigationController.setViewControllers([mainViewController], animated: true)
     }
 
 }
