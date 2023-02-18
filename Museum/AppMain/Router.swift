@@ -14,6 +14,7 @@ protocol RouterProtocol {
     func showMainViewController(email: String)
 }
 
+// show ViewControllers created by builder
 class Router: RouterProtocol {
     var moduleBuilder: ModuleBuilderProtocol
     var navigationController: UINavigationController
