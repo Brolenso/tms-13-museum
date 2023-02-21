@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, LogInViewProtocol {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var forgotPasswordLabel: LogInLabelTappable!
@@ -17,25 +17,13 @@ class LogInViewController: UIViewController {
     
     var presenter: LogInPresenterProtocol!
     
-    // option 1: closure to tap button from other class
-    lazy var closureLogInTap = { [weak self] in
-        return self?.logIn() ?? ()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        emailTextField.closureLogInTap = self.closureLogInTap
-        passwordTextField.closureLogInTap = self.closureLogInTap
-        
-        // no spaces in this field
-        emailTextField.keyboardType = .emailAddress
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillChangeFrame(_:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-        
+        addTopSpace()
+        textFieldsSetup()
+    }
+    
+    private func addTopSpace() {
         // add free space on top of content if possible
         let scrollLayoutGuide = UILayoutGuide()
         view.addLayoutGuide(scrollLayoutGuide)
@@ -49,9 +37,22 @@ class LogInViewController: UIViewController {
             scrollLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             constraintHeight,
         ])
+    }
+    
+    private func textFieldsSetup() {
+        emailTextField.closureLogInTap = self.closureLogInTap
+        passwordTextField.closureLogInTap = self.closureLogInTap
+        
+        // no spaces in this field
+        emailTextField.keyboardType = .emailAddress
         
         // option 3: target - action from code
         emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChangeFrame(_:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
     
     // option 3: target - action from code
@@ -63,6 +64,11 @@ class LogInViewController: UIViewController {
     // option 2: target - action from storyboard
     @IBAction func passwordDonePressed(_ sender: LogInTextField) {
         logIn()
+    }
+    
+    // option 1: closure to tap button from other class
+    lazy var closureLogInTap = { [weak self] in
+        return self?.logIn() ?? ()
     }
     
     @IBAction func logInTapped(_ sender: UIButton) {
@@ -105,8 +111,4 @@ class LogInViewController: UIViewController {
         let password = passwordTextField.text
         presenter.loginUser(email: email, password: password)
     }
-}
-
-extension LogInViewController: LogInViewProtocol {
-
 }
