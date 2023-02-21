@@ -7,8 +7,8 @@
 
 ## Technologies
 - [x] UIKit
+- [x] Storyboards
 - [x] Design moved from Figma
-- [x] Storyboards, constraints in Interface Builder and by code
 - [x] Custom views by code with @IBDesignable and @IBInspectable
 - [x] JSON service
 - [x] Generics
@@ -16,7 +16,7 @@
 ## Code patterns
 - [x] Builder
 - [x] Router
-- [x] Singletone
+- [x] Singleton
 - [x] Target-Action
 - [x] Delegate
 
