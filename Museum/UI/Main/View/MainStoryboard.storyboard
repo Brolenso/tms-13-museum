@@ -52,9 +52,6 @@ MUSEUM</string>
                                                             <directionalEdgeInsets key="contentInsets" top="11.5" leading="12" bottom="12" trailing="20"/>
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="7S8-la-Rdx"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-Y4-Gae">
                                                         <rect key="frame" x="180.33333333333334" y="24" width="32.333333333333343" height="12.333333333333336"/>
@@ -95,7 +92,7 @@ Cg
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="ev0-zu-7EY"/>
+                                                            <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="e3O-qo-kec"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -434,15 +431,14 @@ MTA6MDAgH+KAkyAxNzozMA
                     <navigationItem key="navigationItem" id="3Zw-Kr-xX4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="buttonAddressStreet" destination="JPb-d4-dZx" id="0FW-rD-vJS"/>
+                        <outlet property="buttonAddress" destination="JPb-d4-dZx" id="wjW-Yl-3wL"/>
                         <outlet property="buttonDate" destination="RVN-kp-d10" id="Kq4-xD-NMn"/>
-                        <outlet property="buttonExhibition" destination="GwY-oN-LVs" id="JgF-UZ-9gH"/>
-                        <outlet property="buttonFloor" destination="AKw-ls-enX" id="I5s-92-3uS"/>
-                        <outlet property="buttonHeader" destination="NNu-gu-hms" id="SJl-rK-DCc"/>
-                        <outlet property="buttonLogOut" destination="iGa-Rz-gUz" id="0tW-tB-jO0"/>
-                        <outlet property="buttonOpen" destination="bOG-v2-J96" id="gbA-GO-VHJ"/>
+                        <outlet property="buttonEventName" destination="NNu-gu-hms" id="ns0-VN-uho"/>
+                        <outlet property="buttonEventType" destination="GwY-oN-LVs" id="JgF-UZ-9gH"/>
+                        <outlet property="buttonExactLocation" destination="AKw-ls-enX" id="ba8-aD-0Oc"/>
                         <outlet property="buttonPlanVisit" destination="ntW-f4-jIi" id="8wz-QW-vap"/>
                         <outlet property="buttonTheArtMuseum" destination="efv-pv-HCG" id="WNb-wT-hs0"/>
+                        <outlet property="buttonWorkingHours" destination="bOG-v2-J96" id="eO9-4Z-2DY"/>
                         <outlet property="labelEmail" destination="qhn-Y4-Gae" id="uxV-Gb-84L"/>
                         <outlet property="topBlackView" destination="2LA-by-CxO" id="g6b-Ph-8lp"/>
                     </connections>

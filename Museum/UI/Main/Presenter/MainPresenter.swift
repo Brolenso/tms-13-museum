@@ -9,22 +9,18 @@ import UIKit
 import EventKit
 
 protocol MainViewProtocol: AnyObject {
-    func showEmail(email: String)
-    func setButtonFulfilled(sender: UIButton) async
+    func fillElements(email: String, event: Event)
+    func setButtonPlanVisit(planVisitTitle: String) async
+    func setButtonWasPlanned(plannedVisitTitle: String) async
+    func disableButton(buttonTitle: String) async
 }
 
 protocol MainPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String)
-    func setEmail()
+    func viewWasLoaded()
+    func checkEvent()
     func logout()
-    func planVisit(sender: UIButton,
-                   artMuseumTitle: String,
-                   exhibitionTitle: String,
-                   headerTitle: String,
-                   dateAppStart: Date,
-                   floorTitle: String,
-                   addressStreetTitle: String,
-                   openTitle: String)
+    func planVisitTapped(sender: UIButton)
 }
 
 class MainPresenter: MainPresenterProtocol {
@@ -32,6 +28,16 @@ class MainPresenter: MainPresenterProtocol {
     let jsonService: JsonServiceProtocol
     let router: RouterProtocol
     var email: String
+    let event = Event(
+        artMuseumTitle: "The\nArt\nMuseum",
+        type: "Exhibition",
+        name: "Masters\nold and\nnew",
+        exactLocation: "floor 5",
+        address: "3 Avenue Winston-Churchill\n75008 Paris, France",
+        workingHours: "Open daily\n10:00 – 17:00",
+        planVisitTitle: "Plan Your Visit",
+        plannedVisitTitle: "Visit is in your calendar"
+    )
     
     required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String) {
         self.view = view
@@ -40,8 +46,32 @@ class MainPresenter: MainPresenterProtocol {
         self.email = email
     }
     
-    func setEmail() {
-        view?.showEmail(email: email)
+    func viewWasLoaded() {
+        view?.fillElements(email: email, event: event)
+    }
+    
+    func checkEvent() {
+        Task {
+            do {
+                if try await eventAlreadyExists(
+                    eventTitle: event.eventTitle,
+                    startDate: event.startDate,
+                    endDate: event.endDate
+                ) {
+                    // calendar event is already exist
+                    await view?.setButtonWasPlanned(plannedVisitTitle: event.plannedVisitTitle)
+                    return
+                } else {
+                    // calendar event is not exist
+                    await view?.setButtonPlanVisit(planVisitTitle: event.planVisitTitle)
+                    return
+                }
+            } catch {
+                await view?.disableButton(buttonTitle: "Enable calendar access in Settings")
+                debugPrint("Could not check calendar event. Error: \(error.localizedDescription)")
+                return
+            }
+        }
     }
     
     // show view, than write to JSON
@@ -53,58 +83,67 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     // try to add an event to system calendar
-    func planVisit(sender: UIButton,
-                   artMuseumTitle: String,
-                   exhibitionTitle: String,
-                   headerTitle: String,
-                   dateAppStart: Date,
-                   floorTitle: String,
-                   addressStreetTitle: String,
-                   openTitle: String) {
+    func planVisitTapped(sender: UIButton) {
         Task {
-            let eventTitle = ("\(exhibitionTitle) \"\(headerTitle)\"").replacingOccurrences(of: "\n", with: " ")
-            let eventLocationTitle = ("\(artMuseumTitle), \(addressStreetTitle)").replacingOccurrences(of: "\n", with: " ")
-            let eventNotes = ("\(openTitle.replacingOccurrences(of: "\n", with: " "))\n\(floorTitle.capitalized)")
-            
-            // date, time - tomorrow from 10:00 to 12:00
-            let calendar = Calendar.current
-            var startDate = calendar.date(byAdding: .day, value: 1, to: dateAppStart) ?? Date()
-            var endDate = calendar.date(byAdding: .day, value: 1, to: dateAppStart) ?? Date()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy/MM/dd 10:00:00 ZZZZ"
-            let startDateString = dateFormatter.string(from: startDate)
-            dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss ZZZZ"
-            startDate = dateFormatter.date(from: startDateString) ?? Date()
-            dateFormatter.dateFormat = "yyyy/MM/dd 12:00:00 ZZZZ"
-            let endDateString = dateFormatter.string(from: endDate)
-            dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss ZZZZ"
-            endDate = dateFormatter.date(from: endDateString) ?? Date()
-        
             do {
+                
                 let eventStore = EKEventStore()
                 let requestResult: Bool = try await eventStore.requestAccess(to: .event)
                 guard requestResult else {
                     throw Errors.calendarAccessDenied
                 }
                 
-                let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
-                let events = eventStore.events(matching: predicate)
-                events.forEach { print($0) }
-                
-                let event = EKEvent(eventStore: eventStore)
-                let structuredLocation = EKStructuredLocation(title: eventLocationTitle)
-                event.title = eventTitle
-                event.structuredLocation = structuredLocation
-                event.notes = eventNotes
-                event.startDate = startDate
-                event.endDate = endDate
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                try eventStore.save(event, span: .thisEvent)
-                await view?.setButtonFulfilled(sender: sender)
+                if try await eventAlreadyExists(
+                    eventTitle: event.eventTitle,
+                    startDate: event.startDate,
+                    endDate: event.endDate
+                ) {
+                    // delete all matching events
+                    let predicate = eventStore.predicateForEvents(withStart: event.startDate, end: event.endDate, calendars: nil)
+                    let existingEvents = eventStore.events(matching: predicate)
+                    let filteredEvents = existingEvents.filter { existingEvent in
+                        existingEvent.title == event.eventTitle &&
+                        existingEvent.startDate == event.startDate &&
+                        existingEvent.endDate == event.endDate
+                    }
+                    try filteredEvents.forEach { try eventStore.remove($0, span: .thisEvent) }
+                    await view?.setButtonPlanVisit(planVisitTitle: event.planVisitTitle)
+                } else {
+                    // add event
+                    let ekEvent = EKEvent(eventStore: eventStore)
+                    let structuredLocation = EKStructuredLocation(title: event.eventLocationTitle)
+                    ekEvent.title = event.eventTitle
+                    ekEvent.structuredLocation = structuredLocation
+                    ekEvent.notes = event.eventNotes
+                    ekEvent.startDate = event.startDate
+                    ekEvent.endDate = event.endDate
+                    ekEvent.calendar = eventStore.defaultCalendarForNewEvents
+                    try eventStore.save(ekEvent, span: .thisEvent)
+                    await view?.setButtonWasPlanned(plannedVisitTitle: event.plannedVisitTitle)
+                }
             } catch {
-                debugPrint("Couldn't not create a calendar event. Error: \(error.localizedDescription)")
+                debugPrint("Error: \(error.localizedDescription)")
                 return
             }
         }
+    }
+    
+    private func eventAlreadyExists(eventTitle: String, startDate: Date, endDate: Date) async throws -> Bool {
+        let eventStore = EKEventStore()
+        
+        let requestResult = try await eventStore.requestAccess(to: .event)
+        if requestResult == false {
+            throw Errors.calendarAccessDenied
+        }
+        
+        let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+        let existingEvents = eventStore.events(matching: predicate)
+        
+        let eventAlreadyExists = existingEvents.contains { event in
+            event.title == eventTitle &&
+            event.startDate == startDate &&
+            event.endDate == endDate
+        }
+        return eventAlreadyExists
     }
 }
