@@ -23,7 +23,7 @@ class JsonService: JsonServiceProtocol {
             let jsonDecoder = JSONDecoder()
             return try jsonDecoder.decode(type, from: data)
         } catch {
-            print("Error to read JSON:\n\(error.localizedDescription)")
+            debugPrint("Error to read JSON:\n\(error.localizedDescription)")
             return nil
         }
     }
@@ -37,7 +37,7 @@ class JsonService: JsonServiceProtocol {
             let jsonUrl = try getUrl(fileName: T.jsonFileName)
             try data.write(to: jsonUrl)
         } catch {
-            print("Error to write to JSON:\n\(error.localizedDescription)")
+            debugPrint("Error to write to JSON:\n\(error.localizedDescription)")
             return
         }
     }

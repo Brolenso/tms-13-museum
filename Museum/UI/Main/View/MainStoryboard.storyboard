@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -234,6 +233,9 @@ OLD AND
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonPlanVisitTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="Kzl-Im-RlR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -432,13 +434,13 @@ MTA6MDAgH+KAkyAxNzozMA
                     <navigationItem key="navigationItem" id="3Zw-Kr-xX4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="buttonAdressStreet" destination="JPb-d4-dZx" id="0FW-rD-vJS"/>
+                        <outlet property="buttonAddressStreet" destination="JPb-d4-dZx" id="0FW-rD-vJS"/>
                         <outlet property="buttonDate" destination="RVN-kp-d10" id="Kq4-xD-NMn"/>
                         <outlet property="buttonExhibition" destination="GwY-oN-LVs" id="JgF-UZ-9gH"/>
                         <outlet property="buttonFloor" destination="AKw-ls-enX" id="I5s-92-3uS"/>
                         <outlet property="buttonHeader" destination="NNu-gu-hms" id="SJl-rK-DCc"/>
                         <outlet property="buttonLogOut" destination="iGa-Rz-gUz" id="0tW-tB-jO0"/>
-                        <outlet property="buttonOpenToday" destination="bOG-v2-J96" id="gbA-GO-VHJ"/>
+                        <outlet property="buttonOpen" destination="bOG-v2-J96" id="gbA-GO-VHJ"/>
                         <outlet property="buttonPlanVisit" destination="ntW-f4-jIi" id="8wz-QW-vap"/>
                         <outlet property="buttonTheArtMuseum" destination="efv-pv-HCG" id="WNb-wT-hs0"/>
                         <outlet property="labelEmail" destination="qhn-Y4-Gae" id="uxV-Gb-84L"/>

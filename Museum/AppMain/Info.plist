@@ -27,5 +27,7 @@
 	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>The calendar is used to plan your visits to the museum&apos;s exhibitions</string>
 </dict>
 </plist>

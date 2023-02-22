@@ -7,13 +7,16 @@
 
 ## Technologies
 - [x] UIKit
+- [x] EventKit
 - [x] Storyboards
 - [x] Design moved from Figma
 - [x] Custom views by code with @IBDesignable and @IBInspectable
 - [x] JSON service
 - [x] Generics
+- [x] Localized errors
 
 ## Code patterns
+- [x] Async/await
 - [x] Builder
 - [x] Router
 - [x] Singleton

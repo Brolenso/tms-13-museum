@@ -15,6 +15,7 @@
 		1109F734294DF41A006AB3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1109F733294DF41A006AB3CE /* Assets.xcassets */; };
 		11171FE52997BCC30089C58A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11171FE42997BCC30089C58A /* Router.swift */; };
 		1121DE462950382700129C08 /* LogInLabelTappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121DE452950382700129C08 /* LogInLabelTappable.swift */; };
+		11594F8029A5510700709641 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11594F7F29A5510700709641 /* Errors.swift */; };
 		115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */; };
 		11721EFD296040A900767FBC /* String+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFC296040A900767FBC /* String+textStyle.swift */; };
 		11721EFF296077F800767FBC /* String+removeSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFE296077F800767FBC /* String+removeSpaces.swift */; };
@@ -39,6 +40,8 @@
 		1109F738294DF41A006AB3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11171FE42997BCC30089C58A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1121DE452950382700129C08 /* LogInLabelTappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInLabelTappable.swift; sourceTree = "<group>"; };
+		11594F7A29A5392400709641 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		11594F7F29A5510700709641 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+shadow.swift"; sourceTree = "<group>"; };
 		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
 		11721EFE296077F800767FBC /* String+removeSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+removeSpaces.swift"; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			children = (
 				1109F729294DF419006AB3CE /* Museum */,
 				11E809CB29882255005ACA3C /* Museum.app */,
+				11594F7929A5392400709641 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +95,14 @@
 				11C8B1AB2986B5F500E55018 /* Services */,
 			);
 			path = Museum;
+			sourceTree = "<group>";
+		};
+		11594F7929A5392400709641 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11594F7A29A5392400709641 /* EventKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1199D2EB294F038C00FEC95B /* LogIn */ = {
@@ -121,6 +133,7 @@
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
 				11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */,
 				11171FE42997BCC30089C58A /* Router.swift */,
+				11594F7F29A5510700709641 /* Errors.swift */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -282,6 +295,7 @@
 				1109F72B294DF419006AB3CE /* AppDelegate.swift in Sources */,
 				11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */,
 				1109F72D294DF419006AB3CE /* SceneDelegate.swift in Sources */,
+				11594F8029A5510700709641 /* Errors.swift in Sources */,
 				11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */,
 				11B20007296F53D10045960B /* JsonService.swift in Sources */,
 				11B20009296F55C20045960B /* User.swift in Sources */,
