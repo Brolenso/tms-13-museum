@@ -82,11 +82,10 @@ class MainPresenter: MainPresenterProtocol {
         jsonService.write(dataObject: user)
     }
     
-    // try to add an event to system calendar
+    // add/delete event to/from system calendar
     func planVisitTapped(sender: UIButton) {
         Task {
             do {
-                
                 let eventStore = EKEventStore()
                 let requestResult: Bool = try await eventStore.requestAccess(to: .event)
                 guard requestResult else {

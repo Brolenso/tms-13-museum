@@ -14,6 +14,7 @@
 - [x] JSON service
 - [x] Generics
 - [x] Localized errors
+- [x] Deep link
 
 ## Code patterns
 - [x] Async/await
