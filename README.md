@@ -24,7 +24,7 @@
 - [x] Target-Action
 - [x] Delegate
 
-<img src="Screenshots/LogIn.png" alt="drawing" width="320"/> <img src="Screenshots/Main.png" alt="drawing" width="320"/>
+<img src="Screenshots/LogIn.png" alt="drawing" width="350"/> <img src="Screenshots/Main.png" alt="drawing" width="350"/>
 
 <!-- URL's -->
 [platform-image]: https://img.shields.io/badge/Platform-iOS-green.svg
