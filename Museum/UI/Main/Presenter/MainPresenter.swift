@@ -36,7 +36,7 @@ class MainPresenter: MainPresenterProtocol {
         address: "3 Avenue Winston-Churchill\n75008 Paris, France",
         workingHours: "Open daily\n10:00 – 17:00",
         planVisitTitle: "Plan Your Visit",
-        plannedVisitTitle: "Visit is in your calendar"
+        plannedVisitTitle: "Visit is in your calendar. Cancel?"
     )
     
     required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String) {

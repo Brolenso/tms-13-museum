@@ -14,6 +14,7 @@ class LogInViewController: UIViewController, LogInViewProtocol {
     @IBOutlet var emailTextField: LogInTextField!
     @IBOutlet var passwordTextField: LogInTextField!
     @IBOutlet var logInButton: UIButton!
+    @IBOutlet var dontHaveAnAccount: LogInLabelTappable!
     
     var presenter: LogInPresenterProtocol!
     
@@ -98,10 +99,21 @@ class LogInViewController: UIViewController, LogInViewProtocol {
             right: 0.0
         )
         
-        let visibleFrame = forgotPasswordLabel.frame.inset(by: UIEdgeInsets(top: 0.0,
+        let visibleFrame: CGRect
+        
+        // in Landscape mode
+        if UIDevice.current.orientation.isLandscape {
+            visibleFrame = logInButton.frame.inset(by: UIEdgeInsets(top: 0.0,
                                                                             left: 0.0,
-                                                                            bottom: -10.0,
+                                                                            bottom: 10.0,
                                                                             right: 0.0))
+        } else {
+            // in Portrait mode
+            visibleFrame = dontHaveAnAccount.frame.inset(by: UIEdgeInsets(top: 0.0,
+                                                                              left: 0.0,
+                                                                              bottom: -10.0,
+                                                                              right: 0.0))
+        }
         
         scrollView.scrollRectToVisible(visibleFrame, animated: true)
     }

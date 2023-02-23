@@ -64,20 +64,23 @@ extension MainViewController: MainViewProtocol {
     func setButtonWasPlanned(plannedVisitTitle: String) async {
         buttonPlanVisit.setAttributedTitle(plannedVisitTitle.setTextStyle(.button), for: .normal)
         buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
+        buttonPlanVisit.isEnabled = true
         buttonPlanVisit.isHighlighted = true
-        //buttonPlanVisit.isEnabled = false
 
     }
    
     func setButtonPlanVisit(planVisitTitle: String) async {
         buttonPlanVisit.setAttributedTitle(planVisitTitle.setTextStyle(.button), for: .normal)
         buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .red
+        buttonPlanVisit.isEnabled = true
+        buttonPlanVisit.isHighlighted = false
     }
     
     func disableButton(buttonTitle: String) async {
         buttonPlanVisit.setAttributedTitle(buttonTitle.setTextStyle(.button), for: .disabled)
         buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
         buttonPlanVisit.isEnabled = false
+        buttonPlanVisit.isHighlighted = false
     }
 
 }

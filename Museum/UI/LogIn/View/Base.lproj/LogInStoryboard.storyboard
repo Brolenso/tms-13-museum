@@ -191,6 +191,7 @@ San Francisco, CA 94103</string>
                     </view>
                     <navigationItem key="navigationItem" id="TyL-Pf-ddG"/>
                     <connections>
+                        <outlet property="dontHaveAnAccount" destination="NNG-kn-H75" id="ENt-TB-DZr"/>
                         <outlet property="emailTextField" destination="aOC-0b-wG0" id="QMf-0S-2nt"/>
                         <outlet property="forgotPasswordLabel" destination="XAe-e8-PUg" id="MCi-fV-blz"/>
                         <outlet property="logInButton" destination="Z9u-K2-9Aj" id="nGL-6i-Cv6"/>
