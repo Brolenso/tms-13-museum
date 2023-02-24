@@ -29,7 +29,7 @@ class LogInPresenter: LogInPresenterProtocol {
     
     // show view, than write to JSON
     func loginUser(email: String, password: String) {
-        router.showMainViewController(email: email)
+        router.showMainViewController(email: email, withAnimation: .fromRight)
         User.current.setUser(email: email, password: password)
         jsonService.write(dataObject: User.current)
     }

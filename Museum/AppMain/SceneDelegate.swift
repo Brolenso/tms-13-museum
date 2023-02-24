@@ -23,9 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // if user found in JSON, than show main screen, else show login screen
         if let user = JsonService().read(type: User.self), user.email.count > 0 {
             User.current.setUser(email: user.email, password: user.password)
-            router.showMainViewController(email: user.email)
+            router.showMainViewController(email: user.email, withAnimation: .systemDefault)
         } else {
-            router.showLogInViewController()
+            router.showLogInViewController(withAnimation: .systemDefault)
         }
         
         window.rootViewController = rootNavigationController

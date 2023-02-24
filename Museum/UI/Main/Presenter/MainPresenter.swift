@@ -46,6 +46,17 @@ class MainPresenter: MainPresenterProtocol {
         self.email = email
     }
     
+    enum Errors: LocalizedError {
+        case calendarAccessDenied
+        
+        var errorDescription: String? {
+            switch self {
+            case .calendarAccessDenied:
+                return "Calendar access denied by user"
+            }
+        }
+    }
+    
     func viewWasLoaded() {
         view?.fillElements(email: email, event: event)
     }
@@ -76,7 +87,7 @@ class MainPresenter: MainPresenterProtocol {
     
     // show view, than write to JSON
     func logout() {
-        router.showLogInViewController()
+        router.showLogInViewController(withAnimation: .fromLeft)
         let user = User.current
         user.erase()
         jsonService.write(dataObject: user)

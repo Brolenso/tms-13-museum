@@ -10,8 +10,8 @@ import UIKit
 protocol RouterProtocol {
     var moduleBuilder: ModuleBuilderProtocol { get set }
     var navigationController: UINavigationController  { get set }
-    func showLogInViewController()
-    func showMainViewController(email: String)
+    func showLogInViewController(withAnimation: CATransition)
+    func showMainViewController(email: String, withAnimation: CATransition)
 }
 
 // show ViewControllers created by builder
@@ -24,13 +24,15 @@ class Router: RouterProtocol {
         self.navigationController = navigationController
     }
     
-    func showLogInViewController() {
+    func showLogInViewController(withAnimation: CATransition) {
         let logInViewController = moduleBuilder.createLogInModule(router: self)
-        navigationController.setViewControllers([logInViewController], animated: true)
+        navigationController.view.layer.add(withAnimation, forKey: nil)
+        navigationController.setViewControllers([logInViewController], animated: false)
     }
     
-    func showMainViewController(email: String) {
+    func showMainViewController(email: String, withAnimation: CATransition) {
         let mainViewController = moduleBuilder.createMainModule(router: self, email: email)
+        navigationController.view.layer.add(withAnimation, forKey: nil)
         navigationController.setViewControllers([mainViewController], animated: true)
     }
 

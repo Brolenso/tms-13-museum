@@ -15,6 +15,7 @@
 - [x] Generics
 - [x] Localized errors
 - [x] Deep link
+- [x] Customized animation
 
 ## Code patterns
 - [x] Async/await
