@@ -19,3 +19,7 @@ class User: Codable {
         self.password = password
     }
 }
+
+extension User: JsonFileStorableProtocol {
+    static var jsonFileName: String = "userInfo.json"
+}

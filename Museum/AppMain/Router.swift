@@ -33,7 +33,7 @@ class Router: RouterProtocol {
     func showMainViewController(email: String, withAnimation: CATransition) {
         let mainViewController = moduleBuilder.createMainModule(router: self, email: email)
         navigationController.view.layer.add(withAnimation, forKey: nil)
-        navigationController.setViewControllers([mainViewController], animated: true)
+        navigationController.setViewControllers([mainViewController], animated: false)
     }
 
 }

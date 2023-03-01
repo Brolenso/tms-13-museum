@@ -5,10 +5,6 @@ protocol JsonFileStorableProtocol {
     static var jsonFileName: String { get }
 }
 
-extension User: JsonFileStorableProtocol {
-    static var jsonFileName: String = "userInfo.json"
-}
-
 protocol JsonServiceProtocol {
     func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T?
     func write<T: Codable & JsonFileStorableProtocol>(dataObject: T)
