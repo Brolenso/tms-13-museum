@@ -134,8 +134,8 @@
 				1109F733294DF41A006AB3CE /* Assets.xcassets */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
 				11C6A2D529A7682E009B8836 /* LaunchScreen.storyboard */,
-				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
+				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
 				11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */,
 				11171FE42997BCC30089C58A /* Router.swift */,
 			);

@@ -2,7 +2,7 @@
 
 # Museum App
 
-## Architecture
+## Architectural pattern
 - [x] MVP 
 
 ## Technologies
