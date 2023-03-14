@@ -29,6 +29,8 @@
 		11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B02986C3D900E55018 /* LogInPresenter.swift */; };
 		11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */; };
 		11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B52987023D00E55018 /* MainPresenter.swift */; };
+		11E5F4B529C0443400B979B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E5F4B429C0443400B979B4 /* GoogleService-Info.plist */; };
+		11E5F4BC29C04D4B00B979B4 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 11E5F4BB29C04D4B00B979B4 /* FirebaseCrashlytics */; };
 		11F15F2E294E48AF00D297B5 /* LogInBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,7 @@
 		11C8B1B02986C3D900E55018 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		11C8B1B52987023D00E55018 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		11E5F4B429C0443400B979B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11E809CB29882255005ACA3C /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F15F2D294E48AF00D297B5 /* LogInBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E5F4BC29C04D4B00B979B4 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +137,7 @@
 				1108CD6D296B0DD100A77169 /* Fonts */,
 				1109F733294DF41A006AB3CE /* Assets.xcassets */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
+				11E5F4B429C0443400B979B4 /* GoogleService-Info.plist */,
 				11C6A2D529A7682E009B8836 /* LaunchScreen.storyboard */,
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
 				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
@@ -226,12 +231,16 @@
 				1109F723294DF419006AB3CE /* Sources */,
 				1109F724294DF419006AB3CE /* Frameworks */,
 				1109F725294DF419006AB3CE /* Resources */,
+				11E5F4B929C0463100B979B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Museum;
+			packageProductDependencies = (
+				11E5F4BB29C04D4B00B979B4 /* FirebaseCrashlytics */,
+			);
 			productName = Museum;
 			productReference = 11E809CB29882255005ACA3C /* Museum.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +269,9 @@
 				Base,
 			);
 			mainGroup = 1109F71E294DF419006AB3CE;
+			packageReferences = (
+				11E5F4BA29C04D4B00B979B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1109F71E294DF419006AB3CE;
 			projectDirPath = "";
 			projectRoot = "";
@@ -279,10 +291,33 @@
 				11B2000B297008160045960B /* MainStoryboard.storyboard in Resources */,
 				11C6A2D629A7682E009B8836 /* LaunchScreen.storyboard in Resources */,
 				1109F732294DF419006AB3CE /* LogInStoryboard.storyboard in Resources */,
+				11E5F4B529C0443400B979B4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11E5F4B929C0463100B979B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "find \"${BUILT_PRODUCTS_DIR}\" -name \"*.dSYM\" | xargs -S 1024 -I ARGS \"${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/upload-symbols\" -gsp \"${SRCROOT}/Museum/AppMain/GoogleService-Info.plist\" -p ios ARGS\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1109F723294DF419006AB3CE /* Sources */ = {
@@ -534,6 +569,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11E5F4BA29C04D4B00B979B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11E5F4BB29C04D4B00B979B4 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11E5F4BA29C04D4B00B979B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1109F71F294DF419006AB3CE /* Project object */;
 }

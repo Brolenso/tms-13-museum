@@ -77,6 +77,7 @@ class LogInViewController: UIViewController, LogInViewProtocol {
     }
     
     @IBAction func forgotYourPasswordTapped(_ sender: UITapGestureRecognizer) {
+        // fatalError("Crash to test Firebase Crashlytics")
     }
     
     @IBAction func dontHaveAnAccountTapped(_ sender: UITapGestureRecognizer) {

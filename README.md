@@ -5,6 +5,9 @@
 ## Architectural pattern
 - [x] MVP 
 
+## Frameworks
+- [x] Firebase Crashlytics
+
 ## Technologies
 - [x] UIKit
 - [x] EventKit
