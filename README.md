@@ -31,7 +31,7 @@
 - [x] Delegate
 
 <img src="Screenshots/LogIn.png" alt="drawing" height="700"/>
-<img src="Screenshots/Main2.png" alt="drawing" height="700"/>
+<img src="Screenshots/Main.png" alt="drawing" height="700"/>
 <img src="Screenshots/Localizations.png" alt="drawing" height="700"/>
 
 <!-- URL's -->
