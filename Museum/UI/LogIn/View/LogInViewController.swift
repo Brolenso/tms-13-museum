@@ -10,18 +10,51 @@ import UIKit
 class LogInViewController: UIViewController, LogInViewProtocol {
     
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var forgotPasswordLabel: LogInLabelTappable!
+    @IBOutlet var labelMuseum: UILabel!
+    @IBOutlet var labelAddress: UILabel!
     @IBOutlet var emailTextField: LogInTextField!
     @IBOutlet var passwordTextField: LogInTextField!
+    @IBOutlet var forgotPasswordLabel: LogInLabelTappable!
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var dontHaveAnAccount: LogInLabelTappable!
     
     var presenter: LogInPresenterProtocol!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUiTexts()
+        setupCustomTextfields()
         addTopSpace()
-        textFieldsSetup()
+    }
+       
+    func setupUiTexts() {
+        let textMuseum = String(localized: "login.screen.museum.label.text")
+        let attributedTextMuseum = textMuseum.uppercased().setTextStyle(.title)
+        labelMuseum.attributedText = attributedTextMuseum
+        
+        let textAddress = String(localized: "login.screen.address.label.text")
+        let attributedTextAddress = textAddress.setTextStyle(.subtitle)
+        labelAddress.attributedText = attributedTextAddress
+        
+        let textLogIn = String(localized: "login.screen.login.button.title")
+        let attributedTextLogIn = textLogIn.setTextStyle(.button)
+        logInButton.setAttributedTitle(attributedTextLogIn, for: .normal)
+    }
+    
+    private func setupCustomTextfields() {
+        emailTextField.closureLogInTap = self.closureLogInTap
+        passwordTextField.closureLogInTap = self.closureLogInTap
+        
+        // no spaces in this field
+        emailTextField.keyboardType = .emailAddress
+        
+        // option 3: target - action from code
+        emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChangeFrame(_:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
     
     private func addTopSpace() {
@@ -39,23 +72,7 @@ class LogInViewController: UIViewController, LogInViewProtocol {
             constraintHeight,
         ])
     }
-    
-    private func textFieldsSetup() {
-        emailTextField.closureLogInTap = self.closureLogInTap
-        passwordTextField.closureLogInTap = self.closureLogInTap
-        
-        // no spaces in this field
-        emailTextField.keyboardType = .emailAddress
-        
-        // option 3: target - action from code
-        emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillChangeFrame(_:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-    }
-    
+ 
     // option 3: target - action from code
     @objc
     func emailDonePressed(_ sender: LogInTextField) {

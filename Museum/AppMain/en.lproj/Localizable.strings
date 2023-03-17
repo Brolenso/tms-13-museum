@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Museum
+
+  Created by Vyacheslav on 16.03.2023.
+  
+*/
+
+"login.screen.museum.label.text" = "Grand\nPalais\nMuseum";
+"login.screen.address.label.text" = "3 Avenue Winston-Churchill\n75008 Paris, France";
+"login.screen.email.textfield.placeholder" = "Email address";
+"login.screen.password.textfield.placeholder" = "Password";
+"login.screen.forgot.label.text" = "Forgot your password?";
+"login.screen.login.button.title" = "Log In";
+"login.screen.have.not.account.label.text" = "Don’t have an account?";
+
+"main.screen.log.out" = "Log\nout";
+"main.screen.art.museum.title" = "The\nArt\nMuseum";
+"main.screen.type" = "Exhibition";
+"main.screen.name" = "Masters\nold and\nnew";
+"main.screen.exact.location" = "floor 5";
+"main.screen.address" = "3 Avenue Winston-Churchill\n75008 Paris, France";
+"main.screen.working.hours" = "Open daily\n10:00 – 17:00";
+"main.screen.plan.visit.title" = "Plan Your Visit";
+"main.screen.planned.visit.title" = "Visit is in your calendar. Cancel?";

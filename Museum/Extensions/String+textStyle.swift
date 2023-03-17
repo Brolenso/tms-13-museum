@@ -1,9 +1,28 @@
 import UIKit
 
+extension String {
+    func setTextStyle(_ textStyle: TextStyle) -> NSAttributedString {
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = textStyle.alignment
+        
+        let attributedString = NSAttributedString(
+            string: self,
+            attributes: [
+                .font: textStyle.font,
+                .foregroundColor: textStyle.color,
+                .paragraphStyle : paragraphStyle,
+            ]
+        )
+        return attributedString
+    }
+}
+
 struct TextStyle {
     let size: Double
     let color: UIColor
     let fontName: String
+    var alignment: NSTextAlignment = .left
     
     var font: UIFont {
         UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size)
@@ -57,22 +76,15 @@ extension TextStyle {
         color: .black,
         fontName: "Montserrat-Regular"
     )
+    static let labelDarkRight = TextStyle(
+        size: 10.0,
+        color: .black,
+        fontName: "Montserrat-Regular",
+        alignment: .right
+    )
     static let labelGrey = TextStyle(
         size: 10.0,
         color: UIColor(named: "grey") ?? .gray,
         fontName: "Montserrat-Regular"
     )
-}
-
-extension String {
-    func setTextStyle(_ textStyle: TextStyle) -> NSAttributedString {
-        let attributedString = NSAttributedString(
-            string: self,
-            attributes: [
-                .font: textStyle.font,
-                .foregroundColor: textStyle.color,
-            ]
-        )
-        return attributedString
-    }
 }

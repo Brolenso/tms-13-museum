@@ -17,20 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWR-SZ-Ncb" userLabel="Background View" customClass="LogInBackgroundView" customModule="Museum" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="buttonLogIn" destination="Z9u-K2-9Aj" id="Stv-YH-hMx"/>
-                                    <outlet property="labelAddress" destination="pxn-AC-fAg" id="6Cn-TN-J4S"/>
-                                    <outlet property="labelMuseum" destination="yfP-rH-O7X" id="K0a-X4-Qwg"/>
-                                </connections>
-                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="70l-7m-ohK">
+                                <rect key="frame" x="-976" y="-70" width="1394" height="952"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-RN-lZj">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galeries du Grand Palais" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-rH-O7X" userLabel="Museum name">
-                                        <rect key="frame" x="69.666666666666671" y="300" width="211.66666666666663" height="143"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAND PALAIS MUSEUM" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-rH-O7X" userLabel="Museum name">
+                                        <rect key="frame" x="69.666666666666686" y="300" width="252" height="143"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="143" id="699-2S-8j8"/>
                                         </constraints>
@@ -39,7 +33,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxn-AC-fAg" userLabel="Museum adress">
-                                        <rect key="frame" x="72.666666666666671" y="446" width="152.33333333333331" height="42"/>
+                                        <rect key="frame" x="72.666666666666686" y="446" width="249" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="vfr-B7-sVH"/>
                                         </constraints>
@@ -57,8 +51,8 @@ San Francisco, CA 94103</string>
                                             <constraint firstAttribute="height" constant="42" id="pMg-ti-7Vi"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email adress"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="login.screen.email.textfield.placeholder"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="8q8-GB-M9E" userLabel="Line separator">
@@ -74,8 +68,8 @@ San Francisco, CA 94103</string>
                                             <constraint firstAttribute="height" constant="42" id="x9z-tu-FD2"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="login.screen.password.textfield.placeholder"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="passwordDonePressed:" destination="6fU-8c-qPV" eventType="editingDidEndOnExit" id="DnA-aZ-m2c"/>
@@ -88,8 +82,8 @@ San Francisco, CA 94103</string>
                                             <constraint firstAttribute="height" constant="24" id="Gbr-nR-PN8"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Forgot your password?"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="rightTextAlignment" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="login.screen.forgot.label.text"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="AoF-wh-ULT" appends="YES" id="NXY-e1-xJi"/>
@@ -129,8 +123,8 @@ San Francisco, CA 94103</string>
                                             <constraint firstAttribute="height" constant="24" id="7pJ-pt-UHP"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Don’t have an account?"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="rightTextAlignment" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="login.screen.have.not.account.label.text"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="CEv-pr-BbJ" appends="YES" id="zZT-kG-Moh"/>
@@ -151,17 +145,17 @@ San Francisco, CA 94103</string>
                                     <constraint firstItem="XAe-e8-PUg" firstAttribute="trailing" secondItem="adF-ls-H1E" secondAttribute="trailing" id="RYh-ZR-QUY"/>
                                     <constraint firstItem="yfP-rH-O7X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="T4I-a4-JxA" secondAttribute="top" constant="30" id="SRi-fQ-lzM"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="leading" secondItem="Z9u-K2-9Aj" secondAttribute="leading" id="UOl-pI-sLf"/>
-                                    <constraint firstItem="pxn-AC-fAg" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="aOC-0b-wG0" secondAttribute="trailing" multiplier="0.9" id="UrL-Sy-iyv"/>
+                                    <constraint firstItem="pxn-AC-fAg" firstAttribute="trailing" secondItem="aOC-0b-wG0" secondAttribute="trailing" id="UrL-Sy-iyv"/>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="bottom" secondItem="8q8-GB-M9E" secondAttribute="top" id="Weg-va-dkk"/>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="top" secondItem="pxn-AC-fAg" secondAttribute="bottom" constant="20" id="XTl-99-Dwd"/>
                                     <constraint firstItem="T4I-a4-JxA" firstAttribute="top" secondItem="yfP-rH-O7X" secondAttribute="top" constant="-300" placeholder="YES" id="Zgd-aT-76K"/>
                                     <constraint firstItem="Z9u-K2-9Aj" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="iL2-dv-CFU"/>
                                     <constraint firstItem="T4I-a4-JxA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="aOC-0b-wG0" secondAttribute="leading" constant="-20" id="idG-g2-KMf"/>
-                                    <constraint firstItem="T4I-a4-JxA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aOC-0b-wG0" secondAttribute="trailing" constant="20" id="kez-9o-36D"/>
+                                    <constraint firstItem="aOC-0b-wG0" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="T4I-a4-JxA" secondAttribute="trailing" constant="-20" id="kez-9o-36D"/>
                                     <constraint firstItem="T4I-a4-JxA" firstAttribute="bottom" secondItem="NNG-kn-H75" secondAttribute="bottom" constant="20" id="mj3-7g-HHl"/>
                                     <constraint firstItem="adF-ls-H1E" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="ojt-vG-pYe"/>
                                     <constraint firstItem="adF-ls-H1E" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="pqB-WV-ryK"/>
-                                    <constraint firstItem="yfP-rH-O7X" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="aOC-0b-wG0" secondAttribute="trailing" multiplier="0.9" id="szp-HO-WGi"/>
+                                    <constraint firstItem="yfP-rH-O7X" firstAttribute="trailing" secondItem="aOC-0b-wG0" secondAttribute="trailing" id="szp-HO-WGi"/>
                                     <constraint firstItem="adF-ls-H1E" firstAttribute="top" secondItem="8q8-GB-M9E" secondAttribute="bottom" id="tOq-3A-NkA"/>
                                     <constraint firstItem="8q8-GB-M9E" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="ttj-Bm-zDb"/>
                                     <constraint firstItem="Z9u-K2-9Aj" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="w8L-iJ-UxM"/>
@@ -174,13 +168,13 @@ San Francisco, CA 94103</string>
                         <viewLayoutGuide key="safeArea" id="gvO-If-gru"/>
                         <constraints>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" id="8yJ-Us-huj"/>
+                            <constraint firstItem="70l-7m-ohK" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" constant="25" id="Aw5-mZ-kqs"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" id="Fbg-qI-Ihh"/>
-                            <constraint firstItem="YWR-SZ-Ncb" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" id="Krg-Xt-We8"/>
+                            <constraint firstItem="70l-7m-ohK" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" constant="-70" id="HAK-tr-4JU"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="leading" secondItem="64N-mu-MDv" secondAttribute="leading" id="LdV-Qe-2Gb"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="bottom" secondItem="64N-mu-MDv" secondAttribute="bottom" id="V9l-4g-gkF"/>
-                            <constraint firstItem="YWR-SZ-Ncb" firstAttribute="bottom" secondItem="64N-mu-MDv" secondAttribute="bottom" id="bpv-4G-tsB"/>
-                            <constraint firstItem="YWR-SZ-Ncb" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" id="omw-FY-o7L"/>
-                            <constraint firstItem="YWR-SZ-Ncb" firstAttribute="leading" secondItem="64N-mu-MDv" secondAttribute="leading" id="x9F-OQ-fku"/>
+                            <constraint firstItem="70l-7m-ohK" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="64N-mu-MDv" secondAttribute="bottom" constant="30" id="h9b-R2-hae"/>
+                            <constraint firstItem="70l-7m-ohK" firstAttribute="leading" relation="lessThanOrEqual" secondItem="64N-mu-MDv" secondAttribute="leading" constant="-20" id="xn5-8S-OUG"/>
                         </constraints>
                         <variation key="heightClass=regular-widthClass=compact">
                             <nil key="backgroundColor"/>
@@ -194,6 +188,8 @@ San Francisco, CA 94103</string>
                         <outlet property="dontHaveAnAccount" destination="NNG-kn-H75" id="ENt-TB-DZr"/>
                         <outlet property="emailTextField" destination="aOC-0b-wG0" id="QMf-0S-2nt"/>
                         <outlet property="forgotPasswordLabel" destination="XAe-e8-PUg" id="MCi-fV-blz"/>
+                        <outlet property="labelAddress" destination="pxn-AC-fAg" id="MiG-6W-LOI"/>
+                        <outlet property="labelMuseum" destination="yfP-rH-O7X" id="jRp-0b-p8x"/>
                         <outlet property="logInButton" destination="Z9u-K2-9Aj" id="nGL-6i-Cv6"/>
                         <outlet property="passwordTextField" destination="adF-ls-H1E" id="QND-en-UVM"/>
                         <outlet property="scrollView" destination="dGa-RN-lZj" id="t4y-a0-eh8"/>
@@ -220,6 +216,7 @@ San Francisco, CA 94103</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="1394" height="822"/>
         <image name="Line" width="250" height="1"/>
         <namedColor name="light-text">
             <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

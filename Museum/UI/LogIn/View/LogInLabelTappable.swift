@@ -4,14 +4,15 @@ import UIKit
 class LogInLabelTappable: UIView {
     
     private let label = UILabel(frame: .zero)
+    private var rightAlignment: Bool = false
     
     @IBInspectable
-    var text: String {
+    var localizedText: String {
         get {
             label.text ?? ""
         }
         set {
-            label.text = newValue
+            label.text = NSLocalizedString(newValue, comment: "")
         }
     }
     
@@ -26,6 +27,7 @@ class LogInLabelTappable: UIView {
             } else {
                 label.textAlignment = .left
             }
+            rightAlignment = newValue
         }
     }
     
@@ -53,6 +55,11 @@ class LogInLabelTappable: UIView {
         let labelText = label.text ?? "Default label text"
         let attributedLabelText = labelText.setTextStyle(.label)
         label.attributedText = attributedLabelText
+        
+        // needs because NSLocalizedString break a storyboard defined alignment
+        if rightAlignment {
+            label.textAlignment = .right
+        }
                 
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)

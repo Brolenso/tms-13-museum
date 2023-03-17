@@ -436,6 +436,7 @@ MTA6MDAgH+KAkyAxNzozMA
                         <outlet property="buttonEventName" destination="NNu-gu-hms" id="ns0-VN-uho"/>
                         <outlet property="buttonEventType" destination="GwY-oN-LVs" id="JgF-UZ-9gH"/>
                         <outlet property="buttonExactLocation" destination="AKw-ls-enX" id="ba8-aD-0Oc"/>
+                        <outlet property="buttonLogOut" destination="iGa-Rz-gUz" id="6vw-hm-Q01"/>
                         <outlet property="buttonPlanVisit" destination="ntW-f4-jIi" id="8wz-QW-vap"/>
                         <outlet property="buttonTheArtMuseum" destination="efv-pv-HCG" id="WNb-wT-hs0"/>
                         <outlet property="buttonWorkingHours" destination="bOG-v2-J96" id="eO9-4Z-2DY"/>

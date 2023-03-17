@@ -12,10 +12,12 @@
 - [x] UIKit
 - [x] EventKit
 - [x] Storyboards
+- [x] Localizations: English, French, Russian
 - [x] Design moved from Figma
 - [x] Custom views by code with @IBDesignable and @IBInspectable
 - [x] JSON service
 - [x] Generics
+- [x] Font styles
 - [x] Localized errors
 - [x] Deep link
 - [x] Customized animation
@@ -28,7 +30,9 @@
 - [x] Target-Action
 - [x] Delegate
 
-<img src="Screenshots/LogIn.png" alt="drawing" width="350"/> <img src="Screenshots/Main.png" alt="drawing" width="350"/>
+<img src="Screenshots/LogIn.png" alt="drawing" height="700"/>
+<img src="Screenshots/Main2.png" alt="drawing" height="700"/>
+<img src="Screenshots/Localizations.png" alt="drawing" height="700"/>
 
 <!-- URL's -->
 [platform-image]: https://img.shields.io/badge/Platform-iOS-green.svg

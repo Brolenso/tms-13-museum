@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Museum
+
+  Created by Vyacheslav on 16.03.2023.
+  
+*/
+
+"login.screen.museum.label.text" = "Музей\nБольшого\nдворца";
+"login.screen.address.label.text" = "пр-т Уинстона Черчилля, 3\n75008 Париж, Франция";
+"login.screen.email.textfield.placeholder" = "Электронная почта";
+"login.screen.password.textfield.placeholder" = "Пароль";
+"login.screen.forgot.label.text" = "Забыли пароль?";
+"login.screen.login.button.title" = "Войти";
+"login.screen.have.not.account.label.text" = "Создать аккаунт?";
+
+"main.screen.log.out" = "Выйти";
+"main.screen.art.museum.title" = "Музей\nБольшого\nдворца";
+"main.screen.type" = "Выставка";
+"main.screen.name" = "Мастера\nновые \nи старые";
+"main.screen.exact.location" = "этаж 5";
+"main.screen.address" = "просп. Уинстона Черчилля, 3\n75008 Париж, Франция";
+"main.screen.working.hours" = "Ежедневно\n10:00 – 17:00";
+"main.screen.plan.visit.title" = "Запланировать визит";
+"main.screen.planned.visit.title" = "Визит добавлен в календарь. Отменить?";

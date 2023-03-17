@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Museum
+
+  Created by Vyacheslav on 16.03.2023.
+  
+*/
+
+"login.screen.museum.label.text" = "Musée\ndu Grand\nPalais";
+"login.screen.address.label.text" = "3 Avenue Winston Churchill\n75008 Paris, France";
+"login.screen.email.textfield.placeholder" = "Adresse électronique";
+"login.screen.password.textfield.placeholder" = "Mot de passe";
+"login.screen.forgot.label.text" = "Mot de passe oublié?";
+"login.screen.login.button.title" = "Se Connecter";
+"login.screen.have.not.account.label.text" = "Vous n'avez pas de compte?";
+
+"main.screen.log.out" =  "Décon\nnexion";
+"main.screen.art.museum.title" = "Le\nGrand\nPalais";
+"main.screen.type" = "Exposition";
+"main.screen.name" = "Maîtres\nnouveaux\net anciens";
+"main.screen.exact.location" = "étage 5";
+"main.screen.address" = "3 Avenue Winston Churchill\n75008 Paris, France";
+"main.screen.working.hours" = "Сhaque jour\n10:00 – 17:00";
+"main.screen.plan.visit.title" = "Planifier Votre Visite";
+"main.screen.planned.visit.title" = "La visite est dans votre calendrier. Annuler?";
+ 

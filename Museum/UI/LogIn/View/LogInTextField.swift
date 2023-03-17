@@ -21,12 +21,12 @@ class LogInTextField: UIControl {
     }
     
     @IBInspectable
-    var placeholder: String {
+    var localizedPlaceholder: String {
         get {
-            return textField.placeholder ?? ""
+            textField.placeholder ?? ""
         }
         set {
-            textField.attributedPlaceholder = newValue.setTextStyle(.textfield)
+            return textField.attributedPlaceholder = NSLocalizedString(newValue, comment: "").setTextStyle(.textfield)
         }
     }
     

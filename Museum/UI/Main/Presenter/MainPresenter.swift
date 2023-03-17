@@ -29,14 +29,14 @@ class MainPresenter: MainPresenterProtocol {
     let router: RouterProtocol
     var email: String
     let event = Event(
-        artMuseumTitle: "The\nArt\nMuseum",
-        type: "Exhibition",
-        name: "Masters\nold and\nnew",
-        exactLocation: "floor 5",
-        address: "3 Avenue Winston-Churchill\n75008 Paris, France",
-        workingHours: "Open daily\n10:00 – 17:00",
-        planVisitTitle: "Plan Your Visit",
-        plannedVisitTitle: "Visit is in your calendar. Cancel?"
+        artMuseumTitle: String(localized: "main.screen.art.museum.title"),
+        type: String(localized: "main.screen.type"),
+        name: String(localized: "main.screen.name"),
+        exactLocation: String(localized: "main.screen.exact.location"),
+        address: String(localized: "main.screen.address"),
+        workingHours: String(localized: "main.screen.working.hours"),
+        planVisitTitle: String(localized: "main.screen.plan.visit.title"),
+        plannedVisitTitle: String(localized: "main.screen.planned.visit.title")
     )
     
     required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String) {

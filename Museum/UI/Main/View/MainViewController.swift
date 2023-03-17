@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet var topBlackView: UIView!
     @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
+    @IBOutlet var buttonLogOut: UIButton!
     @IBOutlet var buttonEventType: UIButton!
     @IBOutlet var buttonEventName: UIButton!
     @IBOutlet var buttonDate: UIButton!
@@ -50,15 +51,67 @@ class MainViewController: UIViewController {
 extension MainViewController: MainViewProtocol {
     
     func fillElements(email: String, event: Event) {
+        buttonTheArtMuseum.setAttributedTitle(
+            event.artMuseumTitle
+                .uppercased()
+                .setTextStyle(.labelDark),
+            for: .normal
+        )
+        
         labelEmail.attributedText = email.uppercased().setTextStyle(.labelDark)
-        buttonTheArtMuseum.setAttributedTitle(event.artMuseumTitle.uppercased().setTextStyle(.labelDark), for: .normal)
-        buttonEventType.setAttributedTitle(event.type.uppercased().setTextStyle(.labelGrey), for: .normal)
-        buttonEventName.setAttributedTitle(event.name.uppercased().setTextStyle(.header), for: .normal)
-        buttonDate.setAttributedTitle(event.eventDuration.uppercased().setTextStyle(.headerDate), for: .normal)
-        buttonExactLocation.setAttributedTitle(event.exactLocation.uppercased().setTextStyle(.labelGrey), for: .normal)
-        buttonPlanVisit.setAttributedTitle(event.planVisitTitle.setTextStyle(.button), for: .normal)
-        buttonAddress.setAttributedTitle(event.address.setTextStyle(.coordinates), for: .normal)
-        buttonWorkingHours.setAttributedTitle(event.workingHours.setTextStyle(.coordinates), for: .normal)
+        
+        buttonLogOut.setAttributedTitle(
+            String(localized: "main.screen.log.out")
+                .uppercased()
+                .setTextStyle(.labelDarkRight),
+            for: .normal
+        )
+        
+        buttonEventType.setAttributedTitle(
+            event.type
+                .uppercased()
+                .setTextStyle(.labelGrey),
+            for: .normal
+        )
+
+        buttonEventName.setAttributedTitle(
+            event.name
+                .uppercased()
+                .setTextStyle(.header),
+            for: .normal
+        )
+
+        buttonDate.setAttributedTitle(
+            event.eventDuration
+                .uppercased()
+                .setTextStyle(.headerDate),
+            for: .normal
+        )
+
+        buttonExactLocation.setAttributedTitle(
+            event.exactLocation
+                .uppercased()
+                .setTextStyle(.labelGrey),
+            for: .normal
+        )
+
+        buttonPlanVisit.setAttributedTitle(
+            event.planVisitTitle
+                .setTextStyle(.button),
+            for: .normal
+        )
+
+        buttonAddress.setAttributedTitle(
+            event.address
+                .setTextStyle(.coordinates),
+            for: .normal
+        )
+
+        buttonWorkingHours.setAttributedTitle(
+            event.workingHours
+                .setTextStyle(.coordinates),
+            for: .normal
+        )
     }
     
     func setButtonWasPlanned(plannedVisitTitle: String) async {
