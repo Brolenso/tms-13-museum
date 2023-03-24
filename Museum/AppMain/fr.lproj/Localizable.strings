@@ -12,7 +12,7 @@
 "login.screen.password.textfield.placeholder" = "Mot de passe";
 "login.screen.forgot.label.text" = "Mot de passe oublié?";
 "login.screen.login.button.title" = "Se Connecter";
-"login.screen.have.not.account.label.text" = "Vous n'avez pas de compte?";
+"login.screen.have.not.account.label.text" = "Créer un compte?";
 
 "main.screen.log.out" =  "Décon\nnexion";
 "main.screen.art.museum.title" = "Le\nGrand\nPalais";
