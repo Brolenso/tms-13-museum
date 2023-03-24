@@ -24,8 +24,8 @@
 
 ## Code patterns
 - [x] Async/await
-- [x] Builder
 - [x] Router
+- [x] Builder
 - [x] Singleton
 - [x] Target-Action
 - [x] Delegate

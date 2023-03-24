@@ -19,7 +19,7 @@
 "main.screen.type" = "Выставка";
 "main.screen.name" = "Мастера\nновые \nи старые";
 "main.screen.exact.location" = "этаж 5";
-"main.screen.address" = "просп. Уинстона Черчилля, 3\n75008 Париж, Франция";
+"main.screen.address" = "пр-т Уинстона Черчилля, 3\n75008 Париж, Франция";
 "main.screen.working.hours" = "Ежедневно\n10:00 – 17:00";
 "main.screen.plan.visit.title" = "Запланировать визит";
 "main.screen.planned.visit.title" = "Визит добавлен в календарь. Отменить?";
