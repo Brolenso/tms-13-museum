@@ -20,6 +20,7 @@ App shows the museum's upcoming event, allows users to plan their visit by addin
 - [x] Generics
 - [x] Font styles
 - [x] Localized errors
+- [x] UI tests
 - [x] Deep link
 - [x] Customized animation
 - [x] TestFlight internal testing
@@ -34,7 +35,5 @@ App shows the museum's upcoming event, allows users to plan their visit by addin
 
 <img src="Screenshots/LogIn.png" width="300"/> <img src="Screenshots/Main.png" width="300"/> <img src="Screenshots/TestFlight.png" width="300"/> <img src="Screenshots/Localizations.png" width="657"/>
 
----
-
-## Contacts:
-### [LinkedIn](https://www.linkedin.com/in/vnazimko "https://www.linkedin.com/in/vnazimko") | [Telegram](https://t.me/Voleno "@Voleno") | [Email](mailto:vnazimko@gmail.com "vnazimko@gmail.com")
+### Contacts:
+#### [LinkedIn](https://www.linkedin.com/in/vnazimko "https://www.linkedin.com/in/vnazimko") | [Telegram](https://t.me/Voleno "@Voleno") | [Email](mailto:vnazimko@gmail.com "vnazimko@gmail.com")
