@@ -78,7 +78,7 @@ class MainPresenter: MainPresenterProtocol {
                     return
                 }
             } catch {
-                await view?.disableButton(buttonTitle: "Enable calendar access in Settings")
+                await view?.disableButton(buttonTitle: String(localized: "main.screen.error.calendar.access"))
                 debugPrint("Could not check calendar event. Error: \(error.localizedDescription)")
                 return
             }

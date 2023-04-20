@@ -119,7 +119,6 @@ extension MainViewController: MainViewProtocol {
         buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
         buttonPlanVisit.isEnabled = true
         buttonPlanVisit.isHighlighted = true
-
     }
    
     func setButtonPlanVisit(planVisitTitle: String) async {

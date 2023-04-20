@@ -111,27 +111,4 @@ extension LogInTextField: UITextFieldDelegate {
         return textField.resignFirstResponder()
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // we will format only e-mail-type text fields
-        guard textField.keyboardType == .emailAddress else {
-            return true
-        }
-    
-        // creating UITextRange from NSRange
-        guard let startPosition = textField.position(from: textField.beginningOfDocument, offset: range.location),
-              let endPosition = textField.position(from: textField.beginningOfDocument, offset: range.location + range.length),
-              let textRange = textField.textRange(from: startPosition, to: endPosition) else {
-            return true
-        }
-        
-        // deleting spaces by String extension
-        let editedString = string.removeSpaces()
-        
-        // replacing text in changing range
-        DispatchQueue.main.async {
-            textField.replace(textRange, withText: editedString)
-        }
-        
-        return false
-    }
 }

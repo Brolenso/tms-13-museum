@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Museum
+
+  Created by Vyacheslav on 20.04.2023.
+  
+*/
+
+NSCalendarsUsageDescription = "The calendar is used to plan visits to the museum";

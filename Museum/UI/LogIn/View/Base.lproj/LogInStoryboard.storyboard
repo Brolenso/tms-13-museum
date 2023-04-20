@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fU-8c-qPV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fU-8c-qPV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -46,6 +47,7 @@ San Francisco, CA 94103</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-0b-wG0" userLabel="Email Text Field" customClass="LogInTextField" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="508" width="250" height="42"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="login-text-field"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="9Xs-u9-94k"/>
                                             <constraint firstAttribute="height" constant="42" id="pMg-ti-7Vi"/>
@@ -64,6 +66,7 @@ San Francisco, CA 94103</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adF-ls-H1E" userLabel="Password Text Field" customClass="LogInTextField" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="551" width="250" height="42"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="password-text-field"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="x9z-tu-FD2"/>
                                         </constraints>
@@ -77,6 +80,7 @@ San Francisco, CA 94103</string>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LogInLabelTappable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="596" width="250" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="forgot-password-label"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Gbr-nR-PN8"/>
@@ -91,6 +95,7 @@ San Francisco, CA 94103</string>
                                     </view>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9u-K2-9Aj" userLabel="Log In Button">
                                         <rect key="frame" x="71.666666666666686" y="644" width="250" height="42"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="login-button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="hhi-i1-thu"/>
                                         </constraints>
@@ -118,6 +123,7 @@ San Francisco, CA 94103</string>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LogInLabelTappable" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="689" width="250" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="create-account-label"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="7pJ-pt-UHP"/>

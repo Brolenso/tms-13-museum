@@ -23,4 +23,5 @@
 "main.screen.working.hours" = "Сhaque jour\n10:00 – 17:00";
 "main.screen.plan.visit.title" = "Planifier Votre Visite";
 "main.screen.planned.visit.title" = "La visite est dans votre calendrier. Annuler?";
- 
+"main.screen.error.calendar.access" = "Accès au calendrier requis";
+
