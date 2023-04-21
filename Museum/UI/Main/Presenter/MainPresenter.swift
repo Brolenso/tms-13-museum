@@ -10,9 +10,9 @@ import EventKit
 
 protocol MainViewProtocol: AnyObject {
     func fillElements(email: String, event: Event)
-    func setButtonPlanVisit(planVisitTitle: String) async
-    func setButtonWasPlanned(plannedVisitTitle: String) async
-    func disableButton(buttonTitle: String) async
+    func setButtonPlanVisit(planVisitTitle: String)
+    func setButtonWasPlanned(plannedVisitTitle: String)
+    func disableButton(buttonTitle: String) 
 }
 
 protocol MainPresenterProtocol: AnyObject {
@@ -70,15 +70,21 @@ class MainPresenter: MainPresenterProtocol {
                     endDate: event.endDate
                 ) {
                     // calendar event is already exist
-                    await view?.setButtonWasPlanned(plannedVisitTitle: event.plannedVisitTitle)
+                    await MainActor.run {
+                        view?.setButtonWasPlanned(plannedVisitTitle: event.plannedVisitTitle)
+                    }
                     return
                 } else {
                     // calendar event is not exist
-                    await view?.setButtonPlanVisit(planVisitTitle: event.planVisitTitle)
+                    await MainActor.run {
+                        view?.setButtonPlanVisit(planVisitTitle: event.planVisitTitle)
+                    }
                     return
                 }
             } catch {
-                await view?.disableButton(buttonTitle: String(localized: "main.screen.error.calendar.access"))
+                await MainActor.run {
+                    view?.disableButton(buttonTitle: String(localized: "main.screen.error.calendar.access"))
+                }
                 debugPrint("Could not check calendar event. Error: \(error.localizedDescription)")
                 return
             }
@@ -117,7 +123,9 @@ class MainPresenter: MainPresenterProtocol {
                         existingEvent.endDate == event.endDate
                     }
                     try filteredEvents.forEach { try eventStore.remove($0, span: .thisEvent) }
-                    await view?.setButtonPlanVisit(planVisitTitle: event.planVisitTitle)
+                    await MainActor.run {
+                        view?.setButtonPlanVisit(planVisitTitle: event.planVisitTitle)
+                    }
                 } else {
                     // add event
                     let ekEvent = EKEvent(eventStore: eventStore)
@@ -129,7 +137,9 @@ class MainPresenter: MainPresenterProtocol {
                     ekEvent.endDate = event.endDate
                     ekEvent.calendar = eventStore.defaultCalendarForNewEvents
                     try eventStore.save(ekEvent, span: .thisEvent)
-                    await view?.setButtonWasPlanned(plannedVisitTitle: event.plannedVisitTitle)
+                    await MainActor.run {
+                        view?.setButtonWasPlanned(plannedVisitTitle: event.plannedVisitTitle)
+                    }
                 }
             } catch {
                 debugPrint("Error: \(error.localizedDescription)")

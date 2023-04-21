@@ -19,7 +19,6 @@
 		1153587D29F122B800944101 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1153587A29F1208800944101 /* InfoPlist.strings */; };
 		115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */; };
 		1163021029F1119E0031362C /* MuseumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163020F29F1119E0031362C /* MuseumUITests.swift */; };
-		1163021229F1119E0031362C /* MuseumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163021129F1119E0031362C /* MuseumUITestsLaunchTests.swift */; };
 		116B4DBD29A89D3000E7E81A /* CATransition+types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B4DBC29A89D3000E7E81A /* CATransition+types.swift */; };
 		11721EFD296040A900767FBC /* String+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFC296040A900767FBC /* String+textStyle.swift */; };
 		1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199D2E9294F034300FEC95B /* LogInTextField.swift */; };
@@ -63,10 +62,9 @@
 		1153587C29F120AC00944101 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11594F7A29A5392400709641 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+shadow.swift"; sourceTree = "<group>"; };
-		1163020D29F1119E0031362C /* MuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1163020F29F1119E0031362C /* MuseumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumUITests.swift; sourceTree = "<group>"; };
-		1163021129F1119E0031362C /* MuseumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		116B4DBC29A89D3000E7E81A /* CATransition+types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+types.swift"; sourceTree = "<group>"; };
+		1171F75F29F156540011465D /* MuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MuseumUITests.xctest; path = "/Users/vyacheslav/Library/Mobile Documents/com~apple~CloudDocs/XCode/08.TMS/00-Projects/Museum/build/Debug-iphoneos/MuseumUITests.xctest"; sourceTree = "<absolute>"; };
 		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
 		1199D2E9294F034300FEC95B /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
 		119F427B29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogInStoryboard.storyboard; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				11E809CB29882255005ACA3C /* Museum.app */,
 				1163020E29F1119E0031362C /* MuseumUITests */,
 				11594F7929A5392400709641 /* Frameworks */,
-				1163020D29F1119E0031362C /* MuseumUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				1163020F29F1119E0031362C /* MuseumUITests.swift */,
-				1163021129F1119E0031362C /* MuseumUITestsLaunchTests.swift */,
 			);
 			path = MuseumUITests;
 			sourceTree = "<group>";
@@ -297,7 +293,7 @@
 			);
 			name = MuseumUITests;
 			productName = MuseumUITests;
-			productReference = 1163020D29F1119E0031362C /* MuseumUITests.xctest */;
+			productReference = 1171F75F29F156540011465D /* MuseumUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -418,7 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1163021229F1119E0031362C /* MuseumUITestsLaunchTests.swift in Sources */,
 				1163021029F1119E0031362C /* MuseumUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
