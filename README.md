@@ -36,4 +36,4 @@ App shows the museum's upcoming event, allows users to plan their visit by addin
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
 
 ### Contacts:
-#### [LinkedIn](https://www.linkedin.com/in/vnazimko "https://www.linkedin.com/in/vnazimko") | [Telegram](https://t.me/Voleno "@Voleno") | [Email](mailto:vnazimko@gmail.com "vnazimko@gmail.com")
+[LinkedIn](https://www.linkedin.com/in/vnazimko "https://www.linkedin.com/in/vnazimko") | [Telegram](https://t.me/Voleno "@Voleno") | [Email](mailto:vnazimko@gmail.com "vnazimko@gmail.com")
