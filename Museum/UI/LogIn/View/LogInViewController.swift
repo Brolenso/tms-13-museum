@@ -45,7 +45,6 @@ class LogInViewController: UIViewController, LogInViewProtocol {
         emailTextField.closureLogInTap = self.closureLogInTap
         passwordTextField.closureLogInTap = self.closureLogInTap
         
-        // no spaces in this field
         emailTextField.keyboardType = .emailAddress
         
         // option 3: target - action from code

@@ -186,7 +186,7 @@ San Francisco, CA 94103</string>
                             <nil key="backgroundColor"/>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="Y1t-Tm-a77" appends="YES" id="Nld-DN-1oc"/>
+                            <outletCollection property="gestureRecognizers" destination="Y1t-Tm-a77" appends="YES" id="QEa-EW-FWM"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="TyL-Pf-ddG"/>

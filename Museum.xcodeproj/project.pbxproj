@@ -31,7 +31,7 @@
 		11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B02986C3D900E55018 /* LogInPresenter.swift */; };
 		11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */; };
 		11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B52987023D00E55018 /* MainPresenter.swift */; };
-		11E5F4B529C0443400B979B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E5F4B429C0443400B979B4 /* GoogleService-Info.plist */; };
+		11E2C9A629FE75C900BDED92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E2C9A529FE75C900BDED92 /* GoogleService-Info.plist */; };
 		11E5F4BC29C04D4B00B979B4 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 11E5F4BB29C04D4B00B979B4 /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,6 @@
 		115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+shadow.swift"; sourceTree = "<group>"; };
 		1163020F29F1119E0031362C /* MuseumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumUITests.swift; sourceTree = "<group>"; };
 		116B4DBC29A89D3000E7E81A /* CATransition+types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+types.swift"; sourceTree = "<group>"; };
-		1171F75F29F156540011465D /* MuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MuseumUITests.xctest; path = "/Users/vyacheslav/Library/Mobile Documents/com~apple~CloudDocs/XCode/08.TMS/00-Projects/Museum/build/Debug-iphoneos/MuseumUITests.xctest"; sourceTree = "<absolute>"; };
 		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
 		1199D2E9294F034300FEC95B /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
 		119F427B29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogInStoryboard.storyboard; sourceTree = "<group>"; };
@@ -77,7 +76,8 @@
 		11C8B1B02986C3D900E55018 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		11C8B1B52987023D00E55018 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		11E5F4B429C0443400B979B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11E2C9A429FE67A700BDED92 /* MuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11E2C9A529FE75C900BDED92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11E809CB29882255005ACA3C /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +115,7 @@
 				11E809CB29882255005ACA3C /* Museum.app */,
 				1163020E29F1119E0031362C /* MuseumUITests */,
 				11594F7929A5392400709641 /* Frameworks */,
+				11E2C9A429FE67A700BDED92 /* MuseumUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,7 +173,7 @@
 				112C57D529C36ED600A4354E /* Localizable.strings */,
 				1109F738294DF41A006AB3CE /* Info.plist */,
 				1153587A29F1208800944101 /* InfoPlist.strings */,
-				11E5F4B429C0443400B979B4 /* GoogleService-Info.plist */,
+				11E2C9A529FE75C900BDED92 /* GoogleService-Info.plist */,
 				119F427329C364FF0048761B /* LaunchScreen.storyboard */,
 				1109F72A294DF419006AB3CE /* AppDelegate.swift */,
 				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
@@ -293,7 +294,7 @@
 			);
 			name = MuseumUITests;
 			productName = MuseumUITests;
-			productReference = 1171F75F29F156540011465D /* MuseumUITests.xctest */;
+			productReference = 11E2C9A429FE67A700BDED92 /* MuseumUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -345,13 +346,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1108CD6F296B0DEC00A77169 /* Montserrat-Regular.ttf in Resources */,
+				11E2C9A629FE75C900BDED92 /* GoogleService-Info.plist in Resources */,
 				1153587D29F122B800944101 /* InfoPlist.strings in Resources */,
 				1109F734294DF41A006AB3CE /* Assets.xcassets in Resources */,
 				119F427629C365420048761B /* MainStoryboard.storyboard in Resources */,
 				112C57D329C36ED600A4354E /* Localizable.strings in Resources */,
 				119F427129C364FF0048761B /* LaunchScreen.storyboard in Resources */,
 				1109F732294DF419006AB3CE /* LogInStoryboard.storyboard in Resources */,
-				11E5F4B529C0443400B979B4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,7 @@
 import Foundation
 
-// name of JSON-file in any type for universal generic-based JSON service
 protocol JsonFileStorableProtocol {
+    // name of any type JSON-file for universal generic-based JSON service
     static var jsonFileName: String { get }
 }
 
