@@ -10,6 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
+    private let jsonService = JsonService()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
@@ -17,11 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootNavigationController = UINavigationController()
         rootNavigationController.navigationBar.isHidden = true
 
-        let moduleBuilder = ModuleBuilder()
+        let moduleBuilder = ModuleBuilder(jsonService: jsonService)
         let router = Router(moduleBuilder: moduleBuilder, navigationController: rootNavigationController)
                 
         // if user found in JSON, than show main screen, else show login screen
-        if let user = JsonService().read(type: User.self), user.email.count > 0 {
+        if let user = jsonService.read(type: User.self), user.email.count > 0 {
             User.current.setUser(email: user.email, password: user.password)
             router.showMainViewController(email: user.email, withAnimation: .systemDefault)
         } else {
