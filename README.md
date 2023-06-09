@@ -35,4 +35,4 @@ Museum Walk - pet-project application, that shows the museum's upcoming event, a
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
 
 **Contacts:**  
-[LinkedIn](https://www.linkedin.com/in/vnazimko "https://www.linkedin.com/in/vnazimko") | [Telegram](https://t.me/Voleno "@Voleno") | [Email](mailto:vnazimko@gmail.com "vnazimko@gmail.com")
+[LinkedIn](https://www.linkedin.com/in/bytepixelmelody "https://www.linkedin.com/in/bytepixelmelody") | [Telegram](https://t.me/BytePixelMelody "@BytePixelMelody") | [Email](mailto:bytepixelmelody@gmail.com "bytepixelmelody@gmail.com")
