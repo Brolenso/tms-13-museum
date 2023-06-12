@@ -32,6 +32,7 @@ Museum Walk - pet-project application, that shows the museum's upcoming event, a
 - [x] Target-Action
 - [x] Delegate
 
+## Screenshots
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
 
 **Contacts:**  
