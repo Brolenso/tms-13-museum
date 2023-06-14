@@ -1,8 +1,16 @@
 ![Platform: iOS](https://img.shields.io/badge/Platform-iOS-green.svg)
 
-## <img src="Screenshots/MuseumAppIcon.png" width="100"/> 
-# Museum Walk App
-Museum Walk - pet-project application, that shows the museum's upcoming event, allows users to plan their visit by adding event to their calendar. App is localized into English, French and Russian, supports any screen orientation, can be opened via deeplink, has build-in Google Firebase Crashlytics, uploaded to TestFlight Internal Testing.
+  <table>
+    <tr>
+      <td>
+        <img src="Screenshots/MuseumAppIcon.png" alt="Museum App Icon">
+      </td>
+      <td>
+        <h1>Museum Walk App</h1>
+        <p>Museum Walk - pet-project application, that shows the museum's upcoming event, allows users to plan their visit by adding event to their calendar. App is localized into English, French and Russian, supports any screen orientation, can be opened via deeplink, has build-in Google Firebase Crashlytics, uploaded to TestFlight Internal Testing.</p>
+      </td>
+    </tr>
+  </table>
 
 ## Architectural pattern
 - [x] MVP + Router
