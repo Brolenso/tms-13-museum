@@ -31,7 +31,7 @@
 - [x] Localized errors
 - [x] UI tests
 - [x] Deep link
-- [x] Customized animation
+- [x] Customized animations
 - [x] TestFlight internal testing
 
 ## Code patterns
