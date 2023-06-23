@@ -26,6 +26,7 @@
 - [x] Design moved from Figma
 - [x] Custom views by code with @IBDesignable and @IBInspectable
 - [x] JSON service
+- [x] Async/await
 - [x] Generics
 - [x] Font styles
 - [x] Localized errors
@@ -35,11 +36,8 @@
 - [x] TestFlight internal testing
 
 ## Code patterns
-- [x] Async/await
 - [x] Builder
 - [x] Singleton
-- [x] Target-Action
-- [x] Delegate
 
 ## Screenshots
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
