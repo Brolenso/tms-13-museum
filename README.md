@@ -7,7 +7,7 @@
       </td>
       <td>
         <h1>Museum Walk App</h1>
-        <p>Museum Walk - pet-project application, that shows the museum's upcoming event, allows users to plan their visit by adding event to their calendar. App is localized into English, French and Russian, supports any screen orientation, can be opened via deeplink, has build-in Google Firebase Crashlytics, uploaded to TestFlight Internal Testing.</p>
+        <p>Museum Walk - pet-project application, that shows the museum's upcoming event, allows users to plan their visit by adding event to their calendar. App is localized into English, French and Russian, supports any screen orientation, can be opened via deeplink, has build-in Google Firebase Crashlytics, uploaded to Apple TestFlight Internal Testing.</p>
       </td>
     </tr>
   </table>
