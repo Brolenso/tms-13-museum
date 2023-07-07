@@ -16,10 +16,10 @@ protocol LogInPresenterProtocol: AnyObject {
     func loginUser(email: String, password: String)
 }
 
-class LogInPresenter: LogInPresenterProtocol {
-    weak var view: LogInViewProtocol?
-    let jsonService: JsonServiceProtocol
-    let router: RouterProtocol
+final class LogInPresenter: LogInPresenterProtocol {
+    private weak var view: LogInViewProtocol?
+    private let jsonService: JsonServiceProtocol
+    private let router: RouterProtocol
     
     required init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol) {
         self.view = view

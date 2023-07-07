@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, LogInViewProtocol {
+final class LogInViewController: UIViewController, LogInViewProtocol {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var labelMuseum: UILabel!
@@ -27,7 +27,7 @@ class LogInViewController: UIViewController, LogInViewProtocol {
         addTopSpace()
     }
        
-    func setupUiTexts() {
+    private func setupUiTexts() {
         let textMuseum = String(localized: "login.screen.museum.label.text")
         let attributedTextMuseum = textMuseum.uppercased().setTextStyle(.title)
         labelMuseum.attributedText = attributedTextMuseum
@@ -74,7 +74,7 @@ class LogInViewController: UIViewController, LogInViewProtocol {
  
     // option 3: target - action from code
     @objc
-    func emailDonePressed(_ sender: LogInTextField) {
+    private func emailDonePressed(_ sender: LogInTextField) {
         logIn()
     }
     

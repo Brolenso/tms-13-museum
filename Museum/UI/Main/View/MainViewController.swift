@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     @IBOutlet var topBlackView: UIView!
     @IBOutlet var buttonTheArtMuseum: UIButton!

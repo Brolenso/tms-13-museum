@@ -13,7 +13,7 @@ protocol ModuleBuilderProtocol {
 }
 
 // build MVP modules and return UIViewController
-class ModuleBuilder: ModuleBuilderProtocol {
+final class ModuleBuilder: ModuleBuilderProtocol {
 
     private let jsonService: JsonService
     

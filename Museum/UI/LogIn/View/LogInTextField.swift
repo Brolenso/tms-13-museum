@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-class LogInTextField: UIControl {
+final class LogInTextField: UIControl {
 
     // closure to tap button in other class
     public var closureLogInTap: () -> () = {  }

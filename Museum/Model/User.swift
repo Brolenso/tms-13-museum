@@ -1,5 +1,5 @@
 // singletone
-class User: Codable {
+final class User: Codable {
     private(set) var email: String
     private(set) var password: String
     

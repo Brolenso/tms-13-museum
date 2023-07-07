@@ -10,7 +10,7 @@ protocol JsonServiceProtocol {
     func write<T: Codable & JsonFileStorableProtocol>(dataObject: T)
 }
 
-class JsonService: JsonServiceProtocol {
+final class JsonService: JsonServiceProtocol {
     // read from JSON any Codable & JsonFileStorable object
     public func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T? {
         do {

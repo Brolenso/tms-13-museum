@@ -23,12 +23,12 @@ protocol MainPresenterProtocol: AnyObject {
     func planVisitTapped(sender: UIButton)
 }
 
-class MainPresenter: MainPresenterProtocol {
-    weak var view: MainViewProtocol?
-    let jsonService: JsonServiceProtocol
-    let router: RouterProtocol
-    var email: String
-    let event = Event(
+final class MainPresenter: MainPresenterProtocol {
+    private weak var view: MainViewProtocol?
+    private let jsonService: JsonServiceProtocol
+    private let router: RouterProtocol
+    private var email: String
+    private let event = Event(
         artMuseumTitle: String(localized: "main.screen.art.museum.title"),
         type: String(localized: "main.screen.type"),
         name: String(localized: "main.screen.name"),
