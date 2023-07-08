@@ -18,7 +18,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var dontHaveAnAccount: LogInLabelTappable!
     
-    var presenter: LogInPresenterProtocol!
+    var presenter: LogInPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +138,6 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     private func logIn() {
         let email = emailTextField.text
         let password = passwordTextField.text
-        presenter.loginUser(email: email, password: password)
+        presenter?.loginUser(email: email, password: password)
     }
 }

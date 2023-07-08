@@ -21,30 +21,30 @@ final class MainViewController: UIViewController {
     @IBOutlet var buttonAddress: UIButton!
     @IBOutlet var buttonWorkingHours: UIButton!
     
-    var presenter: MainPresenterProtocol!
+    var presenter: MainPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presenter.viewWasLoaded()
+        presenter?.viewWasLoaded()
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.presenter.checkEvent()
+            self?.presenter?.checkEvent()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.checkEvent()
+        presenter?.checkEvent()
     }
 
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
-        presenter.logout()
+        presenter?.logout()
     }
     
     @IBAction func buttonPlanVisitTapped(_ sender: UIButton) {
-        presenter.planVisitTapped(sender: sender)
+        presenter?.planVisitTapped(sender: sender)
     }
 }
 
