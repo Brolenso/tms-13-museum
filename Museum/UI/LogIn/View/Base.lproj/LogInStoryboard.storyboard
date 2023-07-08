@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAND PALAIS MUSEUM" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-rH-O7X" userLabel="Museum name">
-                                        <rect key="frame" x="69.666666666666686" y="300" width="252" height="143"/>
+                                        <rect key="frame" x="69.666666666666686" y="339" width="252" height="143"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="143" id="699-2S-8j8"/>
                                         </constraints>
@@ -34,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxn-AC-fAg" userLabel="Museum adress">
-                                        <rect key="frame" x="72.666666666666686" y="446" width="249" height="42"/>
+                                        <rect key="frame" x="72.666666666666686" y="485" width="249" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="vfr-B7-sVH"/>
                                         </constraints>
@@ -44,8 +44,8 @@ San Francisco, CA 94103</string>
                                         <color key="textColor" name="light-text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-0b-wG0" userLabel="Email Text Field" customClass="LogInTextField" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="71.666666666666686" y="508" width="250" height="42"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-0b-wG0" userLabel="Email Text Field" customClass="MuseumTextField" customModule="Museum" customModuleProvider="target">
+                                        <rect key="frame" x="71.666666666666686" y="547" width="250" height="42"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <accessibility key="accessibilityConfiguration" identifier="login-text-field"/>
                                         <constraints>
@@ -58,13 +58,13 @@ San Francisco, CA 94103</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="8q8-GB-M9E" userLabel="Line separator">
-                                        <rect key="frame" x="71.666666666666686" y="550" width="250" height="1"/>
+                                        <rect key="frame" x="71.666666666666686" y="589" width="250" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="gmj-Yf-bQS"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adF-ls-H1E" userLabel="Password Text Field" customClass="LogInTextField" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="71.666666666666686" y="551" width="250" height="42"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adF-ls-H1E" userLabel="Password Text Field" customClass="MuseumTextField" customModule="Museum" customModuleProvider="target">
+                                        <rect key="frame" x="71.666666666666686" y="590" width="250" height="42"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <accessibility key="accessibilityConfiguration" identifier="password-text-field"/>
                                         <constraints>
@@ -79,7 +79,7 @@ San Francisco, CA 94103</string>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="LogInLabelTappable" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="71.666666666666686" y="596" width="250" height="24"/>
+                                        <rect key="frame" x="71.666666666666686" y="635" width="250" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="forgot-password-label"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -94,7 +94,7 @@ San Francisco, CA 94103</string>
                                         </connections>
                                     </view>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9u-K2-9Aj" userLabel="Log In Button">
-                                        <rect key="frame" x="71.666666666666686" y="644" width="250" height="42"/>
+                                        <rect key="frame" x="71.666666666666686" y="683" width="250" height="42"/>
                                         <accessibility key="accessibilityConfiguration" identifier="login-button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="hhi-i1-thu"/>
@@ -122,7 +122,7 @@ San Francisco, CA 94103</string>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-kn-H75" userLabel="Label No account" customClass="LogInLabelTappable" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="71.666666666666686" y="689" width="250" height="24"/>
+                                        <rect key="frame" x="71.666666666666686" y="728" width="250" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="create-account-label"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -133,39 +133,36 @@ San Francisco, CA 94103</string>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="login.screen.have.not.account.label.text"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="CEv-pr-BbJ" appends="YES" id="zZT-kG-Moh"/>
+                                            <outletCollection property="gestureRecognizers" destination="CEv-pr-BbJ" appends="YES" id="C4P-Sf-fcz"/>
                                         </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="yfP-rH-O7X" firstAttribute="leading" secondItem="aOC-0b-wG0" secondAttribute="leading" constant="-2" id="0Pc-Ld-fEk"/>
                                     <constraint firstItem="8q8-GB-M9E" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="2wt-Cp-iuU"/>
+                                    <constraint firstItem="Z9u-K2-9Aj" firstAttribute="centerX" secondItem="XAe-e8-PUg" secondAttribute="centerX" id="4pm-9F-2Qj"/>
                                     <constraint firstItem="pxn-AC-fAg" firstAttribute="top" secondItem="yfP-rH-O7X" secondAttribute="bottom" constant="3" id="8Vw-8T-gYX"/>
                                     <constraint firstItem="T4I-a4-JxA" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="ATw-cr-Fqt"/>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="centerX" secondItem="dGa-RN-lZj" secondAttribute="centerX" id="B3F-Je-2ZN"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="top" secondItem="Z9u-K2-9Aj" secondAttribute="bottom" constant="3" id="B4l-wC-9Qg"/>
-                                    <constraint firstItem="NNG-kn-H75" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="Ck7-s2-HL0"/>
+                                    <constraint firstItem="NNG-kn-H75" firstAttribute="centerX" secondItem="Z9u-K2-9Aj" secondAttribute="centerX" id="B6z-fk-FyS"/>
                                     <constraint firstItem="XAe-e8-PUg" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" constant="3" id="FSo-Zq-WFl"/>
-                                    <constraint firstItem="XAe-e8-PUg" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="N8O-4W-J3d"/>
+                                    <constraint firstItem="NNG-kn-H75" firstAttribute="width" secondItem="Z9u-K2-9Aj" secondAttribute="width" id="GyG-d9-tf7"/>
+                                    <constraint firstItem="Z9u-K2-9Aj" firstAttribute="width" secondItem="XAe-e8-PUg" secondAttribute="width" id="Ji7-JQ-nhB"/>
                                     <constraint firstItem="pxn-AC-fAg" firstAttribute="leading" secondItem="yfP-rH-O7X" secondAttribute="leading" constant="3" id="Nou-AB-KSI"/>
-                                    <constraint firstItem="XAe-e8-PUg" firstAttribute="trailing" secondItem="adF-ls-H1E" secondAttribute="trailing" id="RYh-ZR-QUY"/>
                                     <constraint firstItem="yfP-rH-O7X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="T4I-a4-JxA" secondAttribute="top" constant="30" id="SRi-fQ-lzM"/>
-                                    <constraint firstItem="NNG-kn-H75" firstAttribute="leading" secondItem="Z9u-K2-9Aj" secondAttribute="leading" id="UOl-pI-sLf"/>
-                                    <constraint firstItem="pxn-AC-fAg" firstAttribute="trailing" secondItem="aOC-0b-wG0" secondAttribute="trailing" id="UrL-Sy-iyv"/>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="bottom" secondItem="8q8-GB-M9E" secondAttribute="top" id="Weg-va-dkk"/>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="top" secondItem="pxn-AC-fAg" secondAttribute="bottom" constant="20" id="XTl-99-Dwd"/>
-                                    <constraint firstItem="T4I-a4-JxA" firstAttribute="top" secondItem="yfP-rH-O7X" secondAttribute="top" constant="-300" placeholder="YES" id="Zgd-aT-76K"/>
-                                    <constraint firstItem="Z9u-K2-9Aj" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="iL2-dv-CFU"/>
-                                    <constraint firstItem="T4I-a4-JxA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="aOC-0b-wG0" secondAttribute="leading" constant="-20" id="idG-g2-KMf"/>
-                                    <constraint firstItem="aOC-0b-wG0" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="T4I-a4-JxA" secondAttribute="trailing" constant="-20" id="kez-9o-36D"/>
+                                    <constraint firstItem="pxn-AC-fAg" firstAttribute="trailing" secondItem="yfP-rH-O7X" secondAttribute="trailing" id="eKx-XT-uKm"/>
+                                    <constraint firstItem="XAe-e8-PUg" firstAttribute="centerX" secondItem="adF-ls-H1E" secondAttribute="centerX" id="gFS-bE-xm6"/>
+                                    <constraint firstItem="XAe-e8-PUg" firstAttribute="width" secondItem="adF-ls-H1E" secondAttribute="width" id="hfI-ey-SZY"/>
                                     <constraint firstItem="T4I-a4-JxA" firstAttribute="bottom" secondItem="NNG-kn-H75" secondAttribute="bottom" constant="20" id="mj3-7g-HHl"/>
                                     <constraint firstItem="adF-ls-H1E" firstAttribute="width" secondItem="aOC-0b-wG0" secondAttribute="width" id="ojt-vG-pYe"/>
                                     <constraint firstItem="adF-ls-H1E" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="pqB-WV-ryK"/>
+                                    <constraint firstItem="Z9u-K2-9Aj" firstAttribute="top" secondItem="XAe-e8-PUg" secondAttribute="bottom" constant="24" id="qXW-qE-TTH"/>
                                     <constraint firstItem="yfP-rH-O7X" firstAttribute="trailing" secondItem="aOC-0b-wG0" secondAttribute="trailing" id="szp-HO-WGi"/>
                                     <constraint firstItem="adF-ls-H1E" firstAttribute="top" secondItem="8q8-GB-M9E" secondAttribute="bottom" id="tOq-3A-NkA"/>
                                     <constraint firstItem="8q8-GB-M9E" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="ttj-Bm-zDb"/>
-                                    <constraint firstItem="Z9u-K2-9Aj" firstAttribute="centerX" secondItem="aOC-0b-wG0" secondAttribute="centerX" id="w8L-iJ-UxM"/>
-                                    <constraint firstItem="Z9u-K2-9Aj" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" constant="51" id="whf-pV-nOL"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="T4I-a4-JxA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="EPT-ce-JX4"/>
@@ -175,6 +172,7 @@ San Francisco, CA 94103</string>
                         <constraints>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" id="8yJ-Us-huj"/>
                             <constraint firstItem="70l-7m-ohK" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" constant="25" id="Aw5-mZ-kqs"/>
+                            <constraint firstItem="T4I-a4-JxA" firstAttribute="height" secondItem="dGa-RN-lZj" secondAttribute="height" priority="249" constant="-80" id="EjL-wp-OA8"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" id="Fbg-qI-Ihh"/>
                             <constraint firstItem="70l-7m-ohK" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" constant="-70" id="HAK-tr-4JU"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="leading" secondItem="64N-mu-MDv" secondAttribute="leading" id="LdV-Qe-2Gb"/>
@@ -193,7 +191,6 @@ San Francisco, CA 94103</string>
                     <connections>
                         <outlet property="dontHaveAnAccount" destination="NNG-kn-H75" id="ENt-TB-DZr"/>
                         <outlet property="emailTextField" destination="aOC-0b-wG0" id="QMf-0S-2nt"/>
-                        <outlet property="forgotPasswordLabel" destination="XAe-e8-PUg" id="MCi-fV-blz"/>
                         <outlet property="labelAddress" destination="pxn-AC-fAg" id="MiG-6W-LOI"/>
                         <outlet property="labelMuseum" destination="yfP-rH-O7X" id="jRp-0b-p8x"/>
                         <outlet property="logInButton" destination="Z9u-K2-9Aj" id="nGL-6i-Cv6"/>

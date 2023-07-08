@@ -31,21 +31,17 @@ final class LogInLabelTappable: UIView {
         }
     }
     
-    // runs when we create view by code: let myView = CustomView(frame: .zero)
+    // runs when we create view by code
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView()
     }
     
-    // runs if we placed view on storyboard
+    // runs if we place view on storyboard
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    // runs when view is loaded from storyboard
-    override func awakeFromNib() {
-        super.awakeFromNib()
+        
         setupView()
     }
     

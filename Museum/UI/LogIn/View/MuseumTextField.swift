@@ -1,10 +1,8 @@
 import UIKit
 
 @IBDesignable
-final class LogInTextField: UIControl {
+final class MuseumTextField: UIControl {
 
-    // closure to tap button in other class
-    public var closureLogInTap: () -> () = {  }
     private var textField = UITextField(frame: .zero)
         
     public var text: String {
@@ -40,21 +38,16 @@ final class LogInTextField: UIControl {
         }
     }
     
-    // runs when we create view by code: let myView = CustomView(frame: .zero)
+    // runs when we create view by code
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView()
     }
     
-    // runs if we placed view on storyboard
+    // runs if we place view on storyboard
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    // runs when view is loaded from storyboard
-    override func awakeFromNib() {
-        super.awakeFromNib()
         
         setupView()
     }
@@ -86,7 +79,7 @@ final class LogInTextField: UIControl {
     }
     
     @objc
-    func textFieldViewTapped(_ sender: UITapGestureRecognizer) {
+    private func textFieldViewTapped(_ sender: UITapGestureRecognizer) {
         textField.becomeFirstResponder()
     }
     
@@ -97,19 +90,13 @@ final class LogInTextField: UIControl {
     
 }
 
-extension LogInTextField: UITextFieldDelegate {
+extension MuseumTextField: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        // calling tap to logInButton in LoginViewController class
-        
-        // option 1: closures
-        // closureLogInTap()
-        
         // option 2: target - action from storyboard
         sendActions(for: .editingDidEndOnExit)        
 
-        // hide keyboard
+        // call textFieldShouldReturn and hide keyboard
         return textField.resignFirstResponder()
     }
     

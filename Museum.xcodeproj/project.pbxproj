@@ -21,7 +21,7 @@
 		1163021029F1119E0031362C /* MuseumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163020F29F1119E0031362C /* MuseumUITests.swift */; };
 		116B4DBD29A89D3000E7E81A /* CATransition+types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B4DBC29A89D3000E7E81A /* CATransition+types.swift */; };
 		11721EFD296040A900767FBC /* String+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFC296040A900767FBC /* String+textStyle.swift */; };
-		1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199D2E9294F034300FEC95B /* LogInTextField.swift */; };
+		1199D2EA294F034300FEC95B /* MuseumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199D2E9294F034300FEC95B /* MuseumTextField.swift */; };
 		119F427129C364FF0048761B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427329C364FF0048761B /* LaunchScreen.storyboard */; };
 		119F427629C365420048761B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427829C365420048761B /* MainStoryboard.storyboard */; };
 		11A50E682A59C2E10080064A /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A50E672A59C2E10080064A /* ErrorHandler.swift */; };
@@ -66,7 +66,7 @@
 		1163020F29F1119E0031362C /* MuseumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumUITests.swift; sourceTree = "<group>"; };
 		116B4DBC29A89D3000E7E81A /* CATransition+types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+types.swift"; sourceTree = "<group>"; };
 		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
-		1199D2E9294F034300FEC95B /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
+		1199D2E9294F034300FEC95B /* MuseumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumTextField.swift; sourceTree = "<group>"; };
 		119F427B29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		119F427C29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		119F427D29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			children = (
 				1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */,
 				1109F72E294DF419006AB3CE /* LogInViewController.swift */,
-				1199D2E9294F034300FEC95B /* LogInTextField.swift */,
+				1199D2E9294F034300FEC95B /* MuseumTextField.swift */,
 				1121DE452950382700129C08 /* LogInLabelTappable.swift */,
 			);
 			path = View;
@@ -402,7 +402,7 @@
 				116B4DBD29A89D3000E7E81A /* CATransition+types.swift in Sources */,
 				1109F72F294DF419006AB3CE /* LogInViewController.swift in Sources */,
 				11A50E682A59C2E10080064A /* ErrorHandler.swift in Sources */,
-				1199D2EA294F034300FEC95B /* LogInTextField.swift in Sources */,
+				1199D2EA294F034300FEC95B /* MuseumTextField.swift in Sources */,
 				11171FE52997BCC30089C58A /* Router.swift in Sources */,
 				11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */,
 				11C6A2D429A68881009B8836 /* Event.swift in Sources */,

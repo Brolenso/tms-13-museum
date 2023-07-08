@@ -12,9 +12,8 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var labelMuseum: UILabel!
     @IBOutlet var labelAddress: UILabel!
-    @IBOutlet var emailTextField: LogInTextField!
-    @IBOutlet var passwordTextField: LogInTextField!
-    @IBOutlet var forgotPasswordLabel: LogInLabelTappable!
+    @IBOutlet var emailTextField: MuseumTextField!
+    @IBOutlet var passwordTextField: MuseumTextField!
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var dontHaveAnAccount: LogInLabelTappable!
     
@@ -22,9 +21,22 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViewController()
         setupUiTexts()
-        setupCustomTextfields()
-        addTopSpace()
+    }
+    
+    private func setupViewController() {
+        emailTextField.keyboardType = .emailAddress
+        
+        // option 1: target - action from code
+        emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
+        
+        // keyboard will change frame notification
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChangeFrame(_:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
     
     private func setupUiTexts() {
@@ -41,55 +53,18 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         logInButton.setAttributedTitle(attributedTextLogIn, for: .normal)
     }
     
-    private func setupCustomTextfields() {
-        emailTextField.closureLogInTap = self.closureLogInTap
-        passwordTextField.closureLogInTap = self.closureLogInTap
-        
-        emailTextField.keyboardType = .emailAddress
-        
-        // option 3: target - action from code
-        emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillChangeFrame(_:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-    }
-    
-    private func addTopSpace() {
-        // add free space on top of content if possible
-        let scrollLayoutGuide = UILayoutGuide()
-        view.addLayoutGuide(scrollLayoutGuide)
-        
-        let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 20.0)
-        
-        constraintHeight.priority = .defaultLow - 1
-        
-        NSLayoutConstraint.activate([
-            scrollLayoutGuide.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-            scrollLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-            constraintHeight,
-        ])
-    }
-    
-    // option 3: target - action from code
+    // option 1: target - action from code
     @objc
-    private func emailDonePressed(_ sender: LogInTextField) {
+    private func emailDonePressed(_ sender: MuseumTextField) {
         logIn()
     }
     
     // option 2: target - action from storyboard
-    @IBAction func passwordDonePressed(_ sender: LogInTextField) {
+    @IBAction func passwordDonePressed(_ sender: MuseumTextField) {
         logIn()
     }
     
-    // option 1: login action to call from other class
-    lazy var closureLogInTap = { [weak self] in
-        guard let self else { return }
-        self.logIn()
-    }
-    
-    @IBAction func logInTapped(_ sender: UIButton) {
+   @IBAction func logInTapped(_ sender: UIButton) {
         logIn()
     }
     
@@ -111,6 +86,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         view.endEditing(false)
     }
     
+    // old method before keyboardLayoutGuide in iOS 15.0+
     @objc
     func keyboardWillChangeFrame(_ notification: NSNotification) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
