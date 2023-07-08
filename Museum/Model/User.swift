@@ -1,5 +1,6 @@
 // singletone
 final class User: Codable {
+    
     private(set) var email: String
     private(set) var password: String
     
@@ -19,8 +20,11 @@ final class User: Codable {
         self.email = email
         self.password = password
     }
+    
 }
 
 extension User: JsonFileStorableProtocol {
+    
     static var jsonFileName: String = "userInfo.json"
+    
 }

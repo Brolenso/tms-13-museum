@@ -8,8 +8,8 @@
 import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
     var window: UIWindow?
-    
     private let jsonService = JsonService()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -35,10 +35,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
     }
 
+    // deep link opening
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let urlContext = URLContexts.first else { return }
         let url = urlContext.url
-        debugPrint("Museum opened from link: \(url.absoluteString)")
+        print("Museum opened from link: \(url.absoluteString)")
     }
+    
 }
 

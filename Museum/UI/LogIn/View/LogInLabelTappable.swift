@@ -71,4 +71,5 @@ final class LogInLabelTappable: UIView {
             label.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
+    
 }

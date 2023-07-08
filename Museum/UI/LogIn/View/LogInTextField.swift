@@ -55,6 +55,7 @@ final class LogInTextField: UIControl {
     // runs when view is loaded from storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         setupView()
     }
     
@@ -93,6 +94,7 @@ final class LogInTextField: UIControl {
     public func setTextFieldText(text: String) {
         textField.text = text
     }
+    
 }
 
 extension LogInTextField: UITextFieldDelegate {
@@ -104,7 +106,7 @@ extension LogInTextField: UITextFieldDelegate {
         // option 1: closures
         // closureLogInTap()
         
-        // option 2: target - action
+        // option 2: target - action from storyboard
         sendActions(for: .editingDidEndOnExit)        
 
         // hide keyboard

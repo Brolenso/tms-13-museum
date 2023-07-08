@@ -18,15 +18,15 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var dontHaveAnAccount: LogInLabelTappable!
     
-    var presenter: LogInPresenterProtocol?
-
+    internal var presenter: LogInPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUiTexts()
         setupCustomTextfields()
         addTopSpace()
     }
-       
+    
     private func setupUiTexts() {
         let textMuseum = String(localized: "login.screen.museum.label.text")
         let attributedTextMuseum = textMuseum.uppercased().setTextStyle(.title)
@@ -62,7 +62,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         view.addLayoutGuide(scrollLayoutGuide)
         
         let constraintHeight = scrollLayoutGuide.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: 20.0)
-
+        
         constraintHeight.priority = .defaultLow - 1
         
         NSLayoutConstraint.activate([
@@ -71,7 +71,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
             constraintHeight,
         ])
     }
- 
+    
     // option 3: target - action from code
     @objc
     private func emailDonePressed(_ sender: LogInTextField) {
@@ -83,20 +83,28 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         logIn()
     }
     
-    // option 1: closure to tap button from other class
+    // option 1: login action to call from other class
     lazy var closureLogInTap = { [weak self] in
-        return self?.logIn() ?? ()
+        guard let self else { return }
+        self.logIn()
     }
     
     @IBAction func logInTapped(_ sender: UIButton) {
         logIn()
     }
     
+    private func logIn() {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        presenter?.loginUser(email: email, password: password)
+    }
+
     @IBAction func forgotYourPasswordTapped(_ sender: UITapGestureRecognizer) {
         // fatalError("Crash to test Firebase Crashlytics")
     }
     
     @IBAction func dontHaveAnAccountTapped(_ sender: UITapGestureRecognizer) {
+        // login functions are not implemented
     }
     
     @IBAction func backgroundViewTapped(_ sender: UITapGestureRecognizer) {
@@ -121,23 +129,18 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         // in Landscape mode
         if UIDevice.current.orientation.isLandscape {
             visibleFrame = logInButton.frame.inset(by: UIEdgeInsets(top: 0.0,
-                                                                            left: 0.0,
-                                                                            bottom: 10.0,
-                                                                            right: 0.0))
+                                                                    left: 0.0,
+                                                                    bottom: 10.0,
+                                                                    right: 0.0))
         } else {
             // in Portrait mode
             visibleFrame = dontHaveAnAccount.frame.inset(by: UIEdgeInsets(top: 0.0,
-                                                                              left: 0.0,
-                                                                              bottom: -10.0,
-                                                                              right: 0.0))
+                                                                          left: 0.0,
+                                                                          bottom: -10.0,
+                                                                          right: 0.0))
         }
         
         scrollView.scrollRectToVisible(visibleFrame, animated: true)
     }
     
-    private func logIn() {
-        let email = emailTextField.text
-        let password = passwordTextField.text
-        presenter?.loginUser(email: email, password: password)
-    }
 }

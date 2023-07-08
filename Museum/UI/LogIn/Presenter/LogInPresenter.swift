@@ -17,6 +17,7 @@ protocol LogInPresenterProtocol: AnyObject {
 }
 
 final class LogInPresenter: LogInPresenterProtocol {
+    
     private weak var view: LogInViewProtocol?
     private let jsonService: JsonServiceProtocol
     private let router: RouterProtocol
@@ -33,4 +34,5 @@ final class LogInPresenter: LogInPresenterProtocol {
         User.current.setUser(email: email, password: password)
         jsonService.write(dataObject: User.current)
     }
+    
 }

@@ -21,15 +21,14 @@
 ## Technologies
 - [x] UIKit
 - [x] EventKit
-- [x] Storyboards
+- [x] Storyboards with @IBDesignable views and @IBInspectable properties
 - [x] Localizations: English, French, Russian
 - [x] Design moved from Figma
-- [x] Custom views by code with @IBDesignable and @IBInspectable
-- [x] JSON service
+- [x] JSON service by dependency injection
+- [x] Errors Logger
 - [x] Async/await
 - [x] Generics
 - [x] Font styles
-- [x] Localized errors
 - [x] UI tests
 - [x] Deep link
 - [x] Customized animations
@@ -37,6 +36,7 @@
 
 ## Code patterns
 - [x] Builder
+- [x] Router
 - [x] Singleton
 
 ## Screenshots

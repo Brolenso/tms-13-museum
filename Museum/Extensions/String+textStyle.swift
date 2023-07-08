@@ -1,6 +1,7 @@
 import UIKit
 
 extension String {
+    
     func setTextStyle(_ textStyle: TextStyle) -> NSAttributedString {
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -16,9 +17,11 @@ extension String {
         )
         return attributedString
     }
+    
 }
 
 struct TextStyle {
+    
     let size: Double
     let color: UIColor
     let fontName: String
@@ -27,6 +30,7 @@ struct TextStyle {
     var font: UIFont {
         UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size)
     }
+    
 }
 
 extension TextStyle {
@@ -87,4 +91,5 @@ extension TextStyle {
         color: UIColor(named: "grey") ?? .gray,
         fontName: "Montserrat-Regular"
     )
+    
 }

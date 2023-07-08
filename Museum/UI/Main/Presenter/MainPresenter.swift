@@ -24,6 +24,7 @@ protocol MainPresenterProtocol: AnyObject {
 }
 
 final class MainPresenter: MainPresenterProtocol {
+    
     private weak var view: MainViewProtocol?
     private let jsonService: JsonServiceProtocol
     private let router: RouterProtocol
@@ -46,7 +47,7 @@ final class MainPresenter: MainPresenterProtocol {
         self.email = email
     }
     
-    enum Errors: LocalizedError {
+    private enum Errors: LocalizedError {
         case calendarAccessDenied
         
         var errorDescription: String? {
@@ -85,7 +86,7 @@ final class MainPresenter: MainPresenterProtocol {
                 await MainActor.run {
                     view?.disableButton(buttonTitle: String(localized: "main.screen.error.calendar.access"))
                 }
-                debugPrint("Could not check calendar event. Error: \(error.localizedDescription)")
+                ErrorHandler.shared.logError(error)
                 return
             }
         }
@@ -142,7 +143,7 @@ final class MainPresenter: MainPresenterProtocol {
                     }
                 }
             } catch {
-                debugPrint("Error: \(error.localizedDescription)")
+                ErrorHandler.shared.logError(error)
                 return
             }
         }
@@ -166,4 +167,5 @@ final class MainPresenter: MainPresenterProtocol {
         }
         return eventAlreadyExists
     }
+    
 }

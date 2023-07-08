@@ -21,7 +21,7 @@ final class MainViewController: UIViewController {
     @IBOutlet var buttonAddress: UIButton!
     @IBOutlet var buttonWorkingHours: UIButton!
     
-    var presenter: MainPresenterProtocol?
+    internal var presenter: MainPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,7 @@ final class MainViewController: UIViewController {
     @IBAction func buttonPlanVisitTapped(_ sender: UIButton) {
         presenter?.planVisitTapped(sender: sender)
     }
+    
 }
 
 extension MainViewController: MainViewProtocol {

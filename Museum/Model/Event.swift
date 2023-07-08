@@ -8,6 +8,7 @@
 import Foundation
 
 struct Event {
+    
     let artMuseumTitle: String
     let type: String
     let name: String
@@ -60,4 +61,5 @@ struct Event {
         endDate = dateFormatter.date(from: endDateString) ?? currentDate
         return endDate
     }
+    
 }

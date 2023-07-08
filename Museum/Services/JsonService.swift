@@ -19,7 +19,7 @@ final class JsonService: JsonServiceProtocol {
             let jsonDecoder = JSONDecoder()
             return try jsonDecoder.decode(type, from: data)
         } catch {
-            debugPrint("Error to read JSON:\n\(error.localizedDescription)")
+            ErrorHandler.shared.logError(error)
             return nil
         }
     }
@@ -33,7 +33,7 @@ final class JsonService: JsonServiceProtocol {
             let jsonUrl = try getUrl(fileName: T.jsonFileName)
             try data.write(to: jsonUrl)
         } catch {
-            debugPrint("Error to write to JSON:\n\(error.localizedDescription)")
+            ErrorHandler.shared.logError(error)
             return
         }
     }
@@ -48,4 +48,5 @@ final class JsonService: JsonServiceProtocol {
         url.append(path: fileName)
         return url
     }
+    
 }
