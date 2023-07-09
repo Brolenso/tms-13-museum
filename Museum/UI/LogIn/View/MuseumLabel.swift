@@ -22,12 +22,7 @@ final class MuseumLabel: UIView {
             label.textAlignment == .right
         }
         set {
-            if newValue == true {
-                label.textAlignment = .right
-            } else {
-                label.textAlignment = .left
-            }
-            rightAlignment = newValue
+            label.textAlignment = newValue ? .right : .left
         }
     }
     
@@ -46,11 +41,8 @@ final class MuseumLabel: UIView {
     }
     
     private func setupView() {
-        self.backgroundColor = nil
-        
-        let labelText = label.text ?? "Default label text"
-        let attributedLabelText = labelText.setTextStyle(.label)
-        label.attributedText = attributedLabelText
+        let labelText = label.text ?? "Default text"
+        label.attributedText = labelText.setTextStyle(.label)
         
         // needs because NSLocalizedString break a storyboard defined alignment
         if rightAlignment {

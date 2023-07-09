@@ -93,10 +93,10 @@ final class MuseumTextField: UIControl {
 extension MuseumTextField: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // option 2: target - action from storyboard
-        sendActions(for: .editingDidEndOnExit)        
+        // option 1, 2: sending action to target - action subscribers
+        sendActions(for: .editingDidEndOnExit)
 
-        // call textFieldShouldReturn and hide keyboard
+        // call resignFirstResponder and hide keyboard
         return textField.resignFirstResponder()
     }
     

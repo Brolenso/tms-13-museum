@@ -15,7 +15,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     @IBOutlet var emailTextField: MuseumTextField!
     @IBOutlet var passwordTextField: MuseumTextField!
     @IBOutlet var logInButton: UIButton!
-    @IBOutlet var dontHaveAnAccount: LogInLabelTappable!
+    @IBOutlet var dontHaveAnAccount: MuseumLabel!
     
     internal var presenter: LogInPresenterProtocol?
     
@@ -64,7 +64,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         logIn()
     }
     
-   @IBAction func logInTapped(_ sender: UIButton) {
+    @IBAction func logInTapped(_ sender: UIButton) {
         logIn()
     }
     
@@ -73,7 +73,7 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         let password = passwordTextField.text
         presenter?.loginUser(email: email, password: password)
     }
-
+    
     @IBAction func forgotYourPasswordTapped(_ sender: UITapGestureRecognizer) {
         // fatalError("Crash to test Firebase Crashlytics")
     }

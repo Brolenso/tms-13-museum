@@ -14,7 +14,7 @@
 		1109F732294DF419006AB3CE /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */; };
 		1109F734294DF41A006AB3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1109F733294DF41A006AB3CE /* Assets.xcassets */; };
 		11171FE52997BCC30089C58A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11171FE42997BCC30089C58A /* Router.swift */; };
-		1121DE462950382700129C08 /* LogInLabelTappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121DE452950382700129C08 /* LogInLabelTappable.swift */; };
+		1121DE462950382700129C08 /* MuseumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121DE452950382700129C08 /* MuseumLabel.swift */; };
 		112C57D329C36ED600A4354E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 112C57D529C36ED600A4354E /* Localizable.strings */; };
 		1153587D29F122B800944101 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1153587A29F1208800944101 /* InfoPlist.strings */; };
 		115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BECC4295F80D300D17EB4 /* UIButton+shadow.swift */; };
@@ -54,7 +54,7 @@
 		1109F733294DF41A006AB3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1109F738294DF41A006AB3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11171FE42997BCC30089C58A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		1121DE452950382700129C08 /* LogInLabelTappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInLabelTappable.swift; sourceTree = "<group>"; };
+		1121DE452950382700129C08 /* MuseumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumLabel.swift; sourceTree = "<group>"; };
 		112C57D429C36ED600A4354E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		112C57D629C36EDB00A4354E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		112C57D729C36EDD00A4354E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */,
 				1109F72E294DF419006AB3CE /* LogInViewController.swift */,
 				1199D2E9294F034300FEC95B /* MuseumTextField.swift */,
-				1121DE452950382700129C08 /* LogInLabelTappable.swift */,
+				1121DE452950382700129C08 /* MuseumLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1121DE462950382700129C08 /* LogInLabelTappable.swift in Sources */,
+				1121DE462950382700129C08 /* MuseumLabel.swift in Sources */,
 				11721EFD296040A900767FBC /* String+textStyle.swift in Sources */,
 				115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */,
 				11B2000D2970188C0045960B /* MainViewController.swift in Sources */,

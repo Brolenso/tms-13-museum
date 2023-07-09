@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,85 +29,85 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pg0-XZ-WJq">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-HL-oJN" userLabel="Vertical Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="619"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="U3m-zF-rIH" userLabel="Horizontal Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="60.333333333333336"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="U3m-zF-rIH" userLabel="Horizontal Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="60.333333333333336"/>
-                                                <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efv-pv-HCG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="60.333333333333336"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment>
-                                                                    <string key="content">THE ART
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efv-pv-HCG">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="60.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment>
+                                                            <string key="content">THE ART
 MUSEUM</string>
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <directionalEdgeInsets key="contentInsets" top="11.5" leading="12" bottom="12" trailing="20"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-Y4-Gae">
-                                                        <rect key="frame" x="180.33333333333334" y="24" width="32.333333333333343" height="12.333333333333336"/>
-                                                        <accessibility key="accessibilityConfiguration" identifier="email-label"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGa-Rz-gUz">
-                                                        <rect key="frame" x="339" y="13" width="54" height="34.666666666666664"/>
-                                                        <accessibility key="accessibilityConfiguration" identifier="logout-button"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="LOG">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                                        <font key="NSOriginalFont" size="10" name="Mshtakan"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                                <fragment>
-                                                                    <string key="content" base64-UTF8="YES">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <directionalEdgeInsets key="contentInsets" top="11.5" leading="12" bottom="12" trailing="20"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-Y4-Gae">
+                                                <rect key="frame" x="187" y="24" width="32.333333333333343" height="12.333333333333336"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="email-label"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGa-Rz-gUz">
+                                                <rect key="frame" x="339" y="13" width="54" height="34.666666666666664"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="logout-button"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="LOG">
+                                                            <attributes>
+                                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                <font key="NSOriginalFont" size="10" name="Mshtakan"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
 Cg
 </string>
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                                <fragment content="OUT">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="10" name="Montserrat-Regular"/>
-                                                                        <font key="NSOriginalFont" size="10" name="Mshtakan"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <directionalEdgeInsets key="contentInsets" top="5" leading="20" bottom="5" trailing="12"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="e3O-qo-kec"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exhibition" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-37-dqs">
-                                                <rect key="frame" x="0.0" y="60.333333333333314" width="393" height="262"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xh3-37-dqs" secondAttribute="height" multiplier="112.5:75" id="Xhp-CK-MfI"/>
-                                                </constraints>
-                                            </imageView>
+                                                            <attributes>
+                                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="OUT">
+                                                            <attributes>
+                                                                <font key="NSFont" size="10" name="Montserrat-Regular"/>
+                                                                <font key="NSOriginalFont" size="10" name="Mshtakan"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <directionalEdgeInsets key="contentInsets" top="5" leading="20" bottom="5" trailing="12"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonLogOutTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="e3O-qo-kec"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exhibition" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-37-dqs" userLabel="Image View">
+                                        <rect key="frame" x="0.0" y="60.333333333333314" width="393" height="262"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xh3-37-dqs" secondAttribute="height" multiplier="112.5:75" id="Xhp-CK-MfI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-HL-oJN" userLabel="Vertical Stack View">
+                                        <rect key="frame" x="0.0" y="322.33333333333326" width="393" height="296.66666666666674"/>
+                                        <subviews>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-oN-LVs">
-                                                <rect key="frame" x="0.0" y="322.33333333333331" width="393" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -124,7 +124,7 @@ Cg
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-gu-hms">
-                                                <rect key="frame" x="0.0" y="354.33333333333331" width="393" height="88"/>
+                                                <rect key="frame" x="0.0" y="32" width="393" height="88"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -160,7 +160,7 @@ OLD AND
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVN-kp-d10">
-                                                <rect key="frame" x="0.0" y="442.33333333333331" width="393" height="34.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="120.00000000000001" width="393" height="34.666666666666671"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -182,7 +182,7 @@ OLD AND
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-ls-enX">
-                                                <rect key="frame" x="0.0" y="477" width="393" height="23"/>
+                                                <rect key="frame" x="0.0" y="154.66666666666669" width="393" height="23"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
                                                     <attributedString key="attributedTitle">
@@ -204,7 +204,7 @@ OLD AND
                                                 </buttonConfiguration>
                                             </button>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzE-Mn-x7v" userLabel="View With Button">
-                                                <rect key="frame" x="0.0" y="500" width="393" height="69"/>
+                                                <rect key="frame" x="0.0" y="177.66666666666669" width="393" height="69"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="center" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntW-f4-jIi">
                                                         <rect key="frame" x="13" y="13.666666666666629" width="367" height="42"/>
@@ -244,8 +244,8 @@ OLD AND
                                                     <constraint firstItem="ntW-f4-jIi" firstAttribute="centerY" secondItem="WzE-Mn-x7v" secondAttribute="centerY" id="xEM-un-WTw"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-hd-DBT">
-                                                <rect key="frame" x="0.0" y="569" width="393" height="50"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-hd-DBT" userLabel="Address And Time View">
+                                                <rect key="frame" x="0.0" y="246.66666666666669" width="393" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="efd-1t-ver">
                                                         <rect key="frame" x="16" y="8.9999999999999982" width="19" height="25.333333333333329"/>
@@ -343,10 +343,12 @@ MTA6MDAgH+KAkyAxNzozMA
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="top" secondItem="MdZ-LL-rms" secondAttribute="top" id="Gzj-n0-2aA"/>
+                                    <constraint firstItem="xh3-37-dqs" firstAttribute="leading" secondItem="MdZ-LL-rms" secondAttribute="leading" id="0su-DY-r4l"/>
+                                    <constraint firstItem="xh3-37-dqs" firstAttribute="bottom" secondItem="Pdh-HL-oJN" secondAttribute="top" id="24D-tL-2dC"/>
+                                    <constraint firstItem="U3m-zF-rIH" firstAttribute="bottom" secondItem="xh3-37-dqs" secondAttribute="top" id="Gzj-n0-2aA"/>
+                                    <constraint firstItem="MdZ-LL-rms" firstAttribute="trailing" secondItem="xh3-37-dqs" secondAttribute="trailing" id="RxV-3P-x4D"/>
                                     <constraint firstItem="Pdh-HL-oJN" firstAttribute="bottom" secondItem="MdZ-LL-rms" secondAttribute="bottom" id="gaE-gU-NRg"/>
-                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="leading" secondItem="MdZ-LL-rms" secondAttribute="leading" id="m6R-pz-8mA"/>
-                                    <constraint firstItem="Pdh-HL-oJN" firstAttribute="trailing" secondItem="MdZ-LL-rms" secondAttribute="trailing" id="otm-P7-JWe"/>
+                                    <constraint firstItem="U3m-zF-rIH" firstAttribute="top" secondItem="MdZ-LL-rms" secondAttribute="top" id="pkS-wL-Xhh"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="MdZ-LL-rms"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="DOH-ef-BU0"/>
@@ -355,27 +357,22 @@ MTA6MDAgH+KAkyAxNzozMA
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AKw-ls-enX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Hb-h9-cS0"/>
+                            <constraint firstItem="U3m-zF-rIH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4Dt-1Q-ajF"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="6zR-eO-VDr"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iGa-Rz-gUz" secondAttribute="trailing" id="HhI-Yj-XLQ"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LcH-q5-6TJ"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Mqe-2W-Gxg"/>
-                            <constraint firstItem="efv-pv-HCG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Nv4-Vd-qvY"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="OLw-Tm-DO9"/>
-                            <constraint firstItem="ntW-f4-jIi" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" constant="-26" id="SPa-bl-Pjf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Pdh-HL-oJN" secondAttribute="trailing" id="Rdy-v9-jg6"/>
+                            <constraint firstItem="ntW-f4-jIi" firstAttribute="width" secondItem="WzE-Mn-x7v" secondAttribute="width" constant="-26" id="SPa-bl-Pjf"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SWu-ED-4WD"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ucc-KB-qsG"/>
+                            <constraint firstItem="MdZ-LL-rms" firstAttribute="width" secondItem="Pg0-XZ-WJq" secondAttribute="width" id="WYy-P1-hFg"/>
+                            <constraint firstItem="U3m-zF-rIH" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZIi-X5-WfE"/>
                             <constraint firstItem="ntW-f4-jIi" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="aDT-1m-j27"/>
-                            <constraint firstItem="qhn-Y4-Gae" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="aHp-No-WUB"/>
-                            <constraint firstItem="xh3-37-dqs" firstAttribute="trailing" secondItem="Pdh-HL-oJN" secondAttribute="trailing" id="dSA-Wv-lIk"/>
-                            <constraint firstItem="Pdh-HL-oJN" firstAttribute="width" secondItem="Pg0-XZ-WJq" secondAttribute="width" id="dU2-0a-5nD"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="fJ4-z4-BMu"/>
-                            <constraint firstItem="GwY-oN-LVs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lfm-Xa-qbp"/>
-                            <constraint firstItem="efd-1t-ver" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="qyn-AJ-71Z"/>
-                            <constraint firstItem="xh3-37-dqs" firstAttribute="leading" secondItem="Pdh-HL-oJN" secondAttribute="leading" id="rSx-dH-oqu"/>
+                            <constraint firstItem="Pdh-HL-oJN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fSJ-c2-c4C"/>
+                            <constraint firstItem="efd-1t-ver" firstAttribute="leading" secondItem="7IP-hd-DBT" secondAttribute="leading" constant="16" id="qyn-AJ-71Z"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="txh-6R-TvA"/>
-                            <constraint firstItem="RVN-kp-d10" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wC7-W2-vzF"/>
-                            <constraint firstItem="NNu-gu-hms" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wxk-EV-Fj8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Zw-Kr-xX4"/>
