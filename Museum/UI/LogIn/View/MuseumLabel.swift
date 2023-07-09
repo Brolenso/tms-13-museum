@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-final class LogInLabelTappable: UIView {
+final class MuseumLabel: UIView {
     
     private let label = UILabel(frame: .zero)
     private var rightAlignment: Bool = false
