@@ -8,10 +8,22 @@
 import Foundation
 
 protocol ServiceLocating {
-    func addService<T>(_ serviceObject: T)
-    func getService<T>(_ serviceType: T.Type) -> T
+    func addService<T>(_ service: T)
+    func getService<T>() -> T?
 }
 
-class ServiceLocator {
+final class ServiceLocator: ServiceLocating {
+    
+    private lazy var services: [String: Any] = [:]
+    
+    func addService<T>(_ service: T) {
+        let key = String(describing: T.self)
+        services[key] = service
+    }
+    
+    func getService<T>() -> T? {
+        let key = String(describing: T.self)
+        return services[key] as? T
+    }
     
 }
