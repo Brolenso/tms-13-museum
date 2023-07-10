@@ -22,6 +22,7 @@
 		116B4DBD29A89D3000E7E81A /* CATransition+types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B4DBC29A89D3000E7E81A /* CATransition+types.swift */; };
 		11721EFD296040A900767FBC /* String+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721EFC296040A900767FBC /* String+textStyle.swift */; };
 		1199D2EA294F034300FEC95B /* MuseumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199D2E9294F034300FEC95B /* MuseumTextField.swift */; };
+		119E6E9A2A5BB39C00F9DDC1 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E6E992A5BB39C00F9DDC1 /* ServiceLocator.swift */; };
 		119F427129C364FF0048761B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427329C364FF0048761B /* LaunchScreen.storyboard */; };
 		119F427629C365420048761B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427829C365420048761B /* MainStoryboard.storyboard */; };
 		11A50E682A59C2E10080064A /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A50E672A59C2E10080064A /* ErrorHandler.swift */; };
@@ -67,6 +68,7 @@
 		116B4DBC29A89D3000E7E81A /* CATransition+types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+types.swift"; sourceTree = "<group>"; };
 		11721EFC296040A900767FBC /* String+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textStyle.swift"; sourceTree = "<group>"; };
 		1199D2E9294F034300FEC95B /* MuseumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumTextField.swift; sourceTree = "<group>"; };
+		119E6E992A5BB39C00F9DDC1 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		119F427B29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		119F427C29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		119F427D29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				1109F72C294DF419006AB3CE /* SceneDelegate.swift */,
 				11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */,
 				11171FE42997BCC30089C58A /* Router.swift */,
+				119E6E992A5BB39C00F9DDC1 /* ServiceLocator.swift */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119E6E9A2A5BB39C00F9DDC1 /* ServiceLocator.swift in Sources */,
 				1121DE462950382700129C08 /* MuseumLabel.swift in Sources */,
 				11721EFD296040A900767FBC /* String+textStyle.swift in Sources */,
 				115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */,

@@ -12,7 +12,7 @@ protocol LogInViewProtocol: AnyObject {
 }
 
 protocol LogInPresenterProtocol: AnyObject {
-    init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol)
+    init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: Routing)
     func loginUser(email: String, password: String)
 }
 
@@ -20,9 +20,9 @@ final class LogInPresenter: LogInPresenterProtocol {
     
     private weak var view: LogInViewProtocol?
     private let jsonService: JsonServiceProtocol
-    private let router: RouterProtocol
+    private let router: Routing
     
-    required init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol) {
+    required init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: Routing) {
         self.view = view
         self.jsonService = jsonService
         self.router = router

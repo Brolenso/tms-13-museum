@@ -7,20 +7,20 @@
 
 import UIKit
 
-protocol RouterProtocol {
-    var moduleBuilder: ModuleBuilderProtocol { get set }
+protocol Routing {
+    var moduleBuilder: ModuleBuilding { get set }
     var navigationController: UINavigationController  { get set }
     func showLogInViewController(withAnimation: CATransition)
     func showMainViewController(email: String, withAnimation: CATransition)
 }
 
 // show ViewControllers created by builder
-final class Router: RouterProtocol {
+final class Router: Routing {
     
-    var moduleBuilder: ModuleBuilderProtocol
+    var moduleBuilder: ModuleBuilding
     var navigationController: UINavigationController
     
-    init(moduleBuilder: ModuleBuilderProtocol, navigationController: UINavigationController) {
+    init(moduleBuilder: ModuleBuilding, navigationController: UINavigationController) {
         self.moduleBuilder = moduleBuilder
         self.navigationController = navigationController
     }

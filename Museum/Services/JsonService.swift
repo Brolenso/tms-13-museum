@@ -1,18 +1,18 @@
 import Foundation
 
-protocol JsonFileStorableProtocol {
+protocol JsonFileStorable {
     // name of any type JSON-file for universal generic-based JSON service
     static var jsonFileName: String { get }
 }
 
 protocol JsonServiceProtocol {
-    func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T?
-    func write<T: Codable & JsonFileStorableProtocol>(dataObject: T)
+    func read<T: Codable & JsonFileStorable>(type: T.Type) -> T?
+    func write<T: Codable & JsonFileStorable>(dataObject: T)
 }
 
 final class JsonService: JsonServiceProtocol {
     // read from JSON any Codable & JsonFileStorable object
-    public func read<T: Codable & JsonFileStorableProtocol>(type: T.Type) -> T? {
+    public func read<T: Codable & JsonFileStorable>(type: T.Type) -> T? {
         do {
             let jsonUrl = try getUrl(fileName: T.jsonFileName)
             let data = try Data(contentsOf: jsonUrl)
@@ -25,7 +25,7 @@ final class JsonService: JsonServiceProtocol {
     }
     
     // write any Codable & JsonFileStorable object to JSON
-    public func write<T: Codable & JsonFileStorableProtocol>(dataObject: T) {
+    public func write<T: Codable & JsonFileStorable>(dataObject: T) {
         do {
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted

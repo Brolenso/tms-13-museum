@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol ModuleBuilderProtocol {
-    func createLogInModule(router: RouterProtocol) -> UIViewController
-    func createMainModule(router: RouterProtocol, email: String) -> UIViewController
+protocol ModuleBuilding {
+    func createLogInModule(router: Routing) -> UIViewController
+    func createMainModule(router: Routing, email: String) -> UIViewController
 }
 
 // build MVP modules and return UIViewController
-final class ModuleBuilder: ModuleBuilderProtocol {
+final class ModuleBuilder: ModuleBuilding {
 
     private let jsonService: JsonService
     
@@ -21,7 +21,7 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         self.jsonService = jsonService
     }
     
-    func createLogInModule(router: RouterProtocol) -> UIViewController {
+    func createLogInModule(router: Routing) -> UIViewController {
         let logInViewController: LogInViewController
         logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateViewController(identifier: "logInScreen")
         let presenter = LogInPresenter(view: logInViewController, jsonService: jsonService, router: router)
@@ -29,7 +29,7 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         return logInViewController
     }
     
-    func createMainModule(router: RouterProtocol, email: String) -> UIViewController {
+    func createMainModule(router: Routing, email: String) -> UIViewController {
         let mainViewController: MainViewController
         mainViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "mainScreen")
         let presenter = MainPresenter(view: mainViewController, jsonService: jsonService, router: router, email: email)

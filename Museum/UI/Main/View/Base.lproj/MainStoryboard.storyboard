@@ -388,7 +388,6 @@ MTA6MDAgH+KAkyAxNzozMA
                         <outlet property="buttonTheArtMuseum" destination="efv-pv-HCG" id="WNb-wT-hs0"/>
                         <outlet property="buttonWorkingHours" destination="bOG-v2-J96" id="eO9-4Z-2DY"/>
                         <outlet property="labelEmail" destination="qhn-Y4-Gae" id="uxV-Gb-84L"/>
-                        <outlet property="topBlackView" destination="2LA-by-CxO" id="g6b-Ph-8lp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

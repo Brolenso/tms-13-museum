@@ -12,11 +12,11 @@ protocol MainViewProtocol: AnyObject {
     func fillElements(email: String, event: Event)
     func setButtonPlanVisit(planVisitTitle: String)
     func setButtonWasPlanned(plannedVisitTitle: String)
-    func disableButton(buttonTitle: String) 
+    func disableButton(buttonTitle: String.LocalizationValue) 
 }
 
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String)
+    init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: Routing, email: String)
     func viewWasLoaded()
     func checkEvent()
     func logout()
@@ -27,7 +27,7 @@ final class MainPresenter: MainPresenterProtocol {
     
     private weak var view: MainViewProtocol?
     private let jsonService: JsonServiceProtocol
-    private let router: RouterProtocol
+    private let router: Routing
     private var email: String
     private let event = Event(
         artMuseumTitle: String(localized: "main.screen.art.museum.title"),
@@ -40,7 +40,7 @@ final class MainPresenter: MainPresenterProtocol {
         plannedVisitTitle: String(localized: "main.screen.planned.visit.title")
     )
     
-    required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: RouterProtocol, email: String) {
+    required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: Routing, email: String) {
         self.view = view
         self.jsonService = jsonService
         self.router = router
@@ -84,7 +84,7 @@ final class MainPresenter: MainPresenterProtocol {
                 }
             } catch {
                 await MainActor.run {
-                    view?.disableButton(buttonTitle: String(localized: "main.screen.error.calendar.access"))
+                    view?.disableButton(buttonTitle: "main.screen.error.calendar.access")
                 }
                 ErrorHandler.shared.logError(error)
                 return

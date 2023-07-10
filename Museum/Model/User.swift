@@ -23,7 +23,7 @@ final class User: Codable {
     
 }
 
-extension User: JsonFileStorableProtocol {
+extension User: JsonFileStorable {
     
     static var jsonFileName: String = "userInfo.json"
     

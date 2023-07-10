@@ -5,6 +5,12 @@
 //  Created by Vyacheslav on 17.12.2022.
 //
 
+// TODO: ServiceLocator (SL) in SceneDelegate with all services registration, using services from SL in Builder
+// TODO: JsonService delete method
+// TODO: AuthService
+// TODO: EventService
+
+
 import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {

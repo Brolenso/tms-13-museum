@@ -9,7 +9,6 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    @IBOutlet var topBlackView: UIView!
     @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
     @IBOutlet var buttonLogOut: UIButton!
@@ -28,7 +27,8 @@ final class MainViewController: UIViewController {
 
         presenter?.viewWasLoaded()
         
-        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
+        // check calendar event on scene didBecomeActive
+        NotificationCenter.default.addObserver(forName: UIScene.didActivateNotification, object: nil, queue: nil) { [weak self] _ in
             self?.presenter?.checkEvent()
         }
     }
@@ -129,8 +129,8 @@ extension MainViewController: MainViewProtocol {
         buttonPlanVisit.isHighlighted = false
     }
     
-    func disableButton(buttonTitle: String) {
-        buttonPlanVisit.setAttributedTitle(buttonTitle.setTextStyle(.button), for: .disabled)
+    func disableButton(buttonTitle: String.LocalizationValue) {
+        buttonPlanVisit.setAttributedTitle(String(localized: buttonTitle).setTextStyle(.button), for: .disabled)
         buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
         buttonPlanVisit.isEnabled = false
         buttonPlanVisit.isHighlighted = false
