@@ -8,6 +8,7 @@ protocol JsonFileStorable {
 protocol JsonServiceProtocol {
     func read<T: Codable & JsonFileStorable>(type: T.Type) -> T?
     func write<T: Codable & JsonFileStorable>(dataObject: T)
+    func delete<T: Codable & JsonFileStorable>(type: T.Type)
 }
 
 final class JsonService: JsonServiceProtocol {
@@ -35,6 +36,16 @@ final class JsonService: JsonServiceProtocol {
         } catch {
             ErrorHandler.shared.logError(error)
             return
+        }
+    }
+    
+    // delete from JSON
+    public func delete<T: Codable & JsonFileStorable>(type: T.Type) {
+        do {
+            let jsonUrl = try getUrl(fileName: T.jsonFileName)
+            try FileManager.default.removeItem(at: jsonUrl)
+        } catch {
+            ErrorHandler.shared.logError(error)
         }
     }
     
