@@ -16,18 +16,18 @@
 - [x] MVP + Builder + Router
 
 ## Frameworks
+- [x] UIKit
 - [x] Firebase Crashlytics
 
 ## Technologies
-- [x] UIKit
-- [x] EventKit
 - [x] Storyboards with @IBDesignable views and @IBInspectable properties
 - [x] Localizations: English, French, Russian
 - [x] Design moved from Figma
-- [x] JSON service by dependency injection
+- [x] EventKit
+- [x] JSON service
 - [x] Errors Logger
 - [x] Async/await
-- [x] Generics
+- [x] Generics and opaque types
 - [x] Font styles
 - [x] UI tests
 - [x] Deep link
@@ -35,9 +35,10 @@
 - [x] TestFlight internal testing
 
 ## Code patterns
-- [x] Builder
 - [x] Router
-- [x] Singleton
+- [x] Factory
+- [x] Non shared Service Locator with dependency injections in Module Builder
+- [x] Singleton for error logging
 
 ## Screenshots
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>

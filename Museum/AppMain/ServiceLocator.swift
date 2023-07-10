@@ -8,22 +8,25 @@
 import Foundation
 
 protocol ServiceLocating {
-    func addService<T>(_ service: T)
-    func getService<T>() -> T?
+    associatedtype JsonServiceItem: JsonServiceProtocol
+    func getJsonService() -> JsonServiceItem
 }
 
+// all services in one place for the big picture, no shared ServiceLocator object for strong DI in ModuleBuilder
 final class ServiceLocator: ServiceLocating {
     
-    private lazy var services: [String: Any] = [:]
+    private lazy var services: [String: AnyObject] = [:]
     
-    func addService<T>(_ service: T) {
-        let key = String(describing: T.self)
+    func getJsonService() -> some JsonServiceProtocol {
+        let key = "JsonService"
+        // service exist
+        if let service = services[key] as? JsonService {
+            return service
+        }
+        // service not exist
+        let service = JsonService()
         services[key] = service
-    }
-    
-    func getService<T>() -> T? {
-        let key = String(describing: T.self)
-        return services[key] as? T
+        return service
     }
     
 }

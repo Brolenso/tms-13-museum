@@ -16,7 +16,7 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private let jsonService = JsonService()
+    private let serviceLocator: any ServiceLocating = ServiceLocator()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -25,10 +25,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootNavigationController = UINavigationController()
         rootNavigationController.navigationBar.isHidden = true
 
-        let moduleBuilder = ModuleBuilder(jsonService: jsonService)
+        let moduleBuilder = ModuleBuilder(serviceLocator: serviceLocator)
         let router = Router(moduleBuilder: moduleBuilder, navigationController: rootNavigationController)
                 
         // if user found in JSON, than show main screen, else show login screen
+        let jsonService = serviceLocator.getJsonService()
         if let user = jsonService.read(type: User.self), user.email.count > 0 {
             User.current.setUser(email: user.email, password: user.password)
             router.showMainViewController(email: user.email, withAnimation: .systemDefault)
@@ -47,6 +48,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let url = urlContext.url
         print("Museum opened from link: \(url.absoluteString)")
     }
-    
+        
 }
 

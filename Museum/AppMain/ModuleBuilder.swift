@@ -15,23 +15,25 @@ protocol ModuleBuilding {
 // build MVP modules and return UIViewController
 final class ModuleBuilder: ModuleBuilding {
 
-    private let jsonService: JsonService
+    // all services will be injected from here
+    private let serviceLocator: any ServiceLocating
+    private lazy var jsonService = serviceLocator.getJsonService()
     
-    init(jsonService: JsonService) {
-        self.jsonService = jsonService
+    init(serviceLocator: any ServiceLocating) {
+        self.serviceLocator = serviceLocator
     }
     
     func createLogInModule(router: Routing) -> UIViewController {
-        let logInViewController: LogInViewController
-        logInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil).instantiateViewController(identifier: "logInScreen")
+        let logInViewController: LogInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil)
+            .instantiateViewController(identifier: "logInScreen")
         let presenter = LogInPresenter(view: logInViewController, jsonService: jsonService, router: router)
         logInViewController.presenter = presenter
         return logInViewController
     }
     
     func createMainModule(router: Routing, email: String) -> UIViewController {
-        let mainViewController: MainViewController
-        mainViewController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "mainScreen")
+        let mainViewController: MainViewController = UIStoryboard(name: "MainStoryboard", bundle: nil)
+            .instantiateViewController(identifier: "mainScreen")
         let presenter = MainPresenter(view: mainViewController, jsonService: jsonService, router: router, email: email)
         mainViewController.presenter = presenter
         return mainViewController
