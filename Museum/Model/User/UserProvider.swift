@@ -16,7 +16,7 @@ protocol UserProviding {
 
 class UserProvider: UserProviding {
     
-    let jsonService: any JsonServiceProtocol
+    let jsonService: JsonServiceProtocol
     
     required init(jsonService: JsonServiceProtocol) {
         self.jsonService = jsonService

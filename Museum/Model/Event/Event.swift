@@ -9,7 +9,7 @@ import Foundation
 
 struct Event {
     
-    let artMuseumTitle: String
+    let museumTitle: String
     let type: String
     let name: String
     let exactLocation: String
@@ -18,8 +18,8 @@ struct Event {
     let planVisitTitle: String
     let plannedVisitTitle: String
     
-    let currentDate = Date()
-    var eventDuration: String { // "April 15 – August 20"
+    private let currentDate = Date()
+    var duration: String { // "April 15 – August 20"
         let calendar = Calendar.current
         let dateExhibitionBegin = calendar.date(byAdding: .month, value: -1, to: currentDate) ?? currentDate
         let dateFormatter = DateFormatter()
@@ -30,13 +30,13 @@ struct Event {
         resultDate += dateFormatter.string(from: dateExhibitionEnd)
         return resultDate
     }
-    var eventTitle: String {
+    var title: String {
         ("\(type) \"\(name)\"").replacingOccurrences(of: "\n", with: " ")
     }
-    var eventLocationTitle: String {
-        ("\(artMuseumTitle), \(address)").replacingOccurrences(of: "\n", with: " ")
+    var locationTitle: String {
+        ("\(museumTitle), \(address)").replacingOccurrences(of: "\n", with: " ")
     }
-    var eventNotes: String {
+    var notes: String {
         ("\(workingHours.replacingOccurrences(of: "\n", with: " "))\n\(exactLocation.capitalized)")
     }
     // tomorrow 10:00

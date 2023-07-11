@@ -28,7 +28,7 @@
 - [x] User Model interaction by User Provider
 - [x] Errors Logger
 - [x] Async/await
-- [x] Generics and opaque types
+- [x] Generics
 - [x] Font styles
 - [x] UI tests
 - [x] Deep link

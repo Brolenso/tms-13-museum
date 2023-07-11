@@ -16,10 +16,11 @@ protocol ModuleBuilding {
 final class ModuleBuilder: ModuleBuilding {
 
     // all services will be injected from here
-    private let serviceLocator: any ServiceLocating
+    private let serviceLocator: ServiceLocating
     private lazy var userProvider = serviceLocator.getUserProvider()
+    private lazy var eventProvider = serviceLocator.getEventProvider()
     
-    init(serviceLocator: any ServiceLocating) {
+    init(serviceLocator: ServiceLocating) {
         self.serviceLocator = serviceLocator
     }
     
@@ -34,7 +35,7 @@ final class ModuleBuilder: ModuleBuilding {
     func createMainModule(router: Routing, user: User) -> EventViewController {
         let mainViewController: EventViewController = UIStoryboard(name: "EventStoryboard", bundle: nil)
             .instantiateViewController(identifier: "EventStoryboard")
-        let presenter = EventPresenter(view: mainViewController, userProvider: userProvider, router: router, user: user)
+        let presenter = EventPresenter(view: mainViewController, router: router, user: user, userProvider: userProvider, eventProvider: eventProvider)
         mainViewController.presenter = presenter
         return mainViewController
     }

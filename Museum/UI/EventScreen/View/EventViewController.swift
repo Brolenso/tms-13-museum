@@ -53,7 +53,7 @@ extension EventViewController: EventViewProtocol {
     
     func fillElements(email: String, event: Event) {
         buttonTheArtMuseum.setAttributedTitle(
-            event.artMuseumTitle
+            event.museumTitle
                 .uppercased()
                 .setTextStyle(.labelDark),
             for: .normal
@@ -83,7 +83,7 @@ extension EventViewController: EventViewProtocol {
         )
 
         buttonDate.setAttributedTitle(
-            event.eventDuration
+            event.duration
                 .uppercased()
                 .setTextStyle(.headerDate),
             for: .normal

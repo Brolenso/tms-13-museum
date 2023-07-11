@@ -6,6 +6,7 @@
 //
 
 import UIKit
+// TODO: delete this:
 import EventKit
 
 protocol EventViewProtocol: AnyObject {
@@ -16,7 +17,13 @@ protocol EventViewProtocol: AnyObject {
 }
 
 protocol EventPresenterProtocol: AnyObject {
-    init(view: EventViewProtocol, userProvider: any UserProviding, router: Routing, user: User)
+    init(
+        view: EventViewProtocol,
+        router: Routing,
+        user: User,
+        userProvider: UserProviding,
+        eventProvider: EventProviding
+    )
     func viewWasLoaded()
     func checkEvent()
     func logout()
@@ -26,27 +33,27 @@ protocol EventPresenterProtocol: AnyObject {
 final class EventPresenter: EventPresenterProtocol {
     
     private weak var view: EventViewProtocol?
-    private let userProvider: any UserProviding
     private let router: Routing
     private let user: User
-    private let event = Event(
-        artMuseumTitle: String(localized: "main.screen.art.museum.title"),
-        type: String(localized: "main.screen.type"),
-        name: String(localized: "main.screen.name"),
-        exactLocation: String(localized: "main.screen.exact.location"),
-        address: String(localized: "main.screen.address"),
-        workingHours: String(localized: "main.screen.working.hours"),
-        planVisitTitle: String(localized: "main.screen.plan.visit.title"),
-        plannedVisitTitle: String(localized: "main.screen.planned.visit.title")
-    )
+    private let userProvider: UserProviding
+    private let eventProvider: EventProviding
+    private var event: Event?
     
-    required init(view: EventViewProtocol, userProvider: any UserProviding, router: Routing, user: User) {
+    required init(
+        view: EventViewProtocol,
+        router: Routing,
+        user: User,
+        userProvider: UserProviding,
+        eventProvider: EventProviding
+    ) {
         self.view = view
-        self.userProvider = userProvider
         self.router = router
         self.user = user
+        self.userProvider = userProvider
+        self.eventProvider = eventProvider
     }
     
+    // TODO: delete this
     private enum Errors: LocalizedError {
         case calendarAccessDenied
         
@@ -59,14 +66,31 @@ final class EventPresenter: EventPresenterProtocol {
     }
     
     func viewWasLoaded() {
+        event = getFakeEvent()
+        guard let event else { return }
         view?.fillElements(email: user.email, event: event)
     }
     
+    private func getFakeEvent() -> Event {
+        Event(
+            museumTitle: String(localized: "main.screen.art.museum.title"),
+            type: String(localized: "main.screen.type"),
+            name: String(localized: "main.screen.name"),
+            exactLocation: String(localized: "main.screen.exact.location"),
+            address: String(localized: "main.screen.address"),
+            workingHours: String(localized: "main.screen.working.hours"),
+            planVisitTitle: String(localized: "main.screen.plan.visit.title"),
+            plannedVisitTitle: String(localized: "main.screen.planned.visit.title")
+        )
+    }
+    
     func checkEvent() {
+        guard let event else { return }
+        
         Task {
             do {
                 if try await eventAlreadyExists(
-                    eventTitle: event.eventTitle,
+                    eventTitle: event.title,
                     startDate: event.startDate,
                     endDate: event.endDate
                 ) {
@@ -100,6 +124,8 @@ final class EventPresenter: EventPresenterProtocol {
     
     // add/delete event to/from system calendar
     func planVisitTapped(sender: UIButton) {
+        guard let event else { return }
+
         Task {
             do {
                 let eventStore = EKEventStore()
@@ -109,7 +135,7 @@ final class EventPresenter: EventPresenterProtocol {
                 }
                 
                 if try await eventAlreadyExists(
-                    eventTitle: event.eventTitle,
+                    eventTitle: event.title,
                     startDate: event.startDate,
                     endDate: event.endDate
                 ) {
@@ -117,7 +143,7 @@ final class EventPresenter: EventPresenterProtocol {
                     let predicate = eventStore.predicateForEvents(withStart: event.startDate, end: event.endDate, calendars: nil)
                     let existingEvents = eventStore.events(matching: predicate)
                     let filteredEvents = existingEvents.filter { existingEvent in
-                        existingEvent.title == event.eventTitle &&
+                        existingEvent.title == event.title &&
                         existingEvent.startDate == event.startDate &&
                         existingEvent.endDate == event.endDate
                     }
@@ -128,10 +154,10 @@ final class EventPresenter: EventPresenterProtocol {
                 } else {
                     // add event
                     let ekEvent = EKEvent(eventStore: eventStore)
-                    let structuredLocation = EKStructuredLocation(title: event.eventLocationTitle)
-                    ekEvent.title = event.eventTitle
+                    let structuredLocation = EKStructuredLocation(title: event.locationTitle)
+                    ekEvent.title = event.title
                     ekEvent.structuredLocation = structuredLocation
-                    ekEvent.notes = event.eventNotes
+                    ekEvent.notes = event.notes
                     ekEvent.startDate = event.startDate
                     ekEvent.endDate = event.endDate
                     ekEvent.calendar = eventStore.defaultCalendarForNewEvents
