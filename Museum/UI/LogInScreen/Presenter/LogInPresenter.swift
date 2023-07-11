@@ -12,17 +12,17 @@ protocol LogInViewProtocol: AnyObject {
 }
 
 protocol LogInPresenterProtocol: AnyObject {
-    init(view: LogInViewProtocol, userProvider: UserProviderProtocol, router: Routing)
+    init(view: LogInViewProtocol, userProvider: UserProviding, router: Routing)
     func loginUser(email: String, password: String)
 }
 
 final class LogInPresenter: LogInPresenterProtocol {
     
     private weak var view: LogInViewProtocol?
-    private let userProvider: UserProviderProtocol
+    private let userProvider: UserProviding
     private let router: Routing
     
-    required init(view: LogInViewProtocol, userProvider: UserProviderProtocol, router: Routing) {
+    required init(view: LogInViewProtocol, userProvider: UserProviding, router: Routing) {
         self.view = view
         self.userProvider = userProvider
         self.router = router

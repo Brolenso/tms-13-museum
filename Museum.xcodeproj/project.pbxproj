@@ -25,15 +25,16 @@
 		119E6E9A2A5BB39C00F9DDC1 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E6E992A5BB39C00F9DDC1 /* ServiceLocator.swift */; };
 		119E6E9E2A5C7D4D00F9DDC1 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E6E9D2A5C7D4D00F9DDC1 /* UserProvider.swift */; };
 		119F427129C364FF0048761B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427329C364FF0048761B /* LaunchScreen.storyboard */; };
-		119F427629C365420048761B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427829C365420048761B /* MainStoryboard.storyboard */; };
+		119F427629C365420048761B /* EventStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119F427829C365420048761B /* EventStoryboard.storyboard */; };
 		11A50E682A59C2E10080064A /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A50E672A59C2E10080064A /* ErrorHandler.swift */; };
 		11B20007296F53D10045960B /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B20006296F53D10045960B /* JsonService.swift */; };
 		11B20009296F55C20045960B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B20008296F55C20045960B /* User.swift */; };
-		11B2000D2970188C0045960B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2000C2970188C0045960B /* MainViewController.swift */; };
+		11B2000D2970188C0045960B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2000C2970188C0045960B /* EventViewController.swift */; };
 		11C6A2D429A68881009B8836 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A2D329A68880009B8836 /* Event.swift */; };
 		11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B02986C3D900E55018 /* LogInPresenter.swift */; };
 		11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */; };
-		11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B52987023D00E55018 /* MainPresenter.swift */; };
+		11C8B1B62987023D00E55018 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8B1B52987023D00E55018 /* EventPresenter.swift */; };
+		11DB122B2A5D296300356AB1 /* EventProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB122A2A5D296300356AB1 /* EventProvider.swift */; };
 		11E2C9A629FE75C900BDED92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E2C9A529FE75C900BDED92 /* GoogleService-Info.plist */; };
 		11E5F4BC29C04D4B00B979B4 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 11E5F4BB29C04D4B00B979B4 /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
@@ -73,15 +74,16 @@
 		119E6E9D2A5C7D4D00F9DDC1 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
 		119F427B29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		119F427C29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		119F427D29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		119F427D29C365B00048761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventStoryboard.storyboard; sourceTree = "<group>"; };
 		11A50E672A59C2E10080064A /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		11B20006296F53D10045960B /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
 		11B20008296F55C20045960B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		11B2000C2970188C0045960B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		11B2000C2970188C0045960B /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		11C6A2D329A68880009B8836 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		11C8B1B02986C3D900E55018 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		11C8B1B32986CC6B00E55018 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
-		11C8B1B52987023D00E55018 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		11C8B1B52987023D00E55018 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		11DB122A2A5D296300356AB1 /* EventProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProvider.swift; sourceTree = "<group>"; };
 		11E2C9A429FE67A700BDED92 /* MuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E2C9A529FE75C900BDED92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11E809CB29882255005ACA3C /* Museum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,13 +155,13 @@
 			path = MuseumUITests;
 			sourceTree = "<group>";
 		};
-		1199D2EB294F038C00FEC95B /* LogIn */ = {
+		1199D2EB294F038C00FEC95B /* LogInScreen */ = {
 			isa = PBXGroup;
 			children = (
 				11C8B1AC2986C2AC00E55018 /* View */,
 				11C8B1AE2986C2CB00E55018 /* Presenter */,
 			);
-			path = LogIn;
+			path = LogInScreen;
 			sourceTree = "<group>";
 		};
 		119E6E9B2A5C7D3000F9DDC1 /* User */ = {
@@ -175,17 +177,18 @@
 			isa = PBXGroup;
 			children = (
 				11C6A2D329A68880009B8836 /* Event.swift */,
+				11DB122A2A5D296300356AB1 /* EventProvider.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
 		};
-		11B2000E2970189E0045960B /* Main */ = {
+		11B2000E2970189E0045960B /* EventScreen */ = {
 			isa = PBXGroup;
 			children = (
 				11C8B1AD2986C2BC00E55018 /* View */,
 				11C8B1AF2986C2D600E55018 /* Presenter */,
 			);
-			path = Main;
+			path = EventScreen;
 			sourceTree = "<group>";
 		};
 		11C8B1A52986B3E600E55018 /* AppMain */ = {
@@ -210,8 +213,9 @@
 		11C8B1A72986B49300E55018 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1199D2EB294F038C00FEC95B /* LogIn */,
-				11B2000E2970189E0045960B /* Main */,
+				11DB122C2A5D763B00356AB1 /* CommonViews */,
+				1199D2EB294F038C00FEC95B /* LogInScreen */,
+				11B2000E2970189E0045960B /* EventScreen */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -249,8 +253,6 @@
 			children = (
 				1109F730294DF419006AB3CE /* LogInStoryboard.storyboard */,
 				1109F72E294DF419006AB3CE /* LogInViewController.swift */,
-				1199D2E9294F034300FEC95B /* MuseumTextField.swift */,
-				1121DE452950382700129C08 /* MuseumLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,8 +260,8 @@
 		11C8B1AD2986C2BC00E55018 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				119F427829C365420048761B /* MainStoryboard.storyboard */,
-				11B2000C2970188C0045960B /* MainViewController.swift */,
+				119F427829C365420048761B /* EventStoryboard.storyboard */,
+				11B2000C2970188C0045960B /* EventViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,9 +277,18 @@
 		11C8B1AF2986C2D600E55018 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				11C8B1B52987023D00E55018 /* MainPresenter.swift */,
+				11C8B1B52987023D00E55018 /* EventPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		11DB122C2A5D763B00356AB1 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				1199D2E9294F034300FEC95B /* MuseumTextField.swift */,
+				1121DE452950382700129C08 /* MuseumLabel.swift */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,7 +385,7 @@
 				11E2C9A629FE75C900BDED92 /* GoogleService-Info.plist in Resources */,
 				1153587D29F122B800944101 /* InfoPlist.strings in Resources */,
 				1109F734294DF41A006AB3CE /* Assets.xcassets in Resources */,
-				119F427629C365420048761B /* MainStoryboard.storyboard in Resources */,
+				119F427629C365420048761B /* EventStoryboard.storyboard in Resources */,
 				112C57D329C36ED600A4354E /* Localizable.strings in Resources */,
 				119F427129C364FF0048761B /* LaunchScreen.storyboard in Resources */,
 				1109F732294DF419006AB3CE /* LogInStoryboard.storyboard in Resources */,
@@ -420,8 +431,9 @@
 				119E6E9A2A5BB39C00F9DDC1 /* ServiceLocator.swift in Sources */,
 				1121DE462950382700129C08 /* MuseumLabel.swift in Sources */,
 				11721EFD296040A900767FBC /* String+textStyle.swift in Sources */,
+				11DB122B2A5D296300356AB1 /* EventProvider.swift in Sources */,
 				115BECC5295F80D300D17EB4 /* UIButton+shadow.swift in Sources */,
-				11B2000D2970188C0045960B /* MainViewController.swift in Sources */,
+				11B2000D2970188C0045960B /* EventViewController.swift in Sources */,
 				116B4DBD29A89D3000E7E81A /* CATransition+types.swift in Sources */,
 				1109F72F294DF419006AB3CE /* LogInViewController.swift in Sources */,
 				11A50E682A59C2E10080064A /* ErrorHandler.swift in Sources */,
@@ -430,7 +442,7 @@
 				11C8B1B12986C3D900E55018 /* LogInPresenter.swift in Sources */,
 				11C6A2D429A68881009B8836 /* Event.swift in Sources */,
 				1109F72B294DF419006AB3CE /* AppDelegate.swift in Sources */,
-				11C8B1B62987023D00E55018 /* MainPresenter.swift in Sources */,
+				11C8B1B62987023D00E55018 /* EventPresenter.swift in Sources */,
 				1109F72D294DF419006AB3CE /* SceneDelegate.swift in Sources */,
 				11C8B1B42986CC6B00E55018 /* ModuleBuilder.swift in Sources */,
 				119E6E9E2A5C7D4D00F9DDC1 /* UserProvider.swift in Sources */,
@@ -494,12 +506,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		119F427829C365420048761B /* MainStoryboard.storyboard */ = {
+		119F427829C365420048761B /* EventStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				119F427D29C365B00048761B /* Base */,
 			);
-			name = MainStoryboard.storyboard;
+			name = EventStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

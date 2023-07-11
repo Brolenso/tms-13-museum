@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  EventViewController.swift
 //  Museum
 //
 //  Created by Vyacheslav on 12.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class EventViewController: UIViewController {
     
     @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
@@ -20,7 +20,7 @@ final class MainViewController: UIViewController {
     @IBOutlet var buttonAddress: UIButton!
     @IBOutlet var buttonWorkingHours: UIButton!
     
-    internal var presenter: MainPresenterProtocol?
+    internal var presenter: EventPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ final class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: MainViewProtocol {
+extension EventViewController: EventViewProtocol {
     
     func fillElements(email: String, event: Event) {
         buttonTheArtMuseum.setAttributedTitle(

@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol UserProviderProtocol {
+protocol UserProviding {
     init(jsonService: JsonServiceProtocol)
     func setUser(user: User)
     func getUser() -> User?
     func deleteUser()
 }
 
-class UserProvider: UserProviderProtocol {
+class UserProvider: UserProviding {
     
     let jsonService: any JsonServiceProtocol
     

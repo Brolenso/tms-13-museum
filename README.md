@@ -25,6 +25,7 @@
 - [x] Design moved from Figma
 - [x] EventKit
 - [x] JSON service
+- [x] User Model interaction by User Provider
 - [x] Errors Logger
 - [x] Async/await
 - [x] Generics and opaque types
@@ -33,6 +34,7 @@
 - [x] Deep link
 - [x] Customized animations
 - [x] TestFlight internal testing
+- [x] Forced unwrap avoided
 
 ## Code patterns
 - [x] Router

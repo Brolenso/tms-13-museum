@@ -1,5 +1,5 @@
 //
-//  MainPresenter.swift
+//  EventPresenter.swift
 //  Museum
 //
 //  Created by Vyacheslav on 29.01.2023.
@@ -8,25 +8,25 @@
 import UIKit
 import EventKit
 
-protocol MainViewProtocol: AnyObject {
+protocol EventViewProtocol: AnyObject {
     func fillElements(email: String, event: Event)
     func setButtonPlanVisit(planVisitTitle: String)
     func setButtonWasPlanned(plannedVisitTitle: String)
     func disableButton(buttonTitle: String.LocalizationValue) 
 }
 
-protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, userProvider: any UserProviderProtocol, router: Routing, user: User)
+protocol EventPresenterProtocol: AnyObject {
+    init(view: EventViewProtocol, userProvider: any UserProviding, router: Routing, user: User)
     func viewWasLoaded()
     func checkEvent()
     func logout()
     func planVisitTapped(sender: UIButton)
 }
 
-final class MainPresenter: MainPresenterProtocol {
+final class EventPresenter: EventPresenterProtocol {
     
-    private weak var view: MainViewProtocol?
-    private let userProvider: any UserProviderProtocol
+    private weak var view: EventViewProtocol?
+    private let userProvider: any UserProviding
     private let router: Routing
     private let user: User
     private let event = Event(
@@ -40,7 +40,7 @@ final class MainPresenter: MainPresenterProtocol {
         plannedVisitTitle: String(localized: "main.screen.planned.visit.title")
     )
     
-    required init(view: MainViewProtocol, userProvider: any UserProviderProtocol, router: Routing, user: User) {
+    required init(view: EventViewProtocol, userProvider: any UserProviding, router: Routing, user: User) {
         self.view = view
         self.userProvider = userProvider
         self.router = router

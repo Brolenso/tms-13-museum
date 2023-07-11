@@ -11,7 +11,7 @@ protocol ServiceLocating {
     associatedtype JsonServiceItem: JsonServiceProtocol
     func getJsonService() -> JsonServiceItem
     
-    associatedtype UserProviderItem: UserProviderProtocol
+    associatedtype UserProviderItem: UserProviding
     func getUserProvider() -> UserProviderItem
 }
 
@@ -32,7 +32,7 @@ final class ServiceLocator: ServiceLocating {
         return service
     }
     
-    func getUserProvider() -> some UserProviderProtocol {
+    func getUserProvider() -> some UserProviding {
         let key = "UserProvider"
         // exist
         if let service = services[key] as? UserProvider {
