@@ -11,7 +11,7 @@ protocol Routing {
     var moduleBuilder: ModuleBuilding { get set }
     var navigationController: UINavigationController  { get set }
     func showLogInViewController(withAnimation: CATransition)
-    func showMainViewController(email: String, withAnimation: CATransition)
+    func showMainViewController(user: User, withAnimation: CATransition)
 }
 
 // show ViewControllers created by builder
@@ -31,8 +31,8 @@ final class Router: Routing {
         navigationController.setViewControllers([logInViewController], animated: false)
     }
     
-    func showMainViewController(email: String, withAnimation: CATransition) {
-        let mainViewController = moduleBuilder.createMainModule(router: self, email: email)
+    func showMainViewController(user: User, withAnimation: CATransition) {
+        let mainViewController = moduleBuilder.createMainModule(router: self, user: user)
         navigationController.view.layer.add(withAnimation, forKey: nil)
         navigationController.setViewControllers([mainViewController], animated: false)
     }

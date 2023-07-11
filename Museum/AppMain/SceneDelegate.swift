@@ -5,10 +5,7 @@
 //  Created by Vyacheslav on 17.12.2022.
 //
 
-// TODO: JsonService delete method
-// TODO: AuthService
 // TODO: EventService
-
 
 import UIKit
 
@@ -28,10 +25,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let router = Router(moduleBuilder: moduleBuilder, navigationController: rootNavigationController)
                 
         // if user found in JSON, than show main screen, else show login screen
-        let jsonService = serviceLocator.getJsonService()
-        if let user = jsonService.read(type: User.self), user.email.count > 0 {
-            User.current.setUser(email: user.email, password: user.password)
-            router.showMainViewController(email: user.email, withAnimation: .systemDefault)
+        let userProvider = serviceLocator.getUserProvider()
+        if let user = userProvider.getUser(), user.email.count > 0 {
+            router.showMainViewController(user: user, withAnimation: .systemDefault)
         } else {
             router.showLogInViewController(withAnimation: .systemDefault)
         }

@@ -12,27 +12,27 @@ protocol LogInViewProtocol: AnyObject {
 }
 
 protocol LogInPresenterProtocol: AnyObject {
-    init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: Routing)
+    init(view: LogInViewProtocol, userProvider: UserProviderProtocol, router: Routing)
     func loginUser(email: String, password: String)
 }
 
 final class LogInPresenter: LogInPresenterProtocol {
     
     private weak var view: LogInViewProtocol?
-    private let jsonService: JsonServiceProtocol
+    private let userProvider: UserProviderProtocol
     private let router: Routing
     
-    required init(view: LogInViewProtocol, jsonService: JsonServiceProtocol, router: Routing) {
+    required init(view: LogInViewProtocol, userProvider: UserProviderProtocol, router: Routing) {
         self.view = view
-        self.jsonService = jsonService
+        self.userProvider = userProvider
         self.router = router
     }
     
     // show view, than write to JSON
     func loginUser(email: String, password: String) {
-        router.showMainViewController(email: email, withAnimation: .fromRight)
-        User.current.setUser(email: email, password: password)
-        jsonService.write(dataObject: User.current)
+        let user = User(email: email, password: password)
+        router.showMainViewController(user: user, withAnimation: .fromRight)
+        userProvider.setUser(user: user)
     }
     
 }

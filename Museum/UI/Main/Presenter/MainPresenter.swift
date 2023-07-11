@@ -16,7 +16,7 @@ protocol MainViewProtocol: AnyObject {
 }
 
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: Routing, email: String)
+    init(view: MainViewProtocol, userProvider: any UserProviderProtocol, router: Routing, user: User)
     func viewWasLoaded()
     func checkEvent()
     func logout()
@@ -26,9 +26,9 @@ protocol MainPresenterProtocol: AnyObject {
 final class MainPresenter: MainPresenterProtocol {
     
     private weak var view: MainViewProtocol?
-    private let jsonService: JsonServiceProtocol
+    private let userProvider: any UserProviderProtocol
     private let router: Routing
-    private var email: String
+    private let user: User
     private let event = Event(
         artMuseumTitle: String(localized: "main.screen.art.museum.title"),
         type: String(localized: "main.screen.type"),
@@ -40,11 +40,11 @@ final class MainPresenter: MainPresenterProtocol {
         plannedVisitTitle: String(localized: "main.screen.planned.visit.title")
     )
     
-    required init(view: MainViewProtocol, jsonService: JsonServiceProtocol, router: Routing, email: String) {
+    required init(view: MainViewProtocol, userProvider: any UserProviderProtocol, router: Routing, user: User) {
         self.view = view
-        self.jsonService = jsonService
+        self.userProvider = userProvider
         self.router = router
-        self.email = email
+        self.user = user
     }
     
     private enum Errors: LocalizedError {
@@ -59,7 +59,7 @@ final class MainPresenter: MainPresenterProtocol {
     }
     
     func viewWasLoaded() {
-        view?.fillElements(email: email, event: event)
+        view?.fillElements(email: user.email, event: event)
     }
     
     func checkEvent() {
@@ -94,10 +94,8 @@ final class MainPresenter: MainPresenterProtocol {
     
     // show view, than write to JSON
     func logout() {
+        userProvider.deleteUser()
         router.showLogInViewController(withAnimation: .fromLeft)
-        let user = User.current
-        user.erase()
-        jsonService.write(dataObject: user)
     }
     
     // add/delete event to/from system calendar
