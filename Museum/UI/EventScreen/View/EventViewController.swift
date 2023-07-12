@@ -7,6 +7,15 @@
 
 import UIKit
 
+protocol EventViewProtocol: AnyObject {
+    func fillUI()
+    func fillUI(event: Event)
+    func fillUI(userName: String)
+    func setButtonPlan()
+    func setButtonPlanned()
+    func setButtonOff()
+}
+
 final class EventViewController: UIViewController {
     
     @IBOutlet var buttonTheArtMuseum: UIButton!
@@ -22,118 +31,117 @@ final class EventViewController: UIViewController {
     
     internal var presenter: EventPresenterProtocol?
 
+    private let museumTitle = String(localized: "main.screen.art.museum.title")
+    private let logoutTitle = String(localized: "main.screen.log.out")
+    private let disabledButtonTitle = String(localized: "main.screen.error.calendar.access")
+    private let planVisitTitle = String(localized: "main.screen.plan.visit.title")
+    private let plannedVisitTitle = String(localized: "main.screen.planned.visit.title")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presenter?.viewWasLoaded()
+        presenter?.didLoad()
         
         // check calendar event on scene didBecomeActive
         NotificationCenter.default.addObserver(forName: UIScene.didActivateNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.presenter?.checkEvent()
+            self?.presenter?.checkCalendarAccess()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter?.checkEvent()
+        presenter?.checkCalendarAccess()
     }
 
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
         presenter?.logout()
     }
     
-    @IBAction func buttonPlanVisitTapped(_ sender: UIButton) {
-        presenter?.planVisitTapped(sender: sender)
-    }
-    
 }
 
 extension EventViewController: EventViewProtocol {
     
-    func fillElements(email: String, event: Event) {
+    func fillUI() {
         buttonTheArtMuseum.setAttributedTitle(
-            event.museumTitle
-                .uppercased()
-                .setTextStyle(.labelDark),
+            museumTitle.uppercased().setTextStyle(.labelDark),
             for: .normal
         )
-        
-        labelEmail.attributedText = email.uppercased().setTextStyle(.labelDark)
         
         buttonLogOut.setAttributedTitle(
-            String(localized: "main.screen.log.out")
-                .uppercased()
-                .setTextStyle(.labelDarkRight),
+            logoutTitle.uppercased().setTextStyle(.labelDarkRight),
             for: .normal
         )
-        
+    }
+    
+    func fillUI(userName: String) {
+        labelEmail.attributedText = userName.uppercased().setTextStyle(.labelDark)
+    }
+    
+    func fillUI(event: Event) {
         buttonEventType.setAttributedTitle(
-            event.type
-                .uppercased()
-                .setTextStyle(.labelGrey),
+            event.type.uppercased().setTextStyle(.labelGrey),
             for: .normal
         )
 
         buttonEventName.setAttributedTitle(
-            event.name
-                .uppercased()
-                .setTextStyle(.header),
+            event.name.uppercased().setTextStyle(.header),
             for: .normal
         )
 
         buttonDate.setAttributedTitle(
-            event.duration
-                .uppercased()
-                .setTextStyle(.headerDate),
+            event.duration.uppercased().setTextStyle(.headerDate),
             for: .normal
         )
 
         buttonExactLocation.setAttributedTitle(
-            event.exactLocation
-                .uppercased()
-                .setTextStyle(.labelGrey),
+            event.exactLocation.uppercased().setTextStyle(.labelGrey),
             for: .normal
         )
 
+        buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
         buttonPlanVisit.setAttributedTitle(
-            event.planVisitTitle
-                .setTextStyle(.button),
+            planVisitTitle.setTextStyle(.button),
             for: .normal
         )
 
         buttonAddress.setAttributedTitle(
-            event.address
-                .setTextStyle(.coordinates),
+            event.address.setTextStyle(.coordinates),
             for: .normal
         )
 
         buttonWorkingHours.setAttributedTitle(
-            event.workingHours
-                .setTextStyle(.coordinates),
+            event.workingHours.setTextStyle(.coordinates),
             for: .normal
         )
     }
     
-    func setButtonWasPlanned(plannedVisitTitle: String) {
-        buttonPlanVisit.setAttributedTitle(plannedVisitTitle.setTextStyle(.button), for: .normal)
-        buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
-        buttonPlanVisit.isEnabled = true
-        buttonPlanVisit.isHighlighted = true
-    }
-   
-    func setButtonPlanVisit(planVisitTitle: String) {
-        buttonPlanVisit.setAttributedTitle(planVisitTitle.setTextStyle(.button), for: .normal)
-        buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .red
-        buttonPlanVisit.isEnabled = true
+    func setButtonOff() {
+        buttonPlanVisit.setAttributedTitle(disabledButtonTitle.setTextStyle(.button), for: .disabled)
+        buttonPlanVisit.isEnabled = false
         buttonPlanVisit.isHighlighted = false
     }
     
-    func disableButton(buttonTitle: String.LocalizationValue) {
-        buttonPlanVisit.setAttributedTitle(String(localized: buttonTitle).setTextStyle(.button), for: .disabled)
-        buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
-        buttonPlanVisit.isEnabled = false
+    func setButtonPlanned() {
+        buttonPlanVisit.setAttributedTitle(plannedVisitTitle.setTextStyle(.button), for: .normal)
+        buttonPlanVisit.isEnabled = true
+        buttonPlanVisit.isHighlighted = true
+        buttonPlanVisit.removeTarget(nil, action: nil, for: .allEvents)
+        buttonPlanVisit.addAction(UIAction(handler: { [weak self] _ in
+            guard let self else { return }
+            presenter?.removeFromCalendar()
+        }), for: .primaryActionTriggered)
+    }
+   
+    func setButtonPlan() {
+        buttonPlanVisit.setAttributedTitle(planVisitTitle.setTextStyle(.button), for: .normal)
+        buttonPlanVisit.isEnabled = true
         buttonPlanVisit.isHighlighted = false
+        buttonPlanVisit.removeTarget(nil, action: nil, for: .allEvents)
+        buttonPlanVisit.addAction(UIAction(handler: { [weak self] _ in
+            guard let self else { return }
+            presenter?.addToCalendar()
+        }), for: .primaryActionTriggered)
     }
 
 }

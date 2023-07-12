@@ -9,14 +9,12 @@ import Foundation
 
 struct Event {
     
-    let museumTitle: String
+    let galleryTitle: String
     let type: String
     let name: String
     let exactLocation: String
     let address: String
     let workingHours: String
-    let planVisitTitle: String
-    let plannedVisitTitle: String
     
     private let currentDate = Date()
     var duration: String { // "April 15 – August 20"
@@ -34,7 +32,7 @@ struct Event {
         ("\(type) \"\(name)\"").replacingOccurrences(of: "\n", with: " ")
     }
     var locationTitle: String {
-        ("\(museumTitle), \(address)").replacingOccurrences(of: "\n", with: " ")
+        ("\(galleryTitle), \(address)").replacingOccurrences(of: "\n", with: " ")
     }
     var notes: String {
         ("\(workingHours.replacingOccurrences(of: "\n", with: " "))\n\(exactLocation.capitalized)")

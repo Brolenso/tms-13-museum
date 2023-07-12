@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol LogInViewProtocol: AnyObject {
-    
-}
-
 protocol LogInPresenterProtocol: AnyObject {
     init(view: LogInViewProtocol, userProvider: UserProviding, router: Routing)
     func loginUser(email: String, password: String)

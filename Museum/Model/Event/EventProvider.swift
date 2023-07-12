@@ -9,29 +9,21 @@ import Foundation
 import EventKit
 
 protocol EventProviding {
-    func calendarContains(event: Event) async throws -> Bool
-    func addToCalendar(event: Event) async throws
-    func removeFromCalendar(event: Event) async throws
+    func requestCalendarAccess() async throws -> Bool
+    func calendarContains(event: Event) -> Bool
+    func addToCalendar(event: Event) throws
+    func removeFromCalendar(event: Event) throws
 }
 
-actor EventProvider: EventProviding {
+class EventProvider: EventProviding {
     
     private let eventStore = EKEventStore()
     
-    private enum Errors: LocalizedError {
-        case calendarAccessDenied
-        
-        var errorDescription: String? {
-            switch self {
-            case .calendarAccessDenied:
-                return "Calendar access denied by user"
-            }
-        }
+    func requestCalendarAccess() async throws -> Bool {
+        try await eventStore.requestAccess(to: .event)
     }
     
-    func calendarContains(event: Event) async throws -> Bool {
-        try await requestEventStoreAccess()
-        
+    func calendarContains(event: Event) -> Bool {
         let predicate = eventStore.predicateForEvents(withStart: event.startDate, end: event.endDate, calendars: nil)
         let existingEvents = eventStore.events(matching: predicate)
         
@@ -42,9 +34,7 @@ actor EventProvider: EventProviding {
         }
     }
     
-    func addToCalendar(event: Event) async throws {
-        try await requestEventStoreAccess()
-
+    func addToCalendar(event: Event) throws {
         let ekEvent = EKEvent(eventStore: eventStore)
         let structuredLocation = EKStructuredLocation(title: event.locationTitle)
         ekEvent.title = event.title
@@ -56,9 +46,7 @@ actor EventProvider: EventProviding {
         try eventStore.save(ekEvent, span: .thisEvent)
     }
     
-    func removeFromCalendar(event: Event) async throws {
-        try await requestEventStoreAccess()
-
+    func removeFromCalendar(event: Event) throws {
         let predicate = eventStore.predicateForEvents(withStart: event.startDate, end: event.endDate, calendars: nil)
         let retrievedEvents = eventStore.events(matching: predicate)
         let matchingEvents = retrievedEvents.filter { retrievedEvent in
@@ -70,12 +58,5 @@ actor EventProvider: EventProviding {
             try eventStore.remove($0, span: .thisEvent)
         }
     }
-    
-    private func requestEventStoreAccess() async throws {
-        let calendarAccess = try await eventStore.requestAccess(to: .event)
-        guard calendarAccess == true else {
-            throw Errors.calendarAccessDenied
-        }
-    }
-    
+
 }

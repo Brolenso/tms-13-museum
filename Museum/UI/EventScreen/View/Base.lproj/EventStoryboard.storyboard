@@ -234,9 +234,6 @@ OLD AND
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="buttonPlanVisitTapped:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="Kzl-Im-RlR"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

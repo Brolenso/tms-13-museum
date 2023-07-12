@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LogInViewProtocol: AnyObject {
+    
+}
+
 final class LogInViewController: UIViewController, LogInViewProtocol {
     
     @IBOutlet var scrollView: UIScrollView!
