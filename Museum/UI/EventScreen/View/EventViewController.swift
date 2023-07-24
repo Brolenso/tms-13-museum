@@ -44,7 +44,8 @@ final class EventViewController: UIViewController {
         
         // check calendar event on scene didBecomeActive
         NotificationCenter.default.addObserver(forName: UIScene.didActivateNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.presenter?.checkCalendarAccess()
+            guard let self else { return }
+            presenter?.checkCalendarAccess()
         }
     }
     

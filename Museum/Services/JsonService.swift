@@ -15,8 +15,8 @@ final class JsonService: JsonServiceProtocol {
     // read from JSON any Codable & JsonFileStorable object
     public func read<T: Codable & JsonFileStorable>(type: T.Type) -> T? {
         do {
-            let jsonUrl = try getUrl(fileName: T.jsonFileName)
-            let data = try Data(contentsOf: jsonUrl)
+            let jsonURL = try getURL(fileName: T.jsonFileName)
+            let data = try Data(contentsOf: jsonURL)
             let jsonDecoder = JSONDecoder()
             return try jsonDecoder.decode(type, from: data)
         } catch {
@@ -31,8 +31,8 @@ final class JsonService: JsonServiceProtocol {
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted
             let data = try jsonEncoder.encode(dataObject)
-            let jsonUrl = try getUrl(fileName: T.jsonFileName)
-            try data.write(to: jsonUrl)
+            let jsonURL = try getURL(fileName: T.jsonFileName)
+            try data.write(to: jsonURL)
         } catch {
             ErrorHandler.shared.logError(error)
             return
@@ -42,14 +42,14 @@ final class JsonService: JsonServiceProtocol {
     // delete from JSON
     public func delete<T: Codable & JsonFileStorable>(type: T.Type) {
         do {
-            let jsonUrl = try getUrl(fileName: T.jsonFileName)
-            try FileManager.default.removeItem(at: jsonUrl)
+            let jsonURL = try getURL(fileName: T.jsonFileName)
+            try FileManager.default.removeItem(at: jsonURL)
         } catch {
             ErrorHandler.shared.logError(error)
         }
     }
     
-    private func getUrl(fileName: String) throws -> URL {
+    private func getURL(fileName: String) throws -> URL {
         var url = try FileManager.default.url(
             for: .applicationSupportDirectory,
             in: .allDomainsMask,
