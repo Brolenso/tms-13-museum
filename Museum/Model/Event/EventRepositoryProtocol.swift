@@ -8,14 +8,14 @@
 import Foundation
 import EventKit
 
-protocol EventProviding {
+protocol EventRepositoryProtocol {
     func requestCalendarAccess() async throws -> Bool
     func calendarContains(event: Event) -> Bool
     func addToCalendar(event: Event) throws
     func removeFromCalendar(event: Event) throws
 }
 
-class EventProvider: EventProviding {
+class EventProvider: EventRepositoryProtocol {
     
     private let eventStore = EKEventStore()
     

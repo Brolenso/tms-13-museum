@@ -1,5 +1,5 @@
 //
-//  UserProvider.swift
+//  UserRepository.swift
 //  Museum
 //
 //  Created by Vyacheslav on 10.07.2023.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol UserProviding {
+protocol UserRepositoryProtocol {
     init(jsonService: JsonServiceProtocol)
     func setUser(user: User)
     func getUser() -> User?
     func deleteUser()
 }
 
-class UserProvider: UserProviding {
+class UserRepository: UserRepositoryProtocol {
     
     let jsonService: JsonServiceProtocol
     
