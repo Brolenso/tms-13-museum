@@ -16,11 +16,19 @@ protocol UserRepositoryProtocol {
 
 class UserRepository: UserRepositoryProtocol {
     
-    let jsonService: JsonServiceProtocol
+    // MARK: Private Properties
+    
+    private let jsonService: JsonServiceProtocol
+    
+    
+    // MARK: Initialisers
     
     required init(jsonService: JsonServiceProtocol) {
         self.jsonService = jsonService
     }
+    
+    
+    // MARK: Public Methods
     
     func setUser(user: User) {
         jsonService.write(dataObject: user)

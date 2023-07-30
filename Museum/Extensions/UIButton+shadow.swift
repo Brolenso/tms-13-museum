@@ -2,6 +2,8 @@ import UIKit
 
 extension UIButton {
     
+    // MARK: Public Properties
+    
     @IBInspectable
     var shadow: Bool {
         get {
@@ -15,6 +17,9 @@ extension UIButton {
             }
         }
     }
+    
+    
+    // MARK: Public Methods
     
     public func addShadow() {
         layer.shadowColor = UIColor.black.cgColor

@@ -9,14 +9,19 @@ import Foundation
 
 protocol ServiceLocating {
     func getJsonService() -> JsonServiceProtocol
-    func getUserProvider() -> UserProviding
-    func getEventProvider() -> EventProviding
+    func getUserProvider() -> UserRepositoryProtocol
+    func getEventProvider() -> EventRepositoryProtocol
 }
 
 // all services in one place for the big picture, no shared ServiceLocator object for strong DI in ModuleBuilder
 final class ServiceLocator: ServiceLocating {
     
+    // MARK: Private Properties
+    
     private lazy var services: [String: AnyObject] = [:]
+    
+    
+    // MARK: Public Methods
     
     func getJsonService() -> JsonServiceProtocol {
         let key = "JsonService"
@@ -30,27 +35,27 @@ final class ServiceLocator: ServiceLocating {
         return service
     }
     
-    func getUserProvider() -> UserProviding {
-        let key = "UserProvider"
+    func getUserProvider() -> UserRepositoryProtocol {
+        let key = "UserRepository"
         // exist
-        if let service = services[key] as? UserProvider {
+        if let service = services[key] as? UserRepositoryProtocol {
             return service
         }
         // not exist
         let jsonService = getJsonService()
-        let service = UserProvider(jsonService: jsonService)
+        let service = UserRepository(jsonService: jsonService)
         services[key] = service
         return service
     }
     
-    func getEventProvider() -> EventProviding {
-        let key = "EventProvider"
+    func getEventProvider() -> EventRepositoryProtocol {
+        let key = "EventRepository"
         // service exist
-        if let service = services[key] as? EventProvider {
+        if let service = services[key] as? EventRepositoryProtocol {
             return service
         }
         // service not exist
-        let service = EventProvider()
+        let service = EventRepository()
         services[key] = service
         return service
     }

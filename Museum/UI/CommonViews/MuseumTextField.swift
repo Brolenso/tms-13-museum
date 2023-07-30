@@ -3,20 +3,7 @@ import UIKit
 @IBDesignable
 final class MuseumTextField: UIControl {
 
-    private var textField = UITextField(frame: .zero)
-        
-    public var text: String {
-        textField.text ?? ""
-    }
-    
-    public var keyboardType: UIKeyboardType {
-        get {
-            textField.keyboardType
-        }
-        set {
-            textField.keyboardType = newValue
-        }
-    }
+    // MARK: Public Properties
     
     @IBInspectable
     var localizedPlaceholder: String {
@@ -37,6 +24,27 @@ final class MuseumTextField: UIControl {
             textField.isSecureTextEntry = newValue
         }
     }
+        
+    public var text: String {
+        textField.text ?? ""
+    }
+    
+    public var keyboardType: UIKeyboardType {
+        get {
+            textField.keyboardType
+        }
+        set {
+            textField.keyboardType = newValue
+        }
+    }
+    
+
+    // MARK: Private Properties
+
+    private var textField = UITextField(frame: .zero)
+    
+    
+    // MARK: Initialisers
     
     // runs when we create view by code
     override init(frame: CGRect) {
@@ -50,6 +58,14 @@ final class MuseumTextField: UIControl {
         super.init(coder: coder)
         
         setupView()
+    }
+    
+    
+    // MARK: Private Methods
+    
+    @objc
+    private func textFieldViewTapped(_ sender: UITapGestureRecognizer) {
+        textField.becomeFirstResponder()
     }
     
     private func setupView() {
@@ -78,17 +94,15 @@ final class MuseumTextField: UIControl {
         textField.delegate = self
     }
     
-    @objc
-    private func textFieldViewTapped(_ sender: UITapGestureRecognizer) {
-        textField.becomeFirstResponder()
-    }
-    
     // access to values by this interface
     public func setTextFieldText(text: String) {
         textField.text = text
     }
     
 }
+
+
+// MARK: - UITextFieldDelegate
 
 extension MuseumTextField: UITextFieldDelegate {
     

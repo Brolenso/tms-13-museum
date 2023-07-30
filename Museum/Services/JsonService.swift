@@ -1,3 +1,10 @@
+//
+//  JsonService.swift
+//  Museum
+//
+//  Created by Vyacheslav on 08.07.2023.
+//
+
 import Foundation
 
 protocol JsonFileStorable {
@@ -12,6 +19,9 @@ protocol JsonServiceProtocol {
 }
 
 final class JsonService: JsonServiceProtocol {
+    
+    // MARK: Public Methods
+    
     // read from JSON any Codable & JsonFileStorable object
     public func read<T: Codable & JsonFileStorable>(type: T.Type) -> T? {
         do {
@@ -48,6 +58,9 @@ final class JsonService: JsonServiceProtocol {
             ErrorHandler.shared.logError(error)
         }
     }
+    
+    
+   // MARK: Private Methods
     
     private func getURL(fileName: String) throws -> URL {
         var url = try FileManager.default.url(

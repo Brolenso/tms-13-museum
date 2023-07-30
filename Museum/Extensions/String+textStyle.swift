@@ -2,6 +2,8 @@ import UIKit
 
 extension String {
     
+    // MARK: Public Methods
+    
     func setTextStyle(_ textStyle: TextStyle) -> NSAttributedString {
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -22,6 +24,8 @@ extension String {
 
 struct TextStyle {
     
+    // MARK: Public Properties
+    
     let size: Double
     let color: UIColor
     let fontName: String
@@ -32,6 +36,9 @@ struct TextStyle {
     }
     
 }
+
+
+// MARK: Public Properties
 
 extension TextStyle {
     

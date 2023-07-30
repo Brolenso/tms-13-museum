@@ -15,14 +15,22 @@ protocol ModuleBuilding {
 // build MVP modules and return UIViewController
 final class ModuleBuilder: ModuleBuilding {
 
+    // MARK: Private Properties
+    
     // all services will be injected from here
-    private let serviceLocator: ServiceLocating
-    private lazy var userProvider = serviceLocator.getUserProvider()
-    private lazy var eventProvider = serviceLocator.getEventProvider()
+    private var userProvider: UserRepositoryProtocol
+    private var eventProvider: EventRepositoryProtocol
+    
+    
+    // MARK: Initialisers
     
     init(serviceLocator: ServiceLocating) {
-        self.serviceLocator = serviceLocator
+        userProvider = serviceLocator.getUserProvider()
+        eventProvider = serviceLocator.getEventProvider()
     }
+    
+    
+    // MARK: Public Properties
     
     func createLogInModule(router: Routing) -> LogInViewController {
         let logInViewController: LogInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil)

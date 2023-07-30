@@ -18,6 +18,17 @@ protocol EventViewProtocol: AnyObject {
 
 final class EventViewController: UIViewController {
     
+    // MARK: Constants
+    
+    private let museumTitle = String(localized: "main.screen.art.museum.title")
+    private let logoutTitle = String(localized: "main.screen.log.out")
+    private let disabledButtonTitle = String(localized: "main.screen.error.calendar.access")
+    private let planVisitTitle = String(localized: "main.screen.plan.visit.title")
+    private let plannedVisitTitle = String(localized: "main.screen.planned.visit.title")
+    
+    
+    // MARK: IBOutlet
+    
     @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
     @IBOutlet var buttonLogOut: UIButton!
@@ -29,14 +40,14 @@ final class EventViewController: UIViewController {
     @IBOutlet var buttonAddress: UIButton!
     @IBOutlet var buttonWorkingHours: UIButton!
     
-    internal var presenter: EventPresenterProtocol?
-
-    private let museumTitle = String(localized: "main.screen.art.museum.title")
-    private let logoutTitle = String(localized: "main.screen.log.out")
-    private let disabledButtonTitle = String(localized: "main.screen.error.calendar.access")
-    private let planVisitTitle = String(localized: "main.screen.plan.visit.title")
-    private let plannedVisitTitle = String(localized: "main.screen.planned.visit.title")
     
+    // MARK: Public Properties
+    
+    var presenter: EventPresenterProtocol?
+    
+    
+    // MARK: UIViewController
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,12 +65,18 @@ final class EventViewController: UIViewController {
         
         presenter?.checkCalendarAccess()
     }
+    
+    
+    // MARK: IBAction
 
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
         presenter?.logout()
     }
     
 }
+
+
+// MARK: - EventViewProtocol
 
 extension EventViewController: EventViewProtocol {
     

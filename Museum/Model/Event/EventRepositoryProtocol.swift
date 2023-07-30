@@ -1,5 +1,5 @@
 //
-//  EventProvider.swift
+//  EventRepository.swift
 //  Museum
 //
 //  Created by Vyacheslav on 11.07.2023.
@@ -15,9 +15,14 @@ protocol EventRepositoryProtocol {
     func removeFromCalendar(event: Event) throws
 }
 
-class EventProvider: EventRepositoryProtocol {
+class EventRepository: EventRepositoryProtocol {
+    
+    // MARK: Private Properties
     
     private let eventStore = EKEventStore()
+    
+    
+    // MARK: Public Methods
     
     func requestCalendarAccess() async throws -> Bool {
         try await eventStore.requestAccess(to: .event)

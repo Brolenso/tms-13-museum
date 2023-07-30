@@ -3,8 +3,7 @@ import UIKit
 @IBDesignable
 final class MuseumLabel: UIView {
     
-    private let label = UILabel(frame: .zero)
-    private var rightAlignment: Bool = false
+    // MARK: Public Properties
     
     @IBInspectable
     var localizedText: String {
@@ -26,6 +25,15 @@ final class MuseumLabel: UIView {
         }
     }
     
+    
+    // MARK: Private Properties
+    
+    private let label = UILabel(frame: .zero)
+    private var rightAlignment: Bool = false
+    
+    
+    // MARK: Initialisers
+    
     // runs when we create view by code
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +47,9 @@ final class MuseumLabel: UIView {
         
         setupView()
     }
+    
+    
+    // MARK: Private Methods
     
     private func setupView() {
         let labelText = label.text ?? "Default text"

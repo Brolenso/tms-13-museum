@@ -9,6 +9,8 @@ import Foundation
 
 struct Event {
     
+    // MARK: Public Properties
+    
     let galleryTitle: String
     let type: String
     let name: String
@@ -16,7 +18,6 @@ struct Event {
     let address: String
     let workingHours: String
     
-    private let currentDate = Date()
     var duration: String { // "April 15 – August 20"
         let calendar = Calendar.current
         let dateExhibitionBegin = calendar.date(byAdding: .month, value: -1, to: currentDate) ?? currentDate
@@ -28,15 +29,19 @@ struct Event {
         resultDate += dateFormatter.string(from: dateExhibitionEnd)
         return resultDate
     }
+    
     var title: String {
         ("\(type) \"\(name)\"").replacingOccurrences(of: "\n", with: " ")
     }
+    
     var locationTitle: String {
         ("\(galleryTitle), \(address)").replacingOccurrences(of: "\n", with: " ")
     }
+    
     var notes: String {
         ("\(workingHours.replacingOccurrences(of: "\n", with: " "))\n\(exactLocation.capitalized)")
     }
+    
     // tomorrow 10:00
     var startDate: Date {
         let calendar = Calendar.current
@@ -48,6 +53,7 @@ struct Event {
         startDate = dateFormatter.date(from: startDateString) ?? Date()
         return startDate
     }
+    
     // tomorrow 12:00
     var endDate: Date {
         let calendar = Calendar.current
@@ -60,4 +66,9 @@ struct Event {
         return endDate
     }
     
+    
+    // MARK: Private Properties
+    
+    private let currentDate = Date()
+
 }

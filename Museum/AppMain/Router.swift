@@ -8,8 +8,6 @@
 import UIKit
 
 protocol Routing {
-    var moduleBuilder: ModuleBuilding { get set }
-    var navigationController: UINavigationController  { get set }
     func showLogInViewController(withAnimation: CATransition)
     func showMainViewController(user: User, withAnimation: CATransition)
 }
@@ -17,13 +15,21 @@ protocol Routing {
 // show ViewControllers created by builder
 final class Router: Routing {
     
-    var moduleBuilder: ModuleBuilding
-    var navigationController: UINavigationController
+    // MARK: Private Properties
+    
+    private let moduleBuilder: ModuleBuilding
+    private let navigationController: UINavigationController
+    
+    
+    // MARK: Initialisers
     
     init(moduleBuilder: ModuleBuilding, navigationController: UINavigationController) {
         self.moduleBuilder = moduleBuilder
         self.navigationController = navigationController
     }
+    
+    
+    // MARK: Public Methods
     
     func showLogInViewController(withAnimation: CATransition) {
         let logInViewController = moduleBuilder.createLogInModule(router: self)

@@ -10,6 +10,8 @@ import FirebaseCore
 
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    // MARK: AppDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()

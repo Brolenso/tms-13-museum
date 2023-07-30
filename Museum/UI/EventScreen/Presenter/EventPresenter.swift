@@ -12,8 +12,8 @@ protocol EventPresenterProtocol: AnyObject {
         view: EventViewProtocol,
         router: Routing,
         user: User,
-        userProvider: UserProviding,
-        eventProvider: EventProviding
+        userProvider: UserRepositoryProtocol,
+        eventProvider: EventRepositoryProtocol
     )
     func didLoad()
     func checkCalendarAccess()
@@ -24,11 +24,13 @@ protocol EventPresenterProtocol: AnyObject {
 
 final class EventPresenter: EventPresenterProtocol {
     
+    // MARK: Private Properties
+    
     private weak var view: EventViewProtocol?
     private let router: Routing
     private let user: User
-    private let userProvider: UserProviding
-    private let eventProvider: EventProviding
+    private let userProvider: UserRepositoryProtocol
+    private let eventProvider: EventRepositoryProtocol
     private var event: Event?
     private var calendarAccessReceived: Bool? {
         didSet {
@@ -36,12 +38,15 @@ final class EventPresenter: EventPresenterProtocol {
         }
     }
     
+    
+    // MARK: Initialisers
+    
     required init(
         view: EventViewProtocol,
         router: Routing,
         user: User,
-        userProvider: UserProviding,
-        eventProvider: EventProviding
+        userProvider: UserRepositoryProtocol,
+        eventProvider: EventRepositoryProtocol
     ) {
         self.view = view
         self.router = router
@@ -49,6 +54,9 @@ final class EventPresenter: EventPresenterProtocol {
         self.userProvider = userProvider
         self.eventProvider = eventProvider
     }
+    
+    
+    // MARK: Public Methods
 
     func didLoad() {
         view?.fillUI()
@@ -99,6 +107,9 @@ final class EventPresenter: EventPresenterProtocol {
         userProvider.deleteUser()
         router.showLogInViewController(withAnimation: .fromLeft)
     }
+    
+    
+    // MARK: Private Methods
     
     private func getFakeEvent() -> Event {
         Event(
