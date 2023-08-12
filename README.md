@@ -13,34 +13,37 @@
   </table>
 
 ## Architectural pattern
-- [x] MVP + Builder + Router
+- [x] MVP
+- [x] Builder 
+- [x] Router
+- [x] Service Locator
+- [x] Dependency injection
 
 ## Frameworks
 - [x] UIKit
+EventKit
 - [x] Firebase Crashlytics
 
 ## Technologies
-- [x] Storyboards with @IBDesignable views and @IBInspectable properties
+- [x] Storyboards with @IBDesignable and @IBInspectable
 - [x] Localizations: English, French, Russian
-- [x] Design moved from Figma
-- [x] EventKit
+- [x] DI in Builder from Service Locator
+- [x] Design from Figma
 - [x] JSON service
-- [x] User Model interaction by User Provider
 - [x] Errors Logger
+- [x] UI tests
 - [x] Async/await
 - [x] Generics
-- [x] Font styles
-- [x] UI tests
 - [x] Deep link
-- [x] Customized animations
+- [x] Font styles
+- [x] Customised screen transitions
 - [x] TestFlight internal testing
 - [x] Forced unwrap avoided
 
 ## Code patterns
-- [x] Router
 - [x] Factory
-- [x] Non shared Service Locator with dependency injections in Module Builder
-- [x] Singleton for error logging
+- [x] Delegates
+- [x] Singleton for Errors Logger
 
 ## Screenshots
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
