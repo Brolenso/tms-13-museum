@@ -23,7 +23,7 @@ final class JsonService: JsonServiceProtocol {
     // MARK: Public Methods
     
     // read from JSON any Codable & JsonFileStorable object
-    public func read<T: Codable & JsonFileStorable>(type: T.Type) -> T? {
+    func read<T: Codable & JsonFileStorable>(type: T.Type) -> T? {
         do {
             let jsonURL = try getURL(fileName: T.jsonFileName)
             let data = try Data(contentsOf: jsonURL)
@@ -36,7 +36,7 @@ final class JsonService: JsonServiceProtocol {
     }
     
     // write any Codable & JsonFileStorable object to JSON
-    public func write<T: Codable & JsonFileStorable>(dataObject: T) {
+    func write<T: Codable & JsonFileStorable>(dataObject: T) {
         do {
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted
@@ -50,7 +50,7 @@ final class JsonService: JsonServiceProtocol {
     }
     
     // delete from JSON
-    public func delete<T: Codable & JsonFileStorable>(type: T.Type) {
+    func delete<T: Codable & JsonFileStorable>(type: T.Type) {
         do {
             let jsonURL = try getURL(fileName: T.jsonFileName)
             try FileManager.default.removeItem(at: jsonURL)

@@ -25,11 +25,11 @@ final class MuseumTextField: UIControl {
         }
     }
         
-    public var text: String {
+    var text: String {
         textField.text ?? ""
     }
     
-    public var keyboardType: UIKeyboardType {
+    var keyboardType: UIKeyboardType {
         get {
             textField.keyboardType
         }
@@ -95,7 +95,7 @@ final class MuseumTextField: UIControl {
     }
     
     // access to values by this interface
-    public func setTextFieldText(text: String) {
+    func setTextFieldText(text: String) {
         textField.text = text
     }
     
