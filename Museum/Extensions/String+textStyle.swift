@@ -1,4 +1,12 @@
+//
+//  String+textStyle.swift
+//  Museum
+//
+//  Created by Vyacheslav on 24.02.2023.
+//
+
 import UIKit
+import OSLog
 
 extension String {
     
@@ -24,6 +32,10 @@ extension String {
 
 struct TextStyle {
     
+    // MARK: Constants
+    
+    private static let logger = Logger(subsystem: #file, category: "Text style logger")
+    
     // MARK: Public Properties
     
     let size: Double
@@ -32,7 +44,11 @@ struct TextStyle {
     var alignment: NSTextAlignment = .left
     
     var font: UIFont {
-        UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size)
+        guard let font = UIFont(name: fontName, size: size) else {
+            Self.logger.warning("Font \(fontName) not found")
+            return UIFont.systemFont(ofSize: size)
+        }
+        return font
     }
     
 }

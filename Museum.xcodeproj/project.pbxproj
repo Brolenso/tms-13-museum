@@ -302,6 +302,7 @@
 				1109F724294DF419006AB3CE /* Frameworks */,
 				1109F725294DF419006AB3CE /* Resources */,
 				11E5F4B929C0463100B979B4 /* ShellScript */,
+				119E8D992A93C5DD0070F365 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -402,6 +403,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		119E8D992A93C5DD0070F365 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# SwiftLint\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		11E5F4B929C0463100B979B4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -419,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "find \"${BUILT_PRODUCTS_DIR}\" -name \"*.dSYM\" | xargs -S 1024 -I ARGS \"${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/upload-symbols\" -gsp \"${SRCROOT}/Museum/AppMain/GoogleService-Info.plist\" -p ios ARGS\n";
+			shellScript = "# Firebase Crashlytics\nfind \"${BUILT_PRODUCTS_DIR}\" -name \"*.dSYM\" | xargs -S 1024 -I ARGS \"${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/upload-symbols\" -gsp \"${SRCROOT}/Museum/AppMain/GoogleService-Info.plist\" -p ios ARGS\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

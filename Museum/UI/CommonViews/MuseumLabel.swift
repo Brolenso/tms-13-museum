@@ -1,3 +1,10 @@
+//
+//  MuseumLabel.swift
+//  Museum
+//
+//  Created by Vyacheslav on 17.12.2022.
+//
+
 import UIKit
 
 @IBDesignable
@@ -67,7 +74,7 @@ final class MuseumLabel: UIView {
             label.leadingAnchor.constraint(equalTo: leadingAnchor),
             label.trailingAnchor.constraint(equalTo: trailingAnchor),
             label.topAnchor.constraint(equalTo: topAnchor),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

@@ -14,6 +14,15 @@ protocol ModuleBuilding {
 
 // build MVP modules and return UIViewController
 final class ModuleBuilder: ModuleBuilding {
+    
+    // MARK: Constants
+    
+    private enum Constants {
+        static let logInStoryboard = "LogInStoryboard"
+        static let logInViewController = "LogInViewController"
+        static let eventStoryboard = "EventStoryboard"
+        static let eventViewController = "EventViewController"
+    }
 
     // MARK: Private Properties
     
@@ -33,19 +42,24 @@ final class ModuleBuilder: ModuleBuilding {
     // MARK: Public Properties
     
     func createLogInModule(router: Routing) -> LogInViewController {
-        let logInViewController: LogInViewController = UIStoryboard(name: "LogInStoryboard", bundle: nil)
-            .instantiateViewController(identifier: "LogInStoryboard")
+        let logInViewController: LogInViewController = UIStoryboard(name: Constants.logInStoryboard, bundle: nil)
+            .instantiateViewController(identifier: Constants.logInViewController)
         let presenter = LogInPresenter(view: logInViewController, userProvider: userProvider, router: router)
         logInViewController.presenter = presenter
         return logInViewController
     }
     
     func createMainModule(router: Routing, user: User) -> EventViewController {
-        let mainViewController: EventViewController = UIStoryboard(name: "EventStoryboard", bundle: nil)
-            .instantiateViewController(identifier: "EventStoryboard")
-        let presenter = EventPresenter(view: mainViewController, router: router, user: user, userProvider: userProvider, eventProvider: eventProvider)
-        mainViewController.presenter = presenter
-        return mainViewController
+        let eventViewController: EventViewController = UIStoryboard(name: Constants.eventStoryboard, bundle: nil)
+            .instantiateViewController(identifier: Constants.eventViewController)
+        let presenter = EventPresenter(
+            view: eventViewController,
+            router: router, user: user,
+            userProvider: userProvider,
+            eventProvider: eventProvider
+        )
+        eventViewController.presenter = presenter
+        return eventViewController
     }
     
 }

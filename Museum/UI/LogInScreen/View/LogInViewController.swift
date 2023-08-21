@@ -15,11 +15,12 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     
     // MARK: Constants
     
-    let textMuseum = String(localized: "login.screen.museum.label.text")
-    let textAddress = String(localized: "login.screen.address.label.text")
-    let textLogIn = String(localized: "login.screen.login.button.title")
-    
-    
+    private enum Constants {
+        static let textMuseum = String(localized: "login.screen.museum.label.text")
+        static let textAddress = String(localized: "login.screen.address.label.text")
+        static let textLogIn = String(localized: "login.screen.login.button.title")
+    }
+        
     // MARK: IBOutlet
     
     @IBOutlet var scrollView: UIScrollView!
@@ -124,13 +125,13 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
     }
     
     private func setupUiTexts() {
-        let attributedTextMuseum = textMuseum.uppercased().setTextStyle(.title)
+        let attributedTextMuseum = Constants.textMuseum.uppercased().setTextStyle(.title)
         labelMuseum.attributedText = attributedTextMuseum
         
-        let attributedTextAddress = textAddress.setTextStyle(.subtitle)
+        let attributedTextAddress = Constants.textAddress.setTextStyle(.subtitle)
         labelAddress.attributedText = attributedTextAddress
         
-        let attributedTextLogIn = textLogIn.setTextStyle(.button)
+        let attributedTextLogIn = Constants.textLogIn.setTextStyle(.button)
         logInButton.setAttributedTitle(attributedTextLogIn, for: .normal)
     }
     

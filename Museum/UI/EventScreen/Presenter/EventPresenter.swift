@@ -24,6 +24,19 @@ protocol EventPresenterProtocol: AnyObject {
 
 final class EventPresenter: EventPresenterProtocol {
     
+    // MARK: Constants
+    
+    private enum Constants {
+        static let event = Event(
+            galleryTitle: String(localized: "main.screen.art.museum.title"),
+            type: String(localized: "main.screen.type"),
+            name: String(localized: "main.screen.name"),
+            exactLocation: String(localized: "main.screen.exact.location"),
+            address: String(localized: "main.screen.address"),
+            workingHours: String(localized: "main.screen.working.hours")
+        )
+    }
+    
     // MARK: Private Properties
     
     private weak var view: EventViewProtocol?
@@ -62,7 +75,7 @@ final class EventPresenter: EventPresenterProtocol {
         view?.fillUI()
         view?.fillUI(userName: user.email)
         
-        event = getFakeEvent()
+        event = Constants.event
         if let event {
             view?.fillUI(event: event)
         }
@@ -110,17 +123,6 @@ final class EventPresenter: EventPresenterProtocol {
     
     
     // MARK: Private Methods
-    
-    private func getFakeEvent() -> Event {
-        Event(
-            galleryTitle: String(localized: "main.screen.art.museum.title"),
-            type: String(localized: "main.screen.type"),
-            name: String(localized: "main.screen.name"),
-            exactLocation: String(localized: "main.screen.exact.location"),
-            address: String(localized: "main.screen.address"),
-            workingHours: String(localized: "main.screen.working.hours")
-        )
-    }
     
     private func changeButtonState() {
         guard let event else { return }

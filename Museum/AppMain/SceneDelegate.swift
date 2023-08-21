@@ -5,8 +5,6 @@
 //  Created by Vyacheslav on 17.12.2022.
 //
 
-// TODO: EventService
-
 import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -49,7 +47,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let urlContext = URLContexts.first else { return }
         let url = urlContext.url
-        print("Museum opened from link: \(url.absoluteString)")
+        print("Museum Walk opened from link, some actions here: \(url.absoluteString)")
     }
         
 }

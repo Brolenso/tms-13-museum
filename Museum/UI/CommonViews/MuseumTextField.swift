@@ -1,7 +1,21 @@
+//
+//  MuseumTextField.swift
+//  Museum
+//
+//  Created by Vyacheslav on 17.12.2022.
+//
+
 import UIKit
 
 @IBDesignable
 final class MuseumTextField: UIControl {
+    
+    // MARK: Constants
+    
+    private enum Constants {
+        static let textFieldLeadingAnchor = 15.0
+        static let textFieldTrailingAnchor = -15.0
+    }
 
     // MARK: Public Properties
     
@@ -82,8 +96,8 @@ final class MuseumTextField: UIControl {
         self.addSubview(textField)
         
         NSLayoutConstraint.activate([
-            textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
-            textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0),
+            textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.textFieldLeadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.textFieldTrailingAnchor),
             textField.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
         

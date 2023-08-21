@@ -1,6 +1,22 @@
+//
+//  UIButton+shadow.swift
+//  Museum
+//
+//  Created by Vyacheslav on 24.02.2023.
+//
+
 import UIKit
 
 extension UIButton {
+    
+    // MARK: Constants
+    
+    private enum Constants {
+        static let layerShadowColor = UIColor.black.cgColor
+        static let layerShadowOpacity: Float = 0.25
+        static let layerShadowOffset = CGSize(width: 0.0, height: 4.0)
+        static let layerShadowRadius = 4.0
+    }
     
     // MARK: Public Properties
     
@@ -22,17 +38,17 @@ extension UIButton {
     // MARK: Public Methods
     
     func addShadow() {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.25
-        layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        layer.shadowRadius = 4.0
+        layer.shadowColor = Constants.layerShadowColor
+        layer.shadowOpacity = Constants.layerShadowOpacity
+        layer.shadowOffset = Constants.layerShadowOffset
+        layer.shadowRadius = Constants.layerShadowRadius
     }
     
     func removeShadow() {
         layer.shadowColor = .none
-        layer.shadowOpacity = 0.0
+        layer.shadowOpacity = .zero
         layer.shadowOffset = .zero
-        layer.shadowRadius = 0.0
+        layer.shadowRadius = .zero
     }
     
 }

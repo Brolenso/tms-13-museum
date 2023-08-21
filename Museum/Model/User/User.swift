@@ -7,6 +7,12 @@
 
 class User: Codable {
     
+    // MARK: Constants
+    
+    private enum Constants {
+        static let jsonFileName = "userInfo.json"
+    }
+    
     // MARK: Public Properties
     
     var email: String
@@ -27,6 +33,6 @@ class User: Codable {
 
 extension User: JsonFileStorable {
     
-    static var jsonFileName: String = "userInfo.json"
+    static var jsonFileName = Constants.jsonFileName
     
 }

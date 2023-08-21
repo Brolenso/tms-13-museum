@@ -6,8 +6,28 @@
 //
 
 import Foundation
+import OSLog
 
 struct Event {
+    
+    // MARK: Constants
+    
+    private enum Constants {
+        static var currentDate: Date { Date() } // now
+        static var tomorrowMidnight: Date? {
+            let calendar = Calendar.current
+            let todayMidnight = calendar.startOfDay(for: currentDate)
+            return calendar.date(byAdding: .day, value: 1, to: todayMidnight)
+        } // 0:00 tomorrow
+        static let exhibitionBeginMonth = -1 // -1 month of current
+        static let exhibitionEndMonth = 2 // +2 months to current
+        static let durationBeginFormat = "MMMM 15" // "April 15 – "
+        static let durationEndFormat = "MMMM 20" // " – August 20"
+        static let calendarStartHours = 10 // at 10:00 tomorrow
+        static let calendarFinishHours = 12 // at 12:00 tomorrow
+    }
+    
+    private static let logger = Logger(subsystem: #file, category: "Event logger")
     
     // MARK: Public Properties
     
@@ -18,15 +38,19 @@ struct Event {
     let address: String
     let workingHours: String
     
-    var duration: String { // "April 15 – August 20"
+    var duration: String {
+        var resultDate = ""
         let calendar = Calendar.current
-        let dateExhibitionBegin = calendar.date(byAdding: .month, value: -1, to: currentDate) ?? currentDate
+        
+        let dateExhibitionBegin = calendar.date(byAdding: .month, value: Constants.exhibitionBeginMonth, to: Constants.currentDate) ?? Constants.currentDate
+        let dateExhibitionEnd = calendar.date(byAdding: .month, value: Constants.exhibitionEndMonth, to: Constants.currentDate) ?? Constants.currentDate
+        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM 15"
-        var resultDate = dateFormatter.string(from: dateExhibitionBegin) + " – "
-        let dateExhibitionEnd = calendar.date(byAdding: .month, value: 2, to: currentDate) ?? currentDate
-        dateFormatter.dateFormat = "MMMM 20"
+        dateFormatter.dateFormat = Constants.durationBeginFormat
+        resultDate = dateFormatter.string(from: dateExhibitionBegin) + " – "
+        dateFormatter.dateFormat = Constants.durationEndFormat
         resultDate += dateFormatter.string(from: dateExhibitionEnd)
+        
         return resultDate
     }
     
@@ -42,33 +66,22 @@ struct Event {
         ("\(workingHours.replacingOccurrences(of: "\n", with: " "))\n\(exactLocation.capitalized)")
     }
     
-    // tomorrow 10:00
     var startDate: Date {
-        let calendar = Calendar.current
-        var startDate = calendar.date(byAdding: .day, value: 1, to: currentDate) ?? currentDate
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd 10:00:00 ZZZZ"
-        let startDateString = dateFormatter.string(from: startDate)
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss ZZZZ"
-        startDate = dateFormatter.date(from: startDateString) ?? Date()
+        guard let tomorrowMidnight = Constants.tomorrowMidnight,
+              let startDate = Calendar.current.date(byAdding: .hour, value: Constants.calendarStartHours, to: tomorrowMidnight)
+        else {
+            return Date()
+        }
         return startDate
     }
     
-    // tomorrow 12:00
     var endDate: Date {
-        let calendar = Calendar.current
-        var endDate = calendar.date(byAdding: .day, value: 1, to: currentDate) ?? currentDate
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd 12:00:00 ZZZZ"
-        let endDateString = dateFormatter.string(from: endDate)
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss ZZZZ"
-        endDate = dateFormatter.date(from: endDateString) ?? currentDate
+        guard let tomorrowMidnight = Constants.tomorrowMidnight,
+              let endDate = Calendar.current.date(byAdding: .hour, value: Constants.calendarFinishHours, to: tomorrowMidnight)
+        else {
+            return Date()
+        }
         return endDate
     }
-    
-    
-    // MARK: Private Properties
-    
-    private let currentDate = Date()
 
 }

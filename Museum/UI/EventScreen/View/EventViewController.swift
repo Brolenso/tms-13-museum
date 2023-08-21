@@ -20,12 +20,15 @@ final class EventViewController: UIViewController {
     
     // MARK: Constants
     
-    private let museumTitle = String(localized: "main.screen.art.museum.title")
-    private let logoutTitle = String(localized: "main.screen.log.out")
-    private let disabledButtonTitle = String(localized: "main.screen.error.calendar.access")
-    private let planVisitTitle = String(localized: "main.screen.plan.visit.title")
-    private let plannedVisitTitle = String(localized: "main.screen.planned.visit.title")
-    
+    private enum Constants {
+        static let museumTitle = String(localized: "main.screen.art.museum.title")
+        static let logoutTitle = String(localized: "main.screen.log.out")
+        static let disabledButtonTitle = String(localized: "main.screen.error.calendar.access")
+        static let planVisitTitle = String(localized: "main.screen.plan.visit.title")
+        static let plannedVisitTitle = String(localized: "main.screen.planned.visit.title")
+        static let buttonPlanVisitDefaultColor = UIColor(named: "grey") ?? .gray
+
+    }
     
     // MARK: IBOutlet
     
@@ -82,12 +85,12 @@ extension EventViewController: EventViewProtocol {
     
     func fillUI() {
         buttonTheArtMuseum.setAttributedTitle(
-            museumTitle.uppercased().setTextStyle(.labelDark),
+            Constants.museumTitle.uppercased().setTextStyle(.labelDark),
             for: .normal
         )
         
         buttonLogOut.setAttributedTitle(
-            logoutTitle.uppercased().setTextStyle(.labelDarkRight),
+            Constants.logoutTitle.uppercased().setTextStyle(.labelDarkRight),
             for: .normal
         )
     }
@@ -117,9 +120,10 @@ extension EventViewController: EventViewProtocol {
             for: .normal
         )
 
-        buttonPlanVisit.backgroundColor = UIColor(named: "grey") ?? .gray
+        // default color for no calendar access
+        buttonPlanVisit.backgroundColor = Constants.buttonPlanVisitDefaultColor
         buttonPlanVisit.setAttributedTitle(
-            planVisitTitle.setTextStyle(.button),
+            Constants.planVisitTitle.setTextStyle(.button),
             for: .normal
         )
 
@@ -135,13 +139,13 @@ extension EventViewController: EventViewProtocol {
     }
     
     func setButtonOff() {
-        buttonPlanVisit.setAttributedTitle(disabledButtonTitle.setTextStyle(.button), for: .disabled)
+        buttonPlanVisit.setAttributedTitle(Constants.disabledButtonTitle.setTextStyle(.button), for: .disabled)
         buttonPlanVisit.isEnabled = false
         buttonPlanVisit.isHighlighted = false
     }
     
     func setButtonPlanned() {
-        buttonPlanVisit.setAttributedTitle(plannedVisitTitle.setTextStyle(.button), for: .normal)
+        buttonPlanVisit.setAttributedTitle(Constants.plannedVisitTitle.setTextStyle(.button), for: .normal)
         buttonPlanVisit.isEnabled = true
         buttonPlanVisit.isHighlighted = true
         buttonPlanVisit.removeTarget(nil, action: nil, for: .allEvents)
@@ -152,7 +156,7 @@ extension EventViewController: EventViewProtocol {
     }
    
     func setButtonPlan() {
-        buttonPlanVisit.setAttributedTitle(planVisitTitle.setTextStyle(.button), for: .normal)
+        buttonPlanVisit.setAttributedTitle(Constants.planVisitTitle.setTextStyle(.button), for: .normal)
         buttonPlanVisit.isEnabled = true
         buttonPlanVisit.isHighlighted = false
         buttonPlanVisit.removeTarget(nil, action: nil, for: .allEvents)
