@@ -19,9 +19,9 @@ protocol JsonServiceProtocol {
 }
 
 final class JsonService: JsonServiceProtocol {
-    
+
     // MARK: Public Methods
-    
+
     // read from JSON any Codable & JsonFileStorable object
     func read<T: Codable & JsonFileStorable>(type: T.Type) -> T? {
         do {
@@ -34,7 +34,7 @@ final class JsonService: JsonServiceProtocol {
             return nil
         }
     }
-    
+
     // write any Codable & JsonFileStorable object to JSON
     func write<T: Codable & JsonFileStorable>(dataObject: T) {
         do {
@@ -48,7 +48,7 @@ final class JsonService: JsonServiceProtocol {
             return
         }
     }
-    
+
     // delete from JSON
     func delete<T: Codable & JsonFileStorable>(type: T.Type) {
         do {
@@ -58,10 +58,9 @@ final class JsonService: JsonServiceProtocol {
             ErrorHandler.shared.logError(error)
         }
     }
-    
-    
+
    // MARK: Private Methods
-    
+
     private func getURL(fileName: String) throws -> URL {
         var url = try FileManager.default.url(
             for: .applicationSupportDirectory,
@@ -72,5 +71,5 @@ final class JsonService: JsonServiceProtocol {
         url.append(path: fileName)
         return url
     }
-    
+
 }

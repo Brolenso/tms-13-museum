@@ -23,9 +23,9 @@ protocol EventPresenterProtocol: AnyObject {
 }
 
 final class EventPresenter: EventPresenterProtocol {
-    
+
     // MARK: Constants
-    
+
     private enum Constants {
         static let event = Event(
             galleryTitle: String(localized: "main.screen.art.museum.title"),
@@ -36,9 +36,9 @@ final class EventPresenter: EventPresenterProtocol {
             workingHours: String(localized: "main.screen.working.hours")
         )
     }
-    
+
     // MARK: Private Properties
-    
+
     private weak var view: EventViewProtocol?
     private let router: Routing
     private let user: User
@@ -50,10 +50,9 @@ final class EventPresenter: EventPresenterProtocol {
             changeButtonState()
         }
     }
-    
-    
+
     // MARK: Initialisers
-    
+
     required init(
         view: EventViewProtocol,
         router: Routing,
@@ -67,20 +66,19 @@ final class EventPresenter: EventPresenterProtocol {
         self.userProvider = userProvider
         self.eventProvider = eventProvider
     }
-    
-    
+
     // MARK: Public Methods
 
     func didLoad() {
         view?.fillUI()
         view?.fillUI(userName: user.email)
-        
+
         event = Constants.event
         if let event {
             view?.fillUI(event: event)
         }
     }
-    
+
     func checkCalendarAccess() {
         Task {
             do {
@@ -92,7 +90,7 @@ final class EventPresenter: EventPresenterProtocol {
             }
         }
     }
-    
+
     func addToCalendar() {
         guard let event else { return }
         do {
@@ -103,7 +101,7 @@ final class EventPresenter: EventPresenterProtocol {
         }
         changeButtonState()
     }
-    
+
     func removeFromCalendar() {
         guard let event else { return }
         do {
@@ -114,16 +112,15 @@ final class EventPresenter: EventPresenterProtocol {
         }
         changeButtonState()
     }
-    
+
     // show view, than write to JSON
     func logout() {
         userProvider.deleteUser()
         router.showLogInViewController(withAnimation: .fromLeft)
     }
-    
-    
+
     // MARK: Private Methods
-    
+
     private func changeButtonState() {
         guard let event else { return }
         // run task on main actor
@@ -132,7 +129,7 @@ final class EventPresenter: EventPresenterProtocol {
                 view?.setButtonOff()
                 return
             }
-            
+
             if eventProvider.calendarContains(event: event) {
                 view?.setButtonPlanned()
             } else {
@@ -140,5 +137,5 @@ final class EventPresenter: EventPresenterProtocol {
             }
         }
     }
-    
+
 }

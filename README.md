@@ -21,8 +21,9 @@
 
 ## Frameworks
 - [x] UIKit
-EventKit
+- [x] EventKit
 - [x] Firebase Crashlytics
+- [x] SwiftLint
 
 ## Technologies
 - [x] Storyboards with @IBDesignable and @IBInspectable
