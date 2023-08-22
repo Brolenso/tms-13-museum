@@ -14,9 +14,9 @@ protocol ModuleBuilding {
 
 // build MVP modules and return UIViewController
 final class ModuleBuilder: ModuleBuilding {
-    
+
     // MARK: Constants
-    
+
     private enum Constants {
         static let logInStoryboard = "LogInStoryboard"
         static let logInViewController = "LogInViewController"
@@ -25,22 +25,20 @@ final class ModuleBuilder: ModuleBuilding {
     }
 
     // MARK: Private Properties
-    
+
     // all services will be injected from here
     private var userProvider: UserRepositoryProtocol
     private var eventProvider: EventRepositoryProtocol
-    
-    
+
     // MARK: Initialisers
-    
+
     init(serviceLocator: ServiceLocating) {
         userProvider = serviceLocator.getUserProvider()
         eventProvider = serviceLocator.getEventProvider()
     }
-    
-    
+
     // MARK: Public Properties
-    
+
     func createLogInModule(router: Routing) -> LogInViewController {
         let logInViewController: LogInViewController = UIStoryboard(name: Constants.logInStoryboard, bundle: nil)
             .instantiateViewController(identifier: Constants.logInViewController)
@@ -48,7 +46,7 @@ final class ModuleBuilder: ModuleBuilding {
         logInViewController.presenter = presenter
         return logInViewController
     }
-    
+
     func createMainModule(router: Routing, user: User) -> EventViewController {
         let eventViewController: EventViewController = UIStoryboard(name: Constants.eventStoryboard, bundle: nil)
             .instantiateViewController(identifier: Constants.eventViewController)
@@ -61,5 +59,5 @@ final class ModuleBuilder: ModuleBuilding {
         eventViewController.presenter = presenter
         return eventViewController
     }
-    
+
 }

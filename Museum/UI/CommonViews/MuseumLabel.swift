@@ -9,9 +9,9 @@ import UIKit
 
 @IBDesignable
 final class MuseumLabel: UIView {
-    
+
     // MARK: Public Properties
-    
+
     @IBInspectable
     var localizedText: String {
         get {
@@ -21,7 +21,7 @@ final class MuseumLabel: UIView {
             label.text = NSLocalizedString(newValue, comment: "")
         }
     }
-    
+
     @IBInspectable
     var rightTextAlignment: Bool {
         get {
@@ -31,45 +31,42 @@ final class MuseumLabel: UIView {
             label.textAlignment = newValue ? .right : .left
         }
     }
-    
-    
+
     // MARK: Private Properties
-    
+
     private let label = UILabel(frame: .zero)
     private var rightAlignment: Bool = false
-    
-    
+
     // MARK: Initialisers
-    
+
     // runs when we create view by code
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupView()
     }
-    
+
     // runs if we place view on storyboard
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         setupView()
     }
-    
-    
+
     // MARK: Private Methods
-    
+
     private func setupView() {
         let labelText = label.text ?? "Default text"
         label.attributedText = labelText.setTextStyle(.label)
-        
+
         // needs because NSLocalizedString break a storyboard defined alignment
         if rightAlignment {
             label.textAlignment = .right
         }
-                
+
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
-        
+
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor),
             label.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -77,5 +74,5 @@ final class MuseumLabel: UIView {
             label.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
+
 }

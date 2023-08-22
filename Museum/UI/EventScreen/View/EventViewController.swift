@@ -17,9 +17,9 @@ protocol EventViewProtocol: AnyObject {
 }
 
 final class EventViewController: UIViewController {
-    
+
     // MARK: Constants
-    
+
     private enum Constants {
         static let museumTitle = String(localized: "main.screen.art.museum.title")
         static let logoutTitle = String(localized: "main.screen.log.out")
@@ -29,9 +29,9 @@ final class EventViewController: UIViewController {
         static let buttonPlanVisitDefaultColor = UIColor(named: "grey") ?? .gray
 
     }
-    
+
     // MARK: IBOutlet
-    
+
     @IBOutlet var buttonTheArtMuseum: UIButton!
     @IBOutlet var labelEmail: UILabel!
     @IBOutlet var buttonLogOut: UIButton!
@@ -42,63 +42,59 @@ final class EventViewController: UIViewController {
     @IBOutlet var buttonPlanVisit: UIButton!
     @IBOutlet var buttonAddress: UIButton!
     @IBOutlet var buttonWorkingHours: UIButton!
-    
-    
+
     // MARK: Public Properties
-    
+
     var presenter: EventPresenterProtocol?
-    
-    
+
     // MARK: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter?.didLoad()
-        
+
         // check calendar event on scene didBecomeActive
         NotificationCenter.default.addObserver(forName: UIScene.didActivateNotification, object: nil, queue: nil) { [weak self] _ in
             guard let self else { return }
             presenter?.checkCalendarAccess()
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         presenter?.checkCalendarAccess()
     }
-    
-    
+
     // MARK: IBAction
 
     @IBAction func buttonLogOutTapped(_ sender: UIButton) {
         presenter?.logout()
     }
-    
-}
 
+}
 
 // MARK: - EventViewProtocol
 
 extension EventViewController: EventViewProtocol {
-    
+
     func fillUI() {
         buttonTheArtMuseum.setAttributedTitle(
             Constants.museumTitle.uppercased().setTextStyle(.labelDark),
             for: .normal
         )
-        
+
         buttonLogOut.setAttributedTitle(
             Constants.logoutTitle.uppercased().setTextStyle(.labelDarkRight),
             for: .normal
         )
     }
-    
+
     func fillUI(userName: String) {
         labelEmail.attributedText = userName.uppercased().setTextStyle(.labelDark)
     }
-    
+
     func fillUI(event: Event) {
         buttonEventType.setAttributedTitle(
             event.type.uppercased().setTextStyle(.labelGrey),
@@ -137,13 +133,13 @@ extension EventViewController: EventViewProtocol {
             for: .normal
         )
     }
-    
+
     func setButtonOff() {
         buttonPlanVisit.setAttributedTitle(Constants.disabledButtonTitle.setTextStyle(.button), for: .disabled)
         buttonPlanVisit.isEnabled = false
         buttonPlanVisit.isHighlighted = false
     }
-    
+
     func setButtonPlanned() {
         buttonPlanVisit.setAttributedTitle(Constants.plannedVisitTitle.setTextStyle(.button), for: .normal)
         buttonPlanVisit.isEnabled = true
@@ -154,7 +150,7 @@ extension EventViewController: EventViewProtocol {
             presenter?.removeFromCalendar()
         }), for: .primaryActionTriggered)
     }
-   
+
     func setButtonPlan() {
         buttonPlanVisit.setAttributedTitle(Constants.planVisitTitle.setTextStyle(.button), for: .normal)
         buttonPlanVisit.isEnabled = true

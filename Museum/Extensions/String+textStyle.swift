@@ -9,40 +9,40 @@ import UIKit
 import OSLog
 
 extension String {
-    
+
     // MARK: Public Methods
-    
+
     func setTextStyle(_ textStyle: TextStyle) -> NSAttributedString {
-        
+
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = textStyle.alignment
-        
+
         let attributedString = NSAttributedString(
             string: self,
             attributes: [
                 .font: textStyle.font,
                 .foregroundColor: textStyle.color,
-                .paragraphStyle : paragraphStyle,
+                .paragraphStyle: paragraphStyle
             ]
         )
         return attributedString
     }
-    
+
 }
 
 struct TextStyle {
-    
+
     // MARK: Constants
-    
+
     private static let logger = Logger(subsystem: #file, category: "Text style logger")
-    
+
     // MARK: Public Properties
-    
+
     let size: Double
     let color: UIColor
     let fontName: String
     var alignment: NSTextAlignment = .left
-    
+
     var font: UIFont {
         guard let font = UIFont(name: fontName, size: size) else {
             Self.logger.warning("Font \(fontName) not found")
@@ -50,14 +50,13 @@ struct TextStyle {
         }
         return font
     }
-    
-}
 
+}
 
 // MARK: Public Properties
 
 extension TextStyle {
-    
+
     static let title = TextStyle(
         size: 36.0,
         color: UIColor(named: "light-text") ?? .white,
@@ -114,5 +113,5 @@ extension TextStyle {
         color: UIColor(named: "grey") ?? .gray,
         fontName: "Montserrat-Regular"
     )
-    
+
 }
