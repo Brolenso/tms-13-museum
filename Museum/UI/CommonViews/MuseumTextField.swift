@@ -72,6 +72,13 @@ final class MuseumTextField: UIControl {
         setupView()
     }
 
+    // MARK: Public Methods
+
+    // set values by this interface
+    func setTextFieldText(text: String) {
+        textField.text = text
+    }
+
     // MARK: Private Methods
 
     @objc
@@ -99,15 +106,10 @@ final class MuseumTextField: UIControl {
         ])
 
         let tapGesture = UITapGestureRecognizer(target: self,
-                                                 action: #selector(textFieldViewTapped(_:)))
+                                                 action: #selector(textFieldViewTapped))
         self.addGestureRecognizer(tapGesture)
 
         textField.delegate = self
-    }
-
-    // access to values by this interface
-    func setTextFieldText(text: String) {
-        textField.text = text
     }
 
 }

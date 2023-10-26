@@ -69,6 +69,19 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
 
     // MARK: Private Methods
 
+    private func setupViewController() {
+        emailTextField.keyboardType = .emailAddress
+
+        // option 1: target - action from code
+        emailTextField.addTarget(self, action: #selector(emailDonePressed), for: .editingDidEndOnExit)
+
+        // keyboard will change frame notification
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChangeFrame),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+    }
+
     @objc
     private func emailDonePressed(_ sender: MuseumTextField) {
         logIn()
@@ -105,19 +118,6 @@ final class LogInViewController: UIViewController, LogInViewProtocol {
         }
 
         scrollView.scrollRectToVisible(visibleFrame, animated: true)
-    }
-
-    private func setupViewController() {
-        emailTextField.keyboardType = .emailAddress
-
-        // option 1: target - action from code
-        emailTextField.addTarget(self, action: #selector(emailDonePressed(_:)), for: .editingDidEndOnExit)
-
-        // keyboard will change frame notification
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillChangeFrame(_:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
     }
 
     private func setupUiTexts() {
