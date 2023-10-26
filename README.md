@@ -7,7 +7,7 @@
       </td>
       <td>
         <h1>Museum Walk App</h1>
-        <p>Museum Walk - pet-project application, that shows the museum's upcoming event, allows users to plan their visit by adding event to their calendar. App is localized into English, French and Russian, supports any screen orientation, can be opened via deeplink, has build-in Google Firebase Crashlytics, uploaded to Apple TestFlight Internal Testing.</p>
+        <p>Museum Walk - a pet-project application, that shows the museum's upcoming event, allows users to plan their visit by adding event to their calendar. App is localized into English, French and Russian, supports any screen orientation, can be opened via deeplink, has build-in Google Firebase Crashlytics, uploaded to Apple TestFlight Internal Testing.</p>
       </td>
     </tr>
   </table>
@@ -16,8 +16,8 @@
 - [x] MVP
 - [x] Builder 
 - [x] Router
-- [x] Service Locator
-- [x] Dependency injection
+- [x] Service locator with strong DI
+- [x] DI
 
 ## Frameworks
 - [x] UIKit
@@ -42,9 +42,9 @@
 - [x] Forced unwrap avoided
 
 ## Code patterns
-- [x] Factory
+- [x] Protocols
 - [x] Delegates
-- [x] Singleton for Errors Logger
+- [x] Factory
 
 ## Screenshots
 <img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
