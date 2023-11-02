@@ -3,7 +3,7 @@
   <table>
     <tr>
       <td>
-        <img src="Screenshots/MuseumAppIcon.png" alt="Museum App Icon">
+        <img src="Media/MuseumAppIcon.png" alt="Museum App Icon" width="320">
       </td>
       <td>
         <h1>Museum Walk App</h1>
@@ -47,7 +47,7 @@
 - [x] Factory
 
 ## Screenshots
-<img src="Screenshots/LogIn.png" width="273"/> <img src="Screenshots/Main.png" width="273"/> <img src="Screenshots/TestFlight.png" width="273"/> <img src="Screenshots/Localizations.png" width="598"/>
+<img src="Media/LogIn.png" width="273"/> <img src="Media/Main.png" width="273"/> <img src="Media/TestFlight.png" width="273"/> <img src="Media/Localizations.png" width="598"/>
 
 ## Contact me
 [LinkedIn](https://www.linkedin.com/in/bytepixelmelody "https://www.linkedin.com/in/bytepixelmelody") | [Telegram](https://t.me/bytepixelmelody "@bytepixelmelody") | [Email](mailto:bytepixelmelody@gmail.com "bytepixelmelody@gmail.com")
