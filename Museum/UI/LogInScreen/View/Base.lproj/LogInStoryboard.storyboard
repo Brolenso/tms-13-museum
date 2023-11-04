@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fU-8c-qPV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fU-8c-qPV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -63,21 +63,6 @@ San Francisco, CA 94103</string>
                                             <constraint firstAttribute="height" constant="1" id="gmj-Yf-bQS"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adF-ls-H1E" userLabel="Password Text Field" customClass="MuseumTextField" customModule="Museum" customModuleProvider="target">
-                                        <rect key="frame" x="71.666666666666686" y="590" width="250" height="42"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="password-text-field"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="x9z-tu-FD2"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="login.screen.password.textfield.placeholder"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="passwordDonePressed:" destination="6fU-8c-qPV" eventType="editingDidEndOnExit" id="DnA-aZ-m2c"/>
-                                        </connections>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-e8-PUg" userLabel="Label Forgot" customClass="MuseumLabel" customModule="Museum" customModuleProvider="target">
                                         <rect key="frame" x="71.666666666666686" y="635" width="250" height="24"/>
                                         <accessibility key="accessibilityConfiguration" identifier="forgot-password-label"/>
@@ -136,6 +121,21 @@ San Francisco, CA 94103</string>
                                             <outletCollection property="gestureRecognizers" destination="CEv-pr-BbJ" appends="YES" id="C4P-Sf-fcz"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adF-ls-H1E" userLabel="Password Text Field" customClass="MuseumTextField" customModule="Museum" customModuleProvider="target">
+                                        <rect key="frame" x="71.666666666666686" y="590" width="250" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="password-text-field"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="x9z-tu-FD2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="securityEntry" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="login.screen.password.textfield.placeholder"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="passwordDonePressed:" destination="6fU-8c-qPV" eventType="editingDidEndOnExit" id="DnA-aZ-m2c"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="yfP-rH-O7X" firstAttribute="leading" secondItem="aOC-0b-wG0" secondAttribute="leading" constant="-2" id="0Pc-Ld-fEk"/>
@@ -146,6 +146,7 @@ San Francisco, CA 94103</string>
                                     <constraint firstItem="aOC-0b-wG0" firstAttribute="centerX" secondItem="dGa-RN-lZj" secondAttribute="centerX" id="B3F-Je-2ZN"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="top" secondItem="Z9u-K2-9Aj" secondAttribute="bottom" constant="3" id="B4l-wC-9Qg"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="centerX" secondItem="Z9u-K2-9Aj" secondAttribute="centerX" id="B6z-fk-FyS"/>
+                                    <constraint firstItem="T4I-a4-JxA" firstAttribute="height" secondItem="dGa-RN-lZj" secondAttribute="height" priority="249" constant="-80" id="EjL-wp-OA8"/>
                                     <constraint firstItem="XAe-e8-PUg" firstAttribute="top" secondItem="adF-ls-H1E" secondAttribute="bottom" constant="3" id="FSo-Zq-WFl"/>
                                     <constraint firstItem="NNG-kn-H75" firstAttribute="width" secondItem="Z9u-K2-9Aj" secondAttribute="width" id="GyG-d9-tf7"/>
                                     <constraint firstItem="Z9u-K2-9Aj" firstAttribute="width" secondItem="XAe-e8-PUg" secondAttribute="width" id="Ji7-JQ-nhB"/>
@@ -172,7 +173,6 @@ San Francisco, CA 94103</string>
                         <constraints>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" id="8yJ-Us-huj"/>
                             <constraint firstItem="70l-7m-ohK" firstAttribute="trailing" secondItem="64N-mu-MDv" secondAttribute="trailing" constant="25" id="Aw5-mZ-kqs"/>
-                            <constraint firstItem="T4I-a4-JxA" firstAttribute="height" secondItem="dGa-RN-lZj" secondAttribute="height" priority="249" constant="-80" id="EjL-wp-OA8"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" id="Fbg-qI-Ihh"/>
                             <constraint firstItem="70l-7m-ohK" firstAttribute="top" secondItem="64N-mu-MDv" secondAttribute="top" constant="-70" id="HAK-tr-4JU"/>
                             <constraint firstItem="dGa-RN-lZj" firstAttribute="leading" secondItem="64N-mu-MDv" secondAttribute="leading" id="LdV-Qe-2Gb"/>
