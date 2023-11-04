@@ -13,10 +13,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    // MARK: Private Properties
-
-    private let serviceLocator: ServiceLocating = ServiceLocator()
-
     // MARK: SceneDelegate
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -26,6 +22,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootNavigationController = UINavigationController()
         rootNavigationController.navigationBar.isHidden = true
 
+        let serviceLocator = ServiceLocator()
         let moduleBuilder = ModuleBuilder(serviceLocator: serviceLocator)
         let router = Router(moduleBuilder: moduleBuilder, navigationController: rootNavigationController)
 

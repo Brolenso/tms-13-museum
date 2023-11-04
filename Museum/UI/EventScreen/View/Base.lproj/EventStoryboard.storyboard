@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -238,6 +238,7 @@ OLD AND
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="69" id="RMt-Yg-Q1L"/>
+                                                    <constraint firstItem="ntW-f4-jIi" firstAttribute="width" secondItem="WzE-Mn-x7v" secondAttribute="width" constant="-26" id="SPa-bl-Pjf"/>
                                                     <constraint firstItem="ntW-f4-jIi" firstAttribute="centerY" secondItem="WzE-Mn-x7v" secondAttribute="centerY" id="xEM-un-WTw"/>
                                                 </constraints>
                                             </view>
@@ -333,6 +334,7 @@ MTA6MDAgH+KAkyAxNzozMA
                                                     <constraint firstItem="vTE-Xg-xDI" firstAttribute="centerY" secondItem="bOG-v2-J96" secondAttribute="firstBaseline" id="Q12-wJ-IQM"/>
                                                     <constraint firstItem="efd-1t-ver" firstAttribute="centerY" secondItem="JPb-d4-dZx" secondAttribute="firstBaseline" id="efA-ok-9aR"/>
                                                     <constraint firstAttribute="height" constant="50" id="oX6-h0-PqZ"/>
+                                                    <constraint firstItem="efd-1t-ver" firstAttribute="leading" secondItem="7IP-hd-DBT" secondAttribute="leading" constant="16" id="qyn-AJ-71Z"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bOG-v2-J96" secondAttribute="trailing" constant="16" id="yeo-k3-t6f"/>
                                                 </constraints>
                                             </view>
@@ -344,6 +346,7 @@ MTA6MDAgH+KAkyAxNzozMA
                                     <constraint firstItem="xh3-37-dqs" firstAttribute="bottom" secondItem="Pdh-HL-oJN" secondAttribute="top" id="24D-tL-2dC"/>
                                     <constraint firstItem="U3m-zF-rIH" firstAttribute="bottom" secondItem="xh3-37-dqs" secondAttribute="top" id="Gzj-n0-2aA"/>
                                     <constraint firstItem="MdZ-LL-rms" firstAttribute="trailing" secondItem="xh3-37-dqs" secondAttribute="trailing" id="RxV-3P-x4D"/>
+                                    <constraint firstItem="MdZ-LL-rms" firstAttribute="width" secondItem="Pg0-XZ-WJq" secondAttribute="width" id="WYy-P1-hFg"/>
                                     <constraint firstItem="Pdh-HL-oJN" firstAttribute="bottom" secondItem="MdZ-LL-rms" secondAttribute="bottom" id="gaE-gU-NRg"/>
                                     <constraint firstItem="U3m-zF-rIH" firstAttribute="top" secondItem="MdZ-LL-rms" secondAttribute="top" id="pkS-wL-Xhh"/>
                                 </constraints>
@@ -360,15 +363,12 @@ MTA6MDAgH+KAkyAxNzozMA
                             <constraint firstItem="2LA-by-CxO" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Mqe-2W-Gxg"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="OLw-Tm-DO9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Pdh-HL-oJN" secondAttribute="trailing" id="Rdy-v9-jg6"/>
-                            <constraint firstItem="ntW-f4-jIi" firstAttribute="width" secondItem="WzE-Mn-x7v" secondAttribute="width" constant="-26" id="SPa-bl-Pjf"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="SWu-ED-4WD"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ucc-KB-qsG"/>
-                            <constraint firstItem="MdZ-LL-rms" firstAttribute="width" secondItem="Pg0-XZ-WJq" secondAttribute="width" id="WYy-P1-hFg"/>
                             <constraint firstItem="U3m-zF-rIH" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZIi-X5-WfE"/>
                             <constraint firstItem="ntW-f4-jIi" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="aDT-1m-j27"/>
                             <constraint firstItem="Pg0-XZ-WJq" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="fJ4-z4-BMu"/>
                             <constraint firstItem="Pdh-HL-oJN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fSJ-c2-c4C"/>
-                            <constraint firstItem="efd-1t-ver" firstAttribute="leading" secondItem="7IP-hd-DBT" secondAttribute="leading" constant="16" id="qyn-AJ-71Z"/>
                             <constraint firstItem="2LA-by-CxO" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="txh-6R-TvA"/>
                         </constraints>
                     </view>
