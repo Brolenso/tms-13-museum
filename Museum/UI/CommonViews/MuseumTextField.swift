@@ -105,8 +105,10 @@ final class MuseumTextField: UIControl {
             textField.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
 
-        let tapGesture = UITapGestureRecognizer(target: self,
-                                                 action: #selector(textFieldViewTapped))
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(textFieldViewTapped)
+        )
         self.addGestureRecognizer(tapGesture)
 
         textField.delegate = self
