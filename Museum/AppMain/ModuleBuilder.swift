@@ -26,15 +26,16 @@ final class ModuleBuilder: ModuleBuilding {
 
     // MARK: Private Properties
 
+    private let serviceLocator: ServiceLocating
+
     // all services will be injected from here
-    private var userProvider: UserRepositoryProtocol
-    private var eventProvider: EventRepositoryProtocol
+    private lazy var userProvider: UserRepositoryProtocol = serviceLocator.userRepository
+    private lazy var eventProvider: EventRepositoryProtocol = serviceLocator.eventRepository
 
     // MARK: Initialisers
 
     init(serviceLocator: ServiceLocating) {
-        userProvider = serviceLocator.getUserProvider()
-        eventProvider = serviceLocator.getEventProvider()
+        self.serviceLocator = serviceLocator
     }
 
     // MARK: Public Properties
@@ -42,7 +43,11 @@ final class ModuleBuilder: ModuleBuilding {
     func createLogInModule(router: Routing) -> LogInViewController {
         let logInViewController: LogInViewController = UIStoryboard(name: Constants.logInStoryboard, bundle: nil)
             .instantiateViewController(identifier: Constants.logInViewController)
-        let presenter = LogInPresenter(view: logInViewController, userProvider: userProvider, router: router)
+        let presenter = LogInPresenter(
+            view: logInViewController,
+            userProvider: userProvider,
+            router: router
+        )
         logInViewController.presenter = presenter
         return logInViewController
     }
